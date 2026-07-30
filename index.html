@@ -15,7 +15,6 @@
     --ink-deep:#241a15;
     --green:#00d058;
     --coral:#f6594f;
-    --mint:#81e7ce;
     --red:#ff2217;
     --brown:#785940;
     --brown-lt:#997c62;
@@ -23,173 +22,182 @@
     --chrome:#c2aa90;
     --panel:#fff5e6;
     --line:#f0e4d3;
-    --void:#0e0b09;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{height:100%}
   body{
-    margin:0;background:var(--void);color:var(--ink);
+    margin:0;background:var(--cream);color:var(--ink);
     font-family:'Barlow Semi Condensed',system-ui,-apple-system,sans-serif;
-    display:flex;flex-direction:column;align-items:center;
-    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
   }
-  .stage{
-    width:100%;max-width:560px;height:100%;
-    background:var(--cream);
-    display:flex;flex-direction:column;
-    position:relative;overflow:hidden;
-  }
+  .wrap{max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,52px)}
 
-  /* ---------- header ---------- */
-  header{padding:22px 24px 14px;flex:0 0 auto}
-  .wordmark{display:flex;gap:2px;font-weight:700;font-size:19px;letter-spacing:-.6px;line-height:1}
-  .wordmark span:nth-child(1){color:#f32217}
-  .wordmark span:nth-child(2){color:#f27d28}
-  .wordmark span:nth-child(3){color:#ffe637}
-  .wordmark span:nth-child(4){color:#00d058}
-  .wordmark span:nth-child(5){color:#00b1f7}
-  .wordmark span:nth-child(6){color:#6b398a}
+  /* ---------------- header ---------------- */
+  header{
+    position:sticky;top:0;z-index:20;background:rgba(255,252,247,.94);
+    backdrop-filter:blur(11px);border-bottom:1px solid var(--line);
+  }
+  .hrow{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding:22px 0 18px;flex-wrap:wrap}
+  .wordmark{display:flex;gap:2px;font-weight:700;font-size:18px;letter-spacing:-.6px;line-height:1;margin-bottom:12px}
+  .wordmark s:nth-child(1){color:#f32217}
+  .wordmark s:nth-child(2){color:#f27d28}
+  .wordmark s:nth-child(3){color:#ffe637}
+  .wordmark s:nth-child(4){color:#00d058}
+  .wordmark s:nth-child(5){color:#00b1f7}
+  .wordmark s:nth-child(6){color:#6b398a}
+  .wordmark s{text-decoration:none}
   h1{
-    margin:14px 0 0;font-size:38px;line-height:36px;font-weight:700;
-    letter-spacing:-1.1px;color:var(--ink-deep);
+    margin:0;font-size:clamp(34px,5vw,58px);line-height:.94;font-weight:700;
+    letter-spacing:-1.9px;color:var(--ink-deep);
   }
   h1 em{font-style:normal;color:var(--green)}
   .sync{
-    margin-top:9px;display:flex;align-items:center;gap:7px;
-    font-size:11px;font-weight:500;letter-spacing:1.9px;text-transform:uppercase;color:var(--chrome);
+    margin-top:11px;display:flex;align-items:center;gap:8px;
+    font-size:12px;font-weight:500;letter-spacing:2.3px;text-transform:uppercase;color:var(--chrome);
   }
-  .dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex:0 0 auto}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex:0 0 auto}
+  .hactions{display:flex;align-items:center;gap:12px;padding-bottom:4px}
+  .refresh{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:var(--ink);color:var(--cream);border:0;cursor:pointer;
+    font-family:inherit;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+    padding:14px 20px;border-radius:11px;transition:opacity .15s;white-space:nowrap;
+  }
+  .refresh:hover{opacity:.86}
+  .refresh svg{width:14px;height:14px;flex:0 0 auto}
 
-  /* ---------- progress ---------- */
-  .meter{margin:16px 24px 0;flex:0 0 auto;display:flex;gap:4px}
-  .seg{height:3px;flex:1;background:var(--line);border-radius:2px;transition:background .25s}
-  .seg.past{background:var(--chrome)}
-  .seg.now{background:var(--green)}
+  /* ---------------- filter bar ---------------- */
+  .bar{display:flex;align-items:center;gap:9px;padding:16px 0 20px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .chip{
+    border:1px solid var(--line);background:none;cursor:pointer;font-family:inherit;
+    font-size:12px;font-weight:600;letter-spacing:1.7px;text-transform:uppercase;
+    color:var(--brown-lt);padding:9px 15px;border-radius:20px;transition:.15s;
+  }
+  .chip:hover{border-color:var(--chrome)}
+  .chip.on{background:var(--ink-deep);border-color:var(--ink-deep);color:var(--cream)}
+  .tally{margin-left:auto;font-size:12px;font-weight:500;letter-spacing:2.2px;text-transform:uppercase;color:var(--chrome);font-variant-numeric:tabular-nums}
 
-  /* ---------- deck ---------- */
-  .deck{flex:1 1 auto;position:relative;margin:16px 0 0;padding:0 24px 0;min-height:0}
+  /* ---------------- grid ---------------- */
+  .grid{
+    display:grid;gap:22px;padding:28px 0 70px;
+    grid-template-columns:repeat(auto-fill,minmax(380px,1fr));
+    align-items:start;
+  }
+  @media (max-width:520px){ .grid{grid-template-columns:1fr;gap:16px;padding-top:20px} }
+
   .card{
-    position:absolute;left:24px;right:24px;top:0;bottom:0;
-    background:var(--panel);border-radius:18px;
-    padding:24px 22px 22px;overflow-y:auto;overscroll-behavior:contain;
-    box-shadow:0 10px 34px rgba(26,19,16,.13);
-    transition:transform .34s cubic-bezier(.22,.7,.3,1),opacity .3s;
-    display:flex;flex-direction:column;
+    background:var(--panel);border-radius:16px;padding:24px 24px 20px;
+    border:1px solid transparent;display:flex;flex-direction:column;
+    transition:box-shadow .2s,transform .2s,opacity .2s;
   }
-  .card.done{background:#f7f1e7}
-  .overline{
-    font-size:12px;font-weight:500;letter-spacing:2.4px;text-transform:uppercase;
-    color:var(--brown);margin-bottom:9px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
-  }
-  .pill{
-    font-size:10px;letter-spacing:1.5px;padding:3px 7px;border-radius:3px;
-    background:var(--coral);color:#fff;font-weight:600;
-  }
+  .card:hover{box-shadow:0 12px 30px rgba(26,19,16,.09)}
+  .card.hide{display:none}
+  .card.done{background:#f8f3ea;border-color:var(--line);opacity:.72}
+  .card.done h2{color:var(--brown-lt);text-decoration:line-through;text-decoration-color:var(--chrome)}
+  .card.urgent{border-color:var(--coral)}
+
+  .overline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+  .pill{font-size:10px;letter-spacing:1.6px;padding:4px 8px;border-radius:3px;background:var(--coral);color:#fff;font-weight:600;text-transform:uppercase}
   .pill.internal{background:var(--brown)}
-  .pill.sent{background:var(--green)}
-  .card h2{
-    margin:0 0 12px;font-size:29px;line-height:30px;font-weight:700;
-    letter-spacing:-.7px;color:var(--ink-deep);
+  .when{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--chrome)}
+  .due{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:3px 7px;border-radius:3px}
+
+  .card h2{margin:0 0 8px;font-size:26px;line-height:27px;font-weight:700;letter-spacing:-.75px;color:var(--ink-deep)}
+  .who{font-size:12px;font-weight:500;letter-spacing:1.9px;text-transform:uppercase;color:var(--brown-lt);margin-bottom:18px}
+  .label{font-size:11px;font-weight:600;letter-spacing:2.3px;text-transform:uppercase;color:var(--brown);margin:0 0 7px}
+  .ask{font-size:15px;line-height:22px;color:var(--ink);margin:0 0 18px;padding-left:13px;border-left:2px solid var(--green)}
+  .ctx{font-size:14px;line-height:21px;color:var(--body);margin:0 0 18px}
+
+  details.dr{margin-bottom:16px;border-top:1px solid var(--line);padding-top:14px}
+  details.dr summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:600;letter-spacing:2.3px;text-transform:uppercase;color:var(--brown);
   }
-  .card.done h2{color:var(--brown-lt)}
-  .who{
-    font-size:12px;font-weight:500;letter-spacing:1.7px;text-transform:uppercase;
-    color:var(--chrome);margin-bottom:16px;
-  }
-  .label{
-    font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;
-    color:var(--brown);margin:0 0 6px;
-  }
-  .ask{
-    font-size:15px;line-height:22px;color:var(--ink);margin:0 0 16px;
-    padding-left:11px;border-left:2px solid var(--green);
-  }
-  .ctx{font-size:14px;line-height:20px;color:var(--body);margin:0 0 18px}
-  .draft{
-    background:var(--cream);border-radius:12px;padding:15px 16px;margin-bottom:16px;
-    font-size:14px;line-height:21px;color:var(--ink);white-space:pre-wrap;
-  }
+  details.dr summary::-webkit-details-marker{display:none}
+  details.dr summary::after{content:'+';margin-left:auto;font-size:16px;color:var(--chrome);line-height:1}
+  details.dr[open] summary::after{content:'–'}
+  .draft{background:var(--cream);border-radius:11px;padding:16px;margin-top:12px;font-size:14px;line-height:21px;white-space:pre-wrap;color:var(--ink)}
+
   .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-  .tag{
-    font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500;
-    color:var(--brown-lt);border:1px solid var(--line);padding:3px 8px;border-radius:11px;
-  }
-  .acts{margin-top:auto;display:flex;gap:9px;padding-top:4px}
+  .tag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;color:var(--brown-lt);border:1px solid var(--line);padding:4px 9px;border-radius:11px}
+
+  .acts{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
   .btn{
-    flex:1;border:0;border-radius:10px;padding:13px 10px;cursor:pointer;
-    font-family:inherit;font-size:12px;font-weight:600;letter-spacing:1.7px;text-transform:uppercase;
-    transition:opacity .15s;
+    flex:1 1 auto;border:0;border-radius:10px;padding:12px 12px;cursor:pointer;text-align:center;
+    font-family:inherit;font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;
+    text-decoration:none;transition:opacity .15s;min-width:96px;
   }
-  .btn:active{opacity:.72}
-  .btn.open{background:var(--ink);color:var(--cream);text-decoration:none;text-align:center;line-height:normal}
+  .btn:hover{opacity:.85}
+  .btn.open{background:var(--ink);color:var(--cream)}
+  .btn.copy{background:var(--line);color:var(--brown)}
   .btn.tick{background:var(--green);color:var(--ink-deep)}
-  .btn.tick.on{background:var(--line);color:var(--brown-lt)}
+  .card.done .btn.tick{background:var(--line);color:var(--brown-lt)}
 
-  /* stack positions */
-  .card[data-pos="0"]{transform:translateY(0) scale(1);opacity:1;z-index:3}
-  .card[data-pos="1"]{transform:translateY(13px) scale(.955);opacity:.6;z-index:2;pointer-events:none}
-  .card[data-pos="2"]{transform:translateY(24px) scale(.915);opacity:.3;z-index:1;pointer-events:none}
-  .card[data-pos="hidden"]{transform:translateY(30px) scale(.9);opacity:0;z-index:0;pointer-events:none}
-  .card[data-pos="gone"]{transform:translateX(-115%) rotate(-5deg);opacity:0;z-index:4;pointer-events:none}
+  .empty{padding:80px 0 100px;text-align:center;display:none}
+  .empty.on{display:block}
+  .empty h3{font-size:40px;font-weight:700;letter-spacing:-1.2px;margin:0 0 10px;color:var(--green)}
+  .empty p{font-size:16px;line-height:23px;color:var(--body);margin:0}
 
-  /* ---------- footer nav ---------- */
-  footer{
-    flex:0 0 auto;padding:14px 24px 20px;
-    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;font-size:12px;line-height:19px;letter-spacing:.4px;color:var(--chrome)}
+  footer b{color:var(--brown);font-weight:600}
+
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,90px);
+    background:var(--ink-deep);color:var(--cream);padding:13px 22px;border-radius:11px;
+    font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;
+    transition:transform .28s cubic-bezier(.22,.7,.3,1);z-index:60;
   }
-  .nav{
-    background:none;border:1px solid var(--line);border-radius:50%;
-    width:42px;height:42px;cursor:pointer;color:var(--brown);
-    font-size:17px;font-family:inherit;flex:0 0 auto;
-  }
-  .nav:disabled{opacity:.3;cursor:default}
-  .count{
-    font-size:12px;font-weight:500;letter-spacing:2.2px;text-transform:uppercase;color:var(--chrome);
-    font-variant-numeric:tabular-nums;
-  }
-  .empty{
-    position:absolute;inset:0;display:none;flex-direction:column;
-    align-items:center;justify-content:center;text-align:center;padding:0 40px;
-  }
-  .empty.on{display:flex}
-  .empty h3{font-size:31px;font-weight:700;letter-spacing:-.8px;margin:0 0 8px;color:var(--green)}
-  .empty p{font-size:15px;line-height:21px;color:var(--body);margin:0}
-  @media (max-width:400px){
-    h1{font-size:33px;line-height:32px}
-    .card h2{font-size:25px;line-height:26px}
-  }
+  .toast.on{transform:translate(-50%,0)}
 </style>
 </head>
 <body>
-<div class="stage">
-  <header>
-    <div class="wordmark"><span>I</span><span>N</span><span>T</span><span>E</span><span>N</span><span>T</span></div>
-    <h1>Waiting on <em>you</em></h1>
-    <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 30 Jul, 20:02 BST</span></div>
-  </header>
 
-  <div class="meter" id="meter"></div>
-
-  <div class="deck" id="deck">
-    <div class="empty" id="empty">
-      <h3>All clear</h3>
-      <p>Nothing is waiting on a reply from you right now.</p>
+<header>
+  <div class="wrap">
+    <div class="hrow">
+      <div>
+        <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
+        <h1>Waiting on <em>you</em></h1>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 30 Jul, 20:02 BST</span></div>
+      </div>
+      <div class="hactions">
+        <a class="refresh" id="refreshBtn" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+          Refresh from Slack
+        </a>
+      </div>
+    </div>
+    <div class="bar">
+      <button class="chip on" data-f="open">Open</button>
+      <button class="chip" data-f="client">Client</button>
+      <button class="chip" data-f="internal">Internal</button>
+      <button class="chip" data-f="done">Done</button>
+      <button class="chip" data-f="all">All</button>
+      <div class="tally" id="tally"></div>
     </div>
   </div>
+</header>
 
+<div class="wrap">
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">
+    <h3>All clear</h3>
+    <p>Nothing in this view is waiting on a reply from you.</p>
+  </div>
   <footer>
-    <button class="nav" id="prev" aria-label="Previous">&#8592;</button>
-    <div class="count" id="count"></div>
-    <button class="nav" id="next" aria-label="Next">&#8594;</button>
+    <b>Private.</b> Contains internal Slack messages and client names — keep Vercel Deployment Protection on.<br>
+    Refreshed weekdays at 09:00 by a Claude scheduled task, which rewrites this page and pushes to GitHub. Vercel redeploys automatically.
   </footer>
 </div>
 
+<div class="toast" id="toast">Copied</div>
+
 <script>
 /* ============================================================
-   ITEMS — one card per open Slack ask.
+   ITEMS — one card per Slack ask.
    Fields: title, category ('client'|'internal'), tags[], who, when,
-           ask, context, link, draft, done (optional)
-   Client items come first.
+           ask, context, link (Slack permalink), draft,
+           optional done:true, optional due (short label e.g. "Due Mon 12:30")
+   Client items first.
    ============================================================ */
 const ITEMS = [
   {
@@ -215,22 +223,24 @@ const ITEMS = [
     draft: "Thanks Elyse — will complete the DRG form today.\n\nTwo things I want to check before I mark approval, so flagging early rather than sitting on the form:\n• Does the SoW assume the standard manual SDK onboarding? RedCore is one of the accounts I want running on the hybrid provisioning agent, and the timelines are very different.\n• Anything in there needing deep-link validation or first-campaign setup? Those are still phase 2 and are handled offline, so we should not be committing to them implicitly.\n\nIf the answers are ‘no’ to both, we are in luck as I can approve straight through. If not, I will prioritise a short call with @Lidor and @Conrad before we sign.\n\nHope that helps."
   },
   {
-    title: "XLSMART PAG — due Monday 12:30",
+    title: "XLSMART PAG approval",
     category: "client",
     tags: ["xlsmart", "approval", "deadline"],
     who: "Elyse Tawiah — #intentone-presales-xlsmart",
     when: "Thu 30 Jul, 12:45",
+    due: "Due Mon 12:30",
     ask: "“Please provide your PAG approval outcome for the XLSMART sales proposal… If you could aim to have your approval/comments completed by 12:30 on Monday 3rd August, that would be great.”",
     context: "Hard deadline Monday 12:30, and Monday is also the IntentOne walkthrough. Proposal Assurance Gate, so the question is whether what we are proposing is deliverable, not whether the commercials work.",
     link: "https://intent.slack.com/archives/C0797JY41LJ/p1785411956327389",
     draft: "Thanks Elyse — I will have my PAG outcome in before Monday 12:30.\n\nOne ask so I can review it properly: can you point me at the capability list the proposal commits to? I want to check it against what is actually landing post-Bash week rather than what the deck says.\n\nIf it is all shipped or near-shipped, we are in luck as I can approve without comments. If it leans on anything still in Now/Next, I will prioritise flagging it Monday morning so it does not hold up your 12:30.\n\nHope that helps."
   },
   {
-    title: "AIS PAG — due Monday 12:30",
+    title: "AIS PAG approval",
     category: "client",
     tags: ["ais", "approval", "deadline"],
     who: "Elyse Tawiah — #intentone-presales-ais",
     when: "Thu 30 Jul, 12:24",
+    due: "Due Mon 12:30",
     ask: "“Please provide your PAG approval outcome for the AIS sales proposal… If you could aim to have your approval/comments completed by 12:30 on Monday 3rd August, that would be great.”",
     context: "Same gate and same deadline as XLSMART — two proposals landing on one slot Monday morning. Worth doing both in one sitting rather than twice.",
     link: "https://intent.slack.com/archives/C080RGW1LG1/p1785410689596799",
@@ -249,34 +259,42 @@ const ITEMS = [
   }
 ];
 
-/* ============================================================
-   Renderer
-   ============================================================ */
-const deck = document.getElementById('deck');
-const meter = document.getElementById('meter');
-const countEl = document.getElementById('count');
-const emptyEl = document.getElementById('empty');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
+/* Prompt fired by the Refresh button. */
+const REFRESH_PROMPT = "Refresh my Slack reply tracker. It lives at https://github.com/shafeeqshajahanliver/slack-actions (index.html on main). Clone it, scan Slack for new asks addressed to me (U09JWELV5PY) that I have not replied or reacted to, close any existing items I have since handled, update the sync timestamp in .sync .stamp to the current London time, then commit and push. Vercel redeploys automatically. Use the same instructions as my 'Slack Actions' scheduled task.";
 
-const live = ITEMS.filter(it => !it.done);
-let idx = 0;
-const cards = [];
+/* ============================================================
+   Render
+   ============================================================ */
+const grid  = document.getElementById('grid');
+const empty = document.getElementById('empty');
+const tally = document.getElementById('tally');
+const toast = document.getElementById('toast');
+let filter = 'open';
+
+/* Local "mark done" survives a reload; the repo's done:true always wins. */
+const KEY = 'slackTracker.done.v1';
+let localDone = new Set();
+try { localDone = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) {}
+function persist(){ try { localStorage.setItem(KEY, JSON.stringify([...localDone])); } catch (e) {} }
+const isDone = it => it.done === true || localDone.has(it.link);
 
 function esc(s){
-  return String(s).replace(/[&<>"']/g, c => (
-    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
-  ));
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function ping(msg){
+  toast.textContent = msg; toast.classList.add('on');
+  clearTimeout(ping._t); ping._t = setTimeout(() => toast.classList.remove('on'), 1600);
 }
 
-live.forEach((it, i) => {
+ITEMS.forEach((it, i) => {
   const el = document.createElement('article');
-  el.className = 'card' + (it.done ? ' done' : '');
-  const tags = (it.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+  el.className = 'card' + (isDone(it) ? ' done' : '') + (it.due && !isDone(it) ? ' urgent' : '');
+  el.dataset.i = i;
   el.innerHTML = `
     <div class="overline">
       <span class="pill ${it.category === 'internal' ? 'internal' : ''}">${it.category === 'internal' ? 'Internal' : 'Client'}</span>
-      <span>${esc(it.when)}</span>
+      <span class="when">${esc(it.when)}</span>
+      ${it.due ? `<span class="due">${esc(it.due)}</span>` : ''}
     </div>
     <h2>${esc(it.title)}</h2>
     <div class="who">${esc(it.who)}</div>
@@ -284,66 +302,60 @@ live.forEach((it, i) => {
     <blockquote class="ask">${esc(it.ask)}</blockquote>
     <p class="label">Context</p>
     <p class="ctx">${esc(it.context)}</p>
-    <p class="label">Draft reply</p>
-    <div class="draft">${esc(it.draft)}</div>
-    <div class="tags">${tags}</div>
+    <details class="dr"><summary>Draft reply</summary><div class="draft">${esc(it.draft)}</div></details>
+    <div class="tags">${(it.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
     <div class="acts">
       <a class="btn open" href="${esc(it.link)}" target="_blank" rel="noopener">Open in Slack</a>
-      <button class="btn tick" data-i="${i}">Mark done</button>
+      <button class="btn copy">Copy draft</button>
+      <button class="btn tick">${isDone(it) ? 'Reopen' : 'Mark done'}</button>
     </div>`;
-  deck.appendChild(el);
-  cards.push(el);
+  grid.appendChild(el);
 });
 
-const doneSet = new Set();
-
-function render(){
-  cards.forEach((el, i) => {
-    if (doneSet.has(i)) { el.dataset.pos = 'gone'; return; }
-    const rel = order().indexOf(i) - pointer();
-    el.dataset.pos = rel < 0 ? 'gone' : (rel > 2 ? 'hidden' : String(rel));
+function apply(){
+  let shown = 0;
+  [...grid.children].forEach(el => {
+    const it = ITEMS[+el.dataset.i], done = isDone(it);
+    const ok =
+      filter === 'all'      ? true :
+      filter === 'open'     ? !done :
+      filter === 'done'     ? done :
+      /* client|internal */   it.category === filter && !done;
+    el.classList.toggle('hide', !ok);
+    if (ok) shown++;
   });
-  const remaining = order().filter(i => !doneSet.has(i));
-  const pos = Math.min(pointer(), Math.max(remaining.length - 1, 0));
-  meter.innerHTML = remaining.map((_, k) =>
-    `<span class="seg ${k < pos ? 'past' : k === pos ? 'now' : ''}"></span>`).join('');
-  countEl.textContent = remaining.length
-    ? `${pos + 1} / ${remaining.length} open`
-    : 'All done';
-  emptyEl.classList.toggle('on', remaining.length === 0);
-  prevBtn.disabled = pos === 0 || !remaining.length;
-  nextBtn.disabled = pos >= remaining.length - 1;
+  const open = ITEMS.filter(it => !isDone(it)).length;
+  const cli  = ITEMS.filter(it => !isDone(it) && it.category === 'client').length;
+  tally.textContent = `${open} open · ${cli} client · ${ITEMS.length - open} done`;
+  empty.classList.toggle('on', shown === 0);
 }
 
-function order(){ return live.map((_, i) => i).filter(i => !doneSet.has(i)); }
-function pointer(){ return Math.min(idx, Math.max(order().length - 1, 0)); }
-
-deck.addEventListener('click', e => {
-  const btn = e.target.closest('.btn.tick');
-  if (!btn) return;
-  doneSet.add(Number(btn.dataset.i));
-  if (idx >= order().length) idx = Math.max(order().length - 1, 0);
-  render();
+grid.addEventListener('click', e => {
+  const card = e.target.closest('.card'); if (!card) return;
+  const it = ITEMS[+card.dataset.i];
+  if (e.target.closest('.btn.tick')) {
+    if (it.done === true) return ping('Closed at source');
+    localDone.has(it.link) ? localDone.delete(it.link) : localDone.add(it.link);
+    persist();
+    card.classList.toggle('done', isDone(it));
+    card.classList.toggle('urgent', !!it.due && !isDone(it));
+    card.querySelector('.btn.tick').textContent = isDone(it) ? 'Reopen' : 'Mark done';
+    apply();
+  }
+  if (e.target.closest('.btn.copy')) {
+    navigator.clipboard.writeText(it.draft).then(() => ping('Draft copied'), () => ping('Copy failed'));
+  }
 });
 
-nextBtn.addEventListener('click', () => { if (idx < order().length - 1) { idx++; render(); } });
-prevBtn.addEventListener('click', () => { if (idx > 0) { idx--; render(); } });
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') nextBtn.click();
-  if (e.key === 'ArrowLeft') prevBtn.click();
-});
+document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+  document.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+  c.classList.add('on'); filter = c.dataset.f; apply();
+}));
 
-/* swipe */
-let x0 = null;
-deck.addEventListener('touchstart', e => { x0 = e.changedTouches[0].clientX; }, {passive:true});
-deck.addEventListener('touchend', e => {
-  if (x0 === null) return;
-  const dx = e.changedTouches[0].clientX - x0;
-  if (Math.abs(dx) > 55) { dx < 0 ? nextBtn.click() : prevBtn.click(); }
-  x0 = null;
-}, {passive:true});
+document.getElementById('refreshBtn').href =
+  'claude://cowork/new?q=' + encodeURIComponent(REFRESH_PROMPT);
 
-render();
+apply();
 </script>
 </body>
 </html>
