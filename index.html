@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Slack replies — Shaf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fffcf7;
+    --ink:#1a1310;
+    --ink-deep:#241a15;
+    --green:#00d058;
+    --coral:#f6594f;
+    --mint:#81e7ce;
+    --red:#ff2217;
+    --brown:#785940;
+    --brown-lt:#997c62;
+    --body:#8a7257;
+    --chrome:#c2aa90;
+    --panel:#fff5e6;
+    --line:#f0e4d3;
+    --void:#0e0b09;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--void);color:var(--ink);
+    font-family:'Barlow Semi Condensed',system-ui,-apple-system,sans-serif;
+    display:flex;flex-direction:column;align-items:center;
+    overflow:hidden;
+  }
+  .stage{
+    width:100%;max-width:560px;height:100%;
+    background:var(--cream);
+    display:flex;flex-direction:column;
+    position:relative;overflow:hidden;
+  }
+
+  /* ---------- header ---------- */
+  header{padding:22px 24px 14px;flex:0 0 auto}
+  .wordmark{display:flex;gap:2px;font-weight:700;font-size:19px;letter-spacing:-.6px;line-height:1}
+  .wordmark span:nth-child(1){color:#f32217}
+  .wordmark span:nth-child(2){color:#f27d28}
+  .wordmark span:nth-child(3){color:#ffe637}
+  .wordmark span:nth-child(4){color:#00d058}
+  .wordmark span:nth-child(5){color:#00b1f7}
+  .wordmark span:nth-child(6){color:#6b398a}
+  h1{
+    margin:14px 0 0;font-size:38px;line-height:36px;font-weight:700;
+    letter-spacing:-1.1px;color:var(--ink-deep);
+  }
+  h1 em{font-style:normal;color:var(--green)}
+  .sync{
+    margin-top:9px;display:flex;align-items:center;gap:7px;
+    font-size:11px;font-weight:500;letter-spacing:1.9px;text-transform:uppercase;color:var(--chrome);
+  }
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex:0 0 auto}
+
+  /* ---------- progress ---------- */
+  .meter{margin:16px 24px 0;flex:0 0 auto;display:flex;gap:4px}
+  .seg{height:3px;flex:1;background:var(--line);border-radius:2px;transition:background .25s}
+  .seg.past{background:var(--chrome)}
+  .seg.now{background:var(--green)}
+
+  /* ---------- deck ---------- */
+  .deck{flex:1 1 auto;position:relative;margin:16px 0 0;padding:0 24px 0;min-height:0}
+  .card{
+    position:absolute;left:24px;right:24px;top:0;bottom:0;
+    background:var(--panel);border-radius:18px;
+    padding:24px 22px 22px;overflow-y:auto;overscroll-behavior:contain;
+    box-shadow:0 10px 34px rgba(26,19,16,.13);
+    transition:transform .34s cubic-bezier(.22,.7,.3,1),opacity .3s;
+    display:flex;flex-direction:column;
+  }
+  .card.done{background:#f7f1e7}
+  .overline{
+    font-size:12px;font-weight:500;letter-spacing:2.4px;text-transform:uppercase;
+    color:var(--brown);margin-bottom:9px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  }
+  .pill{
+    font-size:10px;letter-spacing:1.5px;padding:3px 7px;border-radius:3px;
+    background:var(--coral);color:#fff;font-weight:600;
+  }
+  .pill.internal{background:var(--brown)}
+  .pill.sent{background:var(--green)}
+  .card h2{
+    margin:0 0 12px;font-size:29px;line-height:30px;font-weight:700;
+    letter-spacing:-.7px;color:var(--ink-deep);
+  }
+  .card.done h2{color:var(--brown-lt)}
+  .who{
+    font-size:12px;font-weight:500;letter-spacing:1.7px;text-transform:uppercase;
+    color:var(--chrome);margin-bottom:16px;
+  }
+  .label{
+    font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;
+    color:var(--brown);margin:0 0 6px;
+  }
+  .ask{
+    font-size:15px;line-height:22px;color:var(--ink);margin:0 0 16px;
+    padding-left:11px;border-left:2px solid var(--green);
+  }
+  .ctx{font-size:14px;line-height:20px;color:var(--body);margin:0 0 18px}
+  .draft{
+    background:var(--cream);border-radius:12px;padding:15px 16px;margin-bottom:16px;
+    font-size:14px;line-height:21px;color:var(--ink);white-space:pre-wrap;
+  }
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+  .tag{
+    font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:500;
+    color:var(--brown-lt);border:1px solid var(--line);padding:3px 8px;border-radius:11px;
+  }
+  .acts{margin-top:auto;display:flex;gap:9px;padding-top:4px}
+  .btn{
+    flex:1;border:0;border-radius:10px;padding:13px 10px;cursor:pointer;
+    font-family:inherit;font-size:12px;font-weight:600;letter-spacing:1.7px;text-transform:uppercase;
+    transition:opacity .15s;
+  }
+  .btn:active{opacity:.72}
+  .btn.open{background:var(--ink);color:var(--cream);text-decoration:none;text-align:center;line-height:normal}
+  .btn.tick{background:var(--green);color:var(--ink-deep)}
+  .btn.tick.on{background:var(--line);color:var(--brown-lt)}
+
+  /* stack positions */
+  .card[data-pos="0"]{transform:translateY(0) scale(1);opacity:1;z-index:3}
+  .card[data-pos="1"]{transform:translateY(13px) scale(.955);opacity:.6;z-index:2;pointer-events:none}
+  .card[data-pos="2"]{transform:translateY(24px) scale(.915);opacity:.3;z-index:1;pointer-events:none}
+  .card[data-pos="hidden"]{transform:translateY(30px) scale(.9);opacity:0;z-index:0;pointer-events:none}
+  .card[data-pos="gone"]{transform:translateX(-115%) rotate(-5deg);opacity:0;z-index:4;pointer-events:none}
+
+  /* ---------- footer nav ---------- */
+  footer{
+    flex:0 0 auto;padding:14px 24px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .nav{
+    background:none;border:1px solid var(--line);border-radius:50%;
+    width:42px;height:42px;cursor:pointer;color:var(--brown);
+    font-size:17px;font-family:inherit;flex:0 0 auto;
+  }
+  .nav:disabled{opacity:.3;cursor:default}
+  .count{
+    font-size:12px;font-weight:500;letter-spacing:2.2px;text-transform:uppercase;color:var(--chrome);
+    font-variant-numeric:tabular-nums;
+  }
+  .empty{
+    position:absolute;inset:0;display:none;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:0 40px;
+  }
+  .empty.on{display:flex}
+  .empty h3{font-size:31px;font-weight:700;letter-spacing:-.8px;margin:0 0 8px;color:var(--green)}
+  .empty p{font-size:15px;line-height:21px;color:var(--body);margin:0}
+  @media (max-width:400px){
+    h1{font-size:33px;line-height:32px}
+    .card h2{font-size:25px;line-height:26px}
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <header>
+    <div class="wordmark"><span>I</span><span>N</span><span>T</span><span>E</span><span>N</span><span>T</span></div>
+    <h1>Waiting on <em>you</em></h1>
+    <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 30 Jul, 20:02 BST</span></div>
+  </header>
+
+  <div class="meter" id="meter"></div>
+
+  <div class="deck" id="deck">
+    <div class="empty" id="empty">
+      <h3>All clear</h3>
+      <p>Nothing is waiting on a reply from you right now.</p>
+    </div>
+  </div>
+
+  <footer>
+    <button class="nav" id="prev" aria-label="Previous">&#8592;</button>
+    <div class="count" id="count"></div>
+    <button class="nav" id="next" aria-label="Next">&#8594;</button>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   ITEMS — one card per open Slack ask.
+   Fields: title, category ('client'|'internal'), tags[], who, when,
+           ask, context, link, draft, done (optional)
+   Client items come first.
+   ============================================================ */
+const ITEMS = [
+  {
+    title: "Time-series: who owns cohort-by-trend?",
+    category: "client",
+    tags: ["mtn", "roadmap", "boundary"],
+    who: "Milan Tailor",
+    when: "Thu 30 Jul, 15:52",
+    ask: "“Andy’s got me running a short investigation into whether one shared time-series capability could serve the three time-based MTN use cases — complaint trends, spend direction, product-mix change… Here’s the line I think sits between us. Please tell me if I’ve drawn it in the wrong place: 1. Keeping history — yours, already done (ONE-301 / ONE-307). 2. Showing a trend on a chart — yours. 3. Grouping customers by the shape of their trend — the bit I’d prototype… If 3 is already on the roadmap, I’ll write up what I’ve found and hand it straight over rather than duplicate.”",
+    context: "He has drawn the boundary himself and is asking you to confirm or move it. The real question is whether trend-shape cohorts belong in the product roadmap or stay an investigation. Sam owns coverage trends first, insight trends after — so 2 is already sequenced. 3 is the genuinely unclaimed piece.",
+    link: "https://intent.slack.com/archives/D09L8MLSHRN/p1785423152856359",
+    draft: "Milan — you have drawn the line in almost exactly the right place, thank you for checking before building.\n\n• 1 and 2 are ours and sequenced. ONE-301 / ONE-307 cover history, and Sam has coverage trends ahead of insight trends. Nothing for you to build there.\n• 3 is not on the roadmap and nobody is on it. Prototype it.\n\nOne steer on scope so it stays useful to us:\n• Make the output a cohort we can actually target in a campaign, not a chart. “These 400k are steady decliners” only earns its place if a campaign manager can act on it.\n• If it works on the MTN complaint-trend case, we are in luck as that is the one with a live commercial pull. If it does not, I would rather you tell me early and we park it.\n\nCome to me and @Sam before you go wide with it — we will fold it into the roadmap properly rather than have it sit as a side investigation.\n\nHope that helps."
+  },
+  {
+    title: "RedCore DRG approval outstanding",
+    category: "client",
+    tags: ["redcore", "approval", "sow"],
+    who: "Elyse Tawiah — #intentone-presales-redcore",
+    when: "Thu 30 Jul, 16:35",
+    ask: "“Please provide your DRG approval outcome for the RedCore sales proposal. The Delivery Readiness Gate form can be found here… The SoW can be found here…”",
+    context: "Delivery Readiness Gate, so this is the commit-to-deliver decision, not a proposal review. RedCore is one of the mid-market logos you named to Lidor as a candidate for the hybrid SDK provisioning agent — worth making sure the SoW does not promise a manual onboarding you are trying to move away from.",
+    link: "https://intent.slack.com/archives/C0B74CKCU5B/p1785425701730529",
+    draft: "Thanks Elyse — will complete the DRG form today.\n\nTwo things I want to check before I mark approval, so flagging early rather than sitting on the form:\n• Does the SoW assume the standard manual SDK onboarding? RedCore is one of the accounts I want running on the hybrid provisioning agent, and the timelines are very different.\n• Anything in there needing deep-link validation or first-campaign setup? Those are still phase 2 and are handled offline, so we should not be committing to them implicitly.\n\nIf the answers are ‘no’ to both, we are in luck as I can approve straight through. If not, I will prioritise a short call with @Lidor and @Conrad before we sign.\n\nHope that helps."
+  },
+  {
+    title: "XLSMART PAG — due Monday 12:30",
+    category: "client",
+    tags: ["xlsmart", "approval", "deadline"],
+    who: "Elyse Tawiah — #intentone-presales-xlsmart",
+    when: "Thu 30 Jul, 12:45",
+    ask: "“Please provide your PAG approval outcome for the XLSMART sales proposal… If you could aim to have your approval/comments completed by 12:30 on Monday 3rd August, that would be great.”",
+    context: "Hard deadline Monday 12:30, and Monday is also the IntentOne walkthrough. Proposal Assurance Gate, so the question is whether what we are proposing is deliverable, not whether the commercials work.",
+    link: "https://intent.slack.com/archives/C0797JY41LJ/p1785411956327389",
+    draft: "Thanks Elyse — I will have my PAG outcome in before Monday 12:30.\n\nOne ask so I can review it properly: can you point me at the capability list the proposal commits to? I want to check it against what is actually landing post-Bash week rather than what the deck says.\n\nIf it is all shipped or near-shipped, we are in luck as I can approve without comments. If it leans on anything still in Now/Next, I will prioritise flagging it Monday morning so it does not hold up your 12:30.\n\nHope that helps."
+  },
+  {
+    title: "AIS PAG — due Monday 12:30",
+    category: "client",
+    tags: ["ais", "approval", "deadline"],
+    who: "Elyse Tawiah — #intentone-presales-ais",
+    when: "Thu 30 Jul, 12:24",
+    ask: "“Please provide your PAG approval outcome for the AIS sales proposal… If you could aim to have your approval/comments completed by 12:30 on Monday 3rd August, that would be great.”",
+    context: "Same gate and same deadline as XLSMART — two proposals landing on one slot Monday morning. Worth doing both in one sitting rather than twice.",
+    link: "https://intent.slack.com/archives/C080RGW1LG1/p1785410689596799",
+    draft: "Thanks Elyse — AIS noted, I will do this alongside XLSMART so both land before Monday 12:30.\n\nSame question as on XLSMART: which committed capabilities does this one rest on? Easiest for me if you can confirm the two proposals draw on the same capability set — if they do, we are in luck as it is one review not two. If they differ, I will prioritise AIS first as it is the larger commitment.\n\nHope that helps."
+  },
+  {
+    title: "Receipts to SD, plus the £44.95",
+    category: "internal",
+    tags: ["finance", "admin", "quick"],
+    who: "Clare Edwards",
+    when: "Thu 30 Jul, 15:33",
+    ask: "“Can you please urgently upload the receipts to SD.” You asked whether the receipt was still needed given the £44.95 was an accident — Clare replied: “Yes please. Thanks”",
+    context: "You said you would transfer the £44.95 today and have cleared the rest. Clare has confirmed she still needs the receipt uploaded. Two minutes of work, and it is the second time of asking.",
+    link: "https://intent.slack.com/archives/D0A359U01HT/p1785422020933989",
+    draft: "Understood — receipt uploaded to SD and the £44.95 transferred. Sorry for the chase, will keep on top of these going forward."
+  }
+];
+
+/* ============================================================
+   Renderer
+   ============================================================ */
+const deck = document.getElementById('deck');
+const meter = document.getElementById('meter');
+const countEl = document.getElementById('count');
+const emptyEl = document.getElementById('empty');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+const live = ITEMS.filter(it => !it.done);
+let idx = 0;
+const cards = [];
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g, c => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
+
+live.forEach((it, i) => {
+  const el = document.createElement('article');
+  el.className = 'card' + (it.done ? ' done' : '');
+  const tags = (it.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+  el.innerHTML = `
+    <div class="overline">
+      <span class="pill ${it.category === 'internal' ? 'internal' : ''}">${it.category === 'internal' ? 'Internal' : 'Client'}</span>
+      <span>${esc(it.when)}</span>
+    </div>
+    <h2>${esc(it.title)}</h2>
+    <div class="who">${esc(it.who)}</div>
+    <p class="label">The ask</p>
+    <blockquote class="ask">${esc(it.ask)}</blockquote>
+    <p class="label">Context</p>
+    <p class="ctx">${esc(it.context)}</p>
+    <p class="label">Draft reply</p>
+    <div class="draft">${esc(it.draft)}</div>
+    <div class="tags">${tags}</div>
+    <div class="acts">
+      <a class="btn open" href="${esc(it.link)}" target="_blank" rel="noopener">Open in Slack</a>
+      <button class="btn tick" data-i="${i}">Mark done</button>
+    </div>`;
+  deck.appendChild(el);
+  cards.push(el);
+});
+
+const doneSet = new Set();
+
+function render(){
+  cards.forEach((el, i) => {
+    if (doneSet.has(i)) { el.dataset.pos = 'gone'; return; }
+    const rel = order().indexOf(i) - pointer();
+    el.dataset.pos = rel < 0 ? 'gone' : (rel > 2 ? 'hidden' : String(rel));
+  });
+  const remaining = order().filter(i => !doneSet.has(i));
+  const pos = Math.min(pointer(), Math.max(remaining.length - 1, 0));
+  meter.innerHTML = remaining.map((_, k) =>
+    `<span class="seg ${k < pos ? 'past' : k === pos ? 'now' : ''}"></span>`).join('');
+  countEl.textContent = remaining.length
+    ? `${pos + 1} / ${remaining.length} open`
+    : 'All done';
+  emptyEl.classList.toggle('on', remaining.length === 0);
+  prevBtn.disabled = pos === 0 || !remaining.length;
+  nextBtn.disabled = pos >= remaining.length - 1;
+}
+
+function order(){ return live.map((_, i) => i).filter(i => !doneSet.has(i)); }
+function pointer(){ return Math.min(idx, Math.max(order().length - 1, 0)); }
+
+deck.addEventListener('click', e => {
+  const btn = e.target.closest('.btn.tick');
+  if (!btn) return;
+  doneSet.add(Number(btn.dataset.i));
+  if (idx >= order().length) idx = Math.max(order().length - 1, 0);
+  render();
+});
+
+nextBtn.addEventListener('click', () => { if (idx < order().length - 1) { idx++; render(); } });
+prevBtn.addEventListener('click', () => { if (idx > 0) { idx--; render(); } });
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') nextBtn.click();
+  if (e.key === 'ArrowLeft') prevBtn.click();
+});
+
+/* swipe */
+let x0 = null;
+deck.addEventListener('touchstart', e => { x0 = e.changedTouches[0].clientX; }, {passive:true});
+deck.addEventListener('touchend', e => {
+  if (x0 === null) return;
+  const dx = e.changedTouches[0].clientX - x0;
+  if (Math.abs(dx) > 55) { dx < 0 ? nextBtn.click() : prevBtn.click(); }
+  x0 = null;
+}, {passive:true});
+
+render();
+</script>
+</body>
+</html>
