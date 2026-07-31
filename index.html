@@ -199,7 +199,7 @@
            optional done:true, optional due (short label e.g. "Due Mon 12:30")
    Client items first.
    ============================================================ */
-/* ITEMS:START — do not edit this marker; /api/refresh rewrites between the markers */
+/* ITEMS:START — do not edit this marker; Claude rewrites between the markers */
 const ITEMS = [
   {
     "title": "Time-series: who owns cohort-by-trend?",
@@ -283,7 +283,7 @@ const ITEMS = [
 ];
 /* ITEMS:END */
 
-/* Prompt fired by the Refresh button. */
+/* Prompt handed to Claude by the Refresh button. */
 const REFRESH_PROMPT = "Refresh my Slack reply tracker. It lives at https://github.com/shafeeqshajahanliver/slack-actions (index.html on main). Clone it, scan Slack for new asks addressed to me (U09JWELV5PY) that I have not replied or reacted to, close any existing items I have since handled, update the sync timestamp in .sync .stamp to the current London time, then commit and push. Vercel redeploys automatically. Use the same instructions as my 'Slack Actions' scheduled task.";
 
 /* ============================================================
@@ -377,55 +377,20 @@ document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () =
 }));
 
 /* ---------- Refresh ----------
-   Calls /api/refresh, which reads Slack, asks Claude what changed, and commits
-   the new ITEMS to GitHub. Vercel redeploys, so we poll for the new stamp.
-   If the endpoint is not configured yet (503), fall back to handing the job to
-   the Claude desktop app via a deep link. */
+   Hands the job to Claude, which reads Slack, rewrites this page and pushes to
+   GitHub. Vercel redeploys on the commit, so reload after a minute or so.
+   This page holds no credentials and calls no backend of its own. Refreshes
+   also run on their own weekday mornings via the 'Slack Actions' scheduled
+   task, and you can ask Claude for one in any session. */
 const rBtn = document.getElementById('refreshBtn');
 const rLabel = rBtn.childNodes[rBtn.childNodes.length - 1];
-let busy = false;
 
-function setLabel(t){ rLabel.textContent = ' ' + t; }
-
-rBtn.addEventListener('click', async e => {
+rBtn.addEventListener('click', e => {
   e.preventDefault();
-  if (busy) return;
-  busy = true; rBtn.style.opacity = '.6'; setLabel('Reading Slack…');
-
-  try {
-    const r = await fetch('/api/refresh', { method: 'POST' });
-    const d = await r.json().catch(() => ({}));
-
-    if (r.status === 503) {
-      setLabel('Opening Claude…');
-      location.href = 'claude://cowork/new?q=' + encodeURIComponent(REFRESH_PROMPT);
-      setTimeout(() => { busy = false; rBtn.style.opacity = ''; setLabel('Refresh from Slack'); }, 2500);
-      ping('Not wired up yet — handing to Claude');
-      return;
-    }
-    if (!r.ok || !d.ok) throw new Error(d.error || ('HTTP ' + r.status));
-
-    ping(`${d.open} open · deploying`);
-    setLabel('Deploying…');
-
-    // Vercel rebuilds on the commit; wait for the stamp to change, then reload.
-    const before = document.querySelector('.stamp').textContent;
-    for (let i = 0; i < 30; i++) {
-      await new Promise(s => setTimeout(s, 4000));
-      try {
-        const html = await (await fetch(location.pathname + '?t=' + Date.now(), { cache: 'no-store' })).text();
-        const m = html.match(/<span class="stamp">([^<]*)<\/span>/);
-        if (m && m[1] !== before) return location.reload();
-      } catch (err) { /* keep waiting */ }
-    }
-    setLabel('Reload to see it');
-    busy = false; rBtn.style.opacity = '';
-  } catch (err) {
-    ping('Refresh failed');
-    setLabel('Refresh from Slack');
-    busy = false; rBtn.style.opacity = '';
-    console.error(err);
-  }
+  location.href = 'claude://cowork/new?q=' + encodeURIComponent(REFRESH_PROMPT);
+  ping('Handing to Claude');
+  rLabel.textContent = ' Opening Claude…';
+  setTimeout(() => { rLabel.textContent = ' Refresh from Slack'; }, 2600);
 });
 
 apply();

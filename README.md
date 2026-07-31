@@ -1,36 +1,34 @@
 # Slack reply tracker
 
-Private tracker for Slack asks awaiting a reply from Shaf. Static page + one
-serverless function, deployed on Vercel.
+Private tracker for Slack asks awaiting a reply from Shaf. A single static page,
+deployed on Vercel. No backend, no API routes, no stored credentials.
 
 ## Files
 - `index.html` — the whole app. The card data lives in the `ITEMS` array between
-  the `/* ITEMS:START */` and `/* ITEMS:END */` markers. Nothing else should be
-  edited by automation.
-- `api/refresh.js` — POST endpoint. Reads Slack, asks Claude what changed,
-  rewrites the ITEMS block, commits back here. Vercel redeploys on the commit.
+  the `/* ITEMS:START */` and `/* ITEMS:END */` markers. Automation edits that
+  block and the timestamp in `.sync .stamp`. Nothing else.
 
-## Refresh paths
-1. **Button on the page** → `/api/refresh` (needs the env vars below).
-   Falls back to opening the Claude desktop app if not configured.
-2. **Scheduled task**, weekdays 09:00, run by Claude. Independent of the
-   endpoint and of any desktop.
-3. **Ask Claude** in any session: "refresh the tracker".
+## How it refreshes
+Claude does the work, using Shaf's own authorised Slack connection. It reads the
+relevant channels and threads, checks reactions, closes what has been handled,
+adds anything new, rewrites the `ITEMS` block and pushes to GitHub. Vercel
+redeploys on the commit.
 
-## Environment variables
-Set in Vercel → Project → Settings → Environment Variables:
+Three ways in, all the same job:
 
-| Name | Notes |
-|---|---|
-| `SLACK_USER_TOKEN` | `xoxp-...` user token, scope `search:read`. Must be a **user** token; Slack's search API rejects bot tokens. |
-| `ANTHROPIC_API_KEY` | `sk-ant-...` from console.anthropic.com. Billed per refresh. |
-| `GITHUB_TOKEN` | Fine-grained PAT, Contents: read and write, this repo only. |
-| `ANTHROPIC_MODEL` | Optional. Pin a model id; otherwise the newest Sonnet is chosen at runtime. |
+1. **Scheduled task** — `Slack Actions`, weekday mornings. Runs on its own in the
+   cloud, needs no desktop.
+2. **Ask Claude** in any session: "refresh the tracker".
+3. **Refresh button** on the page — opens the Claude desktop app with the
+   instructions prefilled. Desktop only, since it uses a `claude://` deep link.
+
+There is deliberately no server-side refresh endpoint. One was prototyped and
+removed. It would have needed a long-lived Slack user token with history and
+reactions scopes sitting in Vercel environment variables, reachable by anyone who
+found the URL, and it still could not see the meeting context Claude draws on
+when drafting replies.
 
 ## Security
-`/api/refresh` has **no authentication of its own**. It relies entirely on
-Vercel Deployment Protection covering the project. If protection is turned off,
-anyone who finds the URL can trigger a read of Shaf's Slack. Keep it on.
-
-The Slack user token can read everything Shaf can read, including every DM.
-Treat it as a password, and rotate it if the Vercel project is ever shared.
+The page is a static file containing internal Slack messages and client names.
+Keep Vercel Deployment Protection on. That is the only thing standing between
+the URL and the contents.
