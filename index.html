@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 4 Aug, 10:09 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 5 Aug, 14:41 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -313,6 +313,35 @@ const ITEMS = [
     "draft": "Kipp — thanks for turning this around, the framing is right: additive to the Adobe stack, not competitive with it.\n\nBefore it goes to Boost:\n• Softening: agree — I will do a wording pass and send it back marked up.\n• The martechture diagram: does it clearly show our signals flowing INTO Adobe at activation? Ingestion ease was their hard gate, so that one image carries the argument. If it already reads that way, we are in luck as the rest is polish. If not, I will prioritise fixing that before any wording.\n• It cites Verizon numbers — can you confirm we have consent to use them client-facing? Same flag Thomas raised on the SEA proposals.\n\nOnce my pass is back, go to @Jerry — and give @Jonathan a skim before it leaves the building.\n\nHope that helps."
   },
   {
+    "title": "AIS: SDK permissions claim needs your call",
+    "category": "client",
+    "tags": [
+      "ais",
+      "sdk",
+      "proposal"
+    ],
+    "who": "Thomas Murdock — #intentone-presales-ais",
+    "when": "Wed 5 Aug, 12:48",
+    "ask": "“Section 10 states the SDK uses \\\"standard operating system APIs that do not require sensitive permissions\\\"… Detecting installed or used competitor applications requires QUERY_ALL_PACKAGES on Android… Either the use case cannot be delivered as described, or the no-sensitive-permissions statement is inaccurate… perhaps Shafeeq can help with identifying the correct option below?”",
+    "context": "He has done the analysis for you: Option 1 is amend the Churn Prediction use case to drop the competitor-app claim; Option 2 is confirm the SDK infers competitor usage through standard APIs (network-level signals, not app enumeration) and re-word the method. Same permissions territory you defended on Parimatch yesterday, and your AIS PAG approval is still outstanding — one sitting could clear both.",
+    "link": "https://intent.slack.com/archives/C080RGW1LG1/p1785930532208089",
+    "draft": "Thomas — good catch, and you are right that this is ours to fix, not AIS's.\n\n• @Adi — can you confirm exactly what the SDK can see for competitor usage: network-level signals, eSIM indicators, anything else that works through standard APIs? We do not enumerate installed apps via QUERY_ALL_PACKAGES, so the answer decides everything.\n• If Adi confirms network-level inference covers it, we are in luck as Option 2 stands — I will help you re-word the use case to describe the method accurately. If it does not, I will prioritise Option 1: amend Churn Prediction and caveat the competitor eSIM reference rather than ship a claim we cannot deliver.\n\nEither way the no-sensitive-permissions statement must stay true — it is the same position we took with Parimatch this week.\n\nHope that helps."
+  },
+  {
+    "title": "Ben: test Mobileum demo before next week",
+    "category": "client",
+    "tags": [
+      "mobileum",
+      "demo"
+    ],
+    "who": "Benjamin Haas — DM",
+    "when": "Wed 5 Aug, 07:34",
+    "ask": "“Alright. Let’s test it before we have the bigger session next week”",
+    "context": "Follow-on from Tuesday: you told him the workspace is now connected to Mobileum's data with one minor, non-showstopper bug outstanding. He wants a dry run before the bigger session next week — cheap insurance, and it needs a slot agreed.",
+    "link": "https://intent.slack.com/archives/D0APU4MDFHT/p1785911663263119",
+    "draft": "Agreed — let's test it properly before the bigger session.\n\n• Send me a slot that works and I will make it — I would rather run through it early in the week so there is time to fix anything we find.\n• Two things I want to check in the run-through: the workspace connection to their data holds up live, and the minor bug I flagged stays minor. If both behave, we are in luck as the demo is ready as-is. If not, I will prioritise fixing it before we put anything in front of Mobileum.\n\nHope that helps."
+  },
+  {
     "title": "Receipts to SD, plus the £44.95",
     "category": "internal",
     "tags": [
@@ -362,12 +391,13 @@ const ITEMS = [
     "tags": [
       "localisation",
       "meeting",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Elyse Tawiah — DM",
     "when": "Tue 4 Aug, 09:40",
-    "due": "Today 13:00",
-    "ask": "“I’ve created a new meeting at 1 for the “SDK localisation proposed solution”. Please let me know if this is okay for you.”",
+    "ask": "Handled — you replied Tue morning flagging the clash (“look at my calendar before you book things in”), and you have been working with Elyse since (showreel, Premiere Pro access).",
+    "done": true,
     "context": "Two-second confirm, but the meeting is at 13:00 today. This is the localisation thread you owe Lidor a direction on — you told him you were meeting Adi and Tomer about it, so this session is where that direction likely gets settled.",
     "link": "https://intent.slack.com/archives/D0BG00P64SD/p1785832828777389",
     "draft": "Morning Elyse — 1pm works, thank you for setting it up. If there is a proposed-solution doc, can you drop it in the invite so I can read it before we start?"
@@ -392,11 +422,13 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "roadmap",
-      "credibility"
+      "credibility",
+      "sent"
     ],
     "who": "Sharifah Amirah — DM",
     "when": "Mon 3 Aug, 19:41",
-    "ask": "“just on the roadmap... please can we have a clear definition of shipped? none of these IMO are truly productised” (with a screenshot of the roadmap slide)",
+    "ask": "Handled — you replied Tue morning (“lets discuss - i think we need \\\"shipped\\\" and then \\\"tested and client-ready\\\"”); she reacted 👍, and you have since answered her Verizon-validation follow-up too.",
+    "done": true,
     "context": "Follow-on from her walkthrough feedback yesterday — she found it hard to parse what is tested and live vs interim, and you agreed the roadmap picture needs to be crystal clear. This is the concrete version of that: the “shipped” label is overclaiming. Worth a real answer, not a defensive one — she is making your own point back to you.",
     "link": "https://intent.slack.com/archives/D09KB177QR4/p1785782463221109",
     "draft": "Fair challenge — “shipped” is doing too much work on that slide.\n• I will add a definition to the roadmap: shipped = productised, in the platform, usable by a campaign manager without us in the loop. Anything short of that gets labelled honestly — in validation, hardened demo, or interim.\n• Some of what you saw is genuinely interim and the slide should say so rather than imply done.\n\nIf it is the labelling that grated, we are in luck as that is a quick fix on the next version. If you think specific items are materially misrepresented, tell me which and I will re-status them properly — that matters more.\n\nHope that helps."
@@ -407,11 +439,13 @@ const ITEMS = [
     "tags": [
       "models",
       "roadmap",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Milan Tailor — DM",
     "when": "Tue 4 Aug, 09:27",
-    "ask": "“I’ll come back with a shortlist plus where I think each one is technically real vs a bit of a stretch — I’m aiming for Thursday, if that works?” Earlier: “Shall we get some time in with Albert this week while Andy’s away?… just shout when the PRD’s ready.”",
+    "ask": "Handled — you replied Tue morning (“that's fair 🙂”) and the conversation moved on to his prototype review, which is now its own card.",
+    "done": true,
     "context": "The skills-and-models layer you showed him yesterday (and JL loved). He has taken use-cases-and-models as his piece, is leaving architecture and the Elai/AutoML decision with Albert and Andy, and wants two confirmations from you: Thursday for the shortlist, and an Albert slot this week. He is also waiting on the PRD.",
     "link": "https://intent.slack.com/archives/D09L8MLSHRN/p1785832040710789",
     "draft": "Morning Milan — glad it landed. Yes on both:\n• Thursday works for the shortlist — and keep the “technically real vs a stretch” honesty, that is exactly what makes it decision-ready.\n• Albert: agreed, this week while Andy is away — I will get something in for Wed/Thu. PRD will be with you before that session so we are not talking in the abstract.\n• Right call on leaving (2) and (3) with Albert and Andy — nobody gets ahead of Andy on Elai while he is out.\n\nHope that helps."
@@ -421,14 +455,46 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "quick",
-      "admin"
+      "admin",
+      "sent"
     ],
     "who": "Milan Straub — DM",
     "when": "Mon 3 Aug, 17:14",
-    "ask": "“Qq could you please [send] the link to the knowledge base you shared during company meet? I lost it ;(”",
+    "ask": "Handled — you forwarded the knowledge base link Tue morning (“this one?”); Milan reacted 🙌.",
+    "done": true,
     "context": "Thirty-second job — the knowledge base you showed at the company meeting yesterday. He is mid-build on the onboarding brief, so he probably wants it for that.",
     "link": "https://intent.slack.com/archives/D09S43JLS8M/p1785773673167579",
     "draft": "Hello hello! All good — link here: [paste knowledge base link]. Shout if access misbehaves."
+  },
+  {
+    "title": "Milan T's Skills prototype review needs a reply",
+    "category": "internal",
+    "tags": [
+      "skills",
+      "prototype",
+      "mtn"
+    ],
+    "who": "Milan Tailor — group DM with Andy",
+    "when": "Tue 4 Aug, 16:09",
+    "ask": "“This is me trying to answer the question you actually asked: where would it fall over on a real feed… It tests whether there's enough of the right kind of data. It doesn't test whether the data is any good… I don't think I can tell you whether that library would actually train on a real client until we point the scan at one. Hope this is helpful 😬”",
+    "context": "You asked him where the prototype breaks; he spent an afternoon finding out. Core finding: the data check tests quantity, not quality — three tests missing (fields populated, history evenly spread, feed reliable enough for weekly retrain), and MTN Nigeria's feed (half-empty usage rows, missing deliveries) would likely fail them. He is also on the hook to you for Thursday's model shortlist, so a reply keeps that thread moving.",
+    "link": "https://intent.slack.com/archives/C0B8VGW5PT2/p1785856147236789",
+    "draft": "Milan — this is exactly the review I wanted, thank you for going deep.\n\n• The data-check gap is the real finding: we test for enough data, not good data. Your three missing tests go into the PRD — I will fold them in before our Albert session.\n• On feasibility: agree we cannot know until the scan hits a real feed. MTN Nigeria is the right test precisely because it is messy — half-empty usage rows is the reality the check has to survive. Let's make that the acceptance test.\n• Data gaps need an owner and a route, not just a log button — let me think on where they land, probably the delivery manager per account.\n• The two states looking similar: fair, I will take that to @Mark.\n\nSignposting point noted too — if it took you a while cold, a client team will need more. Still on for your Thursday shortlist.\n\nHope that helps."
+  },
+  {
+    "title": "Lidor: how to work the Client Success Hub questions",
+    "category": "internal",
+    "tags": [
+      "client-success",
+      "process",
+      "quick"
+    ],
+    "who": "Lidor Raviv — group DM with Luca and Adi",
+    "when": "Wed 5 Aug, 12:56",
+    "ask": "“Every time you will see ⬛ it's something I'm not sure how it works and I will need your smart heads to give me answers… So how do you prefer to work with these ones? To tag you, to give you each time a page and someone will provide me comments directly in the document…? Whatever you guys prefer.”",
+    "context": "He built the hub off the back of your alignment (internal guide for onboarding and maintaining IntentOne customers, already using the Fishka access process as a worked example). Nobody in the group DM has answered his process question yet. Cheap to answer and it unblocks the whole doc.",
+    "link": "https://intent.slack.com/archives/C0ATSLXJRB7/p1785930997238799",
+    "draft": "Lidor — this is great, thank you for just getting on and building it.\n\nOn how to work the open questions:\n• Tag the right owner on each ⬛ directly in the doc — answers should live next to the questions, not in Slack. Me for product behaviour, @Adi for SDK and access, @Luca for anything commercial or trial-flow.\n• Batch by page rather than one ping per question, so nobody drowns in notifications.\n• If most of the unknowns are product behaviour, we are in luck as I can do one sitting on the doc this week and clear the bulk. If they lean SDK/deployment, I will prioritise getting @Adi to do the same.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
