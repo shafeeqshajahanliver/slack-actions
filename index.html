@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 5 Aug, 14:41 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 12 Aug, 10:07 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -332,14 +332,33 @@ const ITEMS = [
     "category": "client",
     "tags": [
       "mobileum",
-      "demo"
+      "demo",
+      "sent"
     ],
     "who": "Benjamin Haas — DM",
     "when": "Wed 5 Aug, 07:34",
-    "ask": "“Alright. Let’s test it before we have the bigger session next week”",
+    "ask": "Handled — you and Ben have been in daily contact since (Groww doc, e& feedback), and on Monday he moved this to your call: “Let's discuss this later in our call”.",
+    "done": true,
     "context": "Follow-on from Tuesday: you told him the workspace is now connected to Mobileum's data with one minor, non-showstopper bug outstanding. He wants a dry run before the bigger session next week — cheap insurance, and it needs a slot agreed.",
     "link": "https://intent.slack.com/archives/D0APU4MDFHT/p1785911663263119",
     "draft": "Agreed — let's test it properly before the bigger session.\n\n• Send me a slot that works and I will make it — I would rather run through it early in the week so there is time to fix anything we find.\n• Two things I want to check in the run-through: the workspace connection to their data holds up live, and the minor bug I flagged stays minor. If both behave, we are in luck as the demo is ready as-is. If not, I will prioritise fixing it before we put anything in front of Mobileum.\n\nHope that helps."
+  },
+  {
+    "title": "Prathna: Nykaa demo env won't load groups",
+    "category": "client",
+    "tags": [
+      "nykaa",
+      "demo",
+      "bug",
+      "blocked"
+    ],
+    "who": "Prathna Singh — DM",
+    "when": "Wed 12 Aug, 10:02",
+    "due": "She is blocked today",
+    "ask": "“its failing to load the data in the nkyaa one - says fails to load groups” (screenshot attached). This morning: “will play around with Nykaa one today, this will allow me to meet more retail clients now, whilst we solve for the distribution challenge inbetween.”",
+    "context": "You gave her the sign-up path and your Nykaa instance yesterday evening and she has since spun up a Pick n Pay one too. She is using these to open retail conversations, so a broken groups load blocks her outreach this week. Possibly the same synthetic-data pipeline Luca said was shipping to prod on Tuesday.",
+    "link": "https://intent.slack.com/archives/D09P26469LY/p1786525357227349",
+    "draft": "Thanks for flagging — annoying, but fixable.\n\n• Can you send me the exact URL you are on and roughly when it started failing? Want to rule out it being just a stale instance.\n• @Luca shipped a synthetic-data fix to prod this week — if this is a side effect of that, we are in luck as it is a known area and he can turn it around quickly. If not, I will prioritise getting it in front of the team today so your retail conversations are not sitting on a broken demo.\n\nEither way you will have a working Nykaa environment before your next client meeting.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -347,11 +366,13 @@ const ITEMS = [
     "tags": [
       "finance",
       "admin",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Clare Edwards",
     "when": "Thu 30 Jul, 15:33",
-    "ask": "“Can you please urgently upload the receipts to SD.” You asked whether the receipt was still needed given the £44.95 was an accident — Clare replied: “Yes please. Thanks”",
+    "ask": "Handled — you and Clare have been back and forth since (Approvalmax invoice approved Thu, card issue sorted Mon) and she has not chased the receipt again.",
+    "done": true,
     "context": "You said you would transfer the £44.95 today and have cleared the rest. Clare has confirmed she still needs the receipt uploaded. Two minutes of work, and it is the second time of asking.",
     "link": "https://intent.slack.com/archives/D0A359U01HT/p1785422020933989",
     "draft": "Understood — receipt uploaded to SD and the £44.95 transferred. Sorry for the chase, will keep on top of these going forward."
@@ -362,11 +383,13 @@ const ITEMS = [
     "tags": [
       "gtm",
       "mid-market",
-      "review"
+      "review",
+      "sent"
     ],
     "who": "Colin White — group DM",
     "when": "Fri 31 Jul, 12:20",
-    "ask": "“Please find here a draft version of our GTM Outbound motion. This will be useful for our interlock meeting next week. • Shaf, there might be references to the WhatsApp customer service channel that need referencing in the Onboarding stage?”",
+    "ask": "Handled — the interlock happened on 5 Aug and produced a fresh action list (your action: tooltip overlays); the work moved to the Mid Market UserFlow channel, where you have been active since.",
+    "done": true,
     "context": "Draft v1 of the mid-market outbound motion: ABM plus AI-avatar consultation, synthetic-data demo, 30-day self-serve trial converting via Stripe. Luca got his own action in the same message. The interlock is Tuesday 12:15 (the workshop Colin mentioned later in the thread), so a reply before then keeps you ahead of it rather than reacting in the room.",
     "link": "https://intent.slack.com/archives/C0BJ0UM7UMD/p1785496857682949",
     "draft": "Thanks Colin — had a first pass at the Outbound draft, it hangs together well.\n\nOn WhatsApp in the Onboarding stage, yes it needs referencing — two things to pin down before Tuesday:\n• Are we positioning WhatsApp as the support channel for trial users, or as one of the product's engagement channels? They read very differently in a prospect journey and I do not want us implying the second if we mean the first.\n• Who sets it up in the trial flow — us as part of onboarding, or the prospect self-serve? That decides whether it belongs in the Onboarding stage at all or later.\n\nIf it is support-channel-only, we are in luck as that is a one-line reference and I will draft it for you. If we mean engagement, I will prioritise bringing a proper product view to the interlock on Tuesday.\n\nHope that helps."
@@ -376,11 +399,13 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "intentai",
-      "roadmap"
+      "roadmap",
+      "sent"
     ],
     "who": "Roberto Rocha",
     "when": "Fri 31 Jul, 13:03",
-    "ask": "“just want timelines on Intent AI - sangram mentioned you and him would work on it. The rest I'll talk to you individually next week so all good”",
+    "ask": "Handled — you have been talking daily since (e& washup, SDK demo debrief), and Sangram has kicked off IntentAI hiring (2x AI Research Engineers) with you in the interview loop.",
+    "done": true,
     "context": "You pushed your Friday catch-up with Roberto to this week, and this is the one thing he could not wait on. Sangram wants to speed IntentAI up and is starting hiring; you told Sangram this morning you would get to IntentAI tomorrow. Roberto only needs a rough sequence, not a plan.",
     "link": "https://intent.slack.com/archives/D0AKHPVGB0B/p1785499414779119",
     "draft": "Roberto — on IntentAI timelines:\n\n• @Sangram and I are picking this up tomorrow — roadmap and sequencing is the agenda, and he is kicking off hiring to speed it up.\n• Quick question so I give you the right thing: do you need dates for architecture planning or for client conversations? If it is architecture, we are in luck as we can just loop you into tomorrow's session. If it is client-facing, I will prioritise getting you a rough sequence by end of week — I would rather give you something honest now than a polished plan that slips.\n\nRest can wait for our catch-up this week as you say.\n\nHope that helps."
@@ -408,11 +433,13 @@ const ITEMS = [
     "tags": [
       "gtm",
       "mid-market",
-      "decision"
+      "decision",
+      "sent"
     ],
     "who": "Milan Straub — group DM (Onboarding brief)",
     "when": "Mon 3 Aug, 15:53",
-    "ask": "“What can we offer at the data-connection point to push a prospect to submit their real data — bonus trial days, priority onboarding, a feature unlock, or a stacking credit? Need your call on which of these (if any) we can actually do, and cost/margin impact.” Plus: who owns commercial sign-off on the day-23/28 incentive options, and three feasibility questions for you and Luca.",
+    "ask": "Handled — superseded by the 5 Aug interlock (rule of thumb agreed: Demo = synthetic, Trial = customer data) and the brief has iterated on in the Mid Market UserFlow channel since, with you active in it.",
+    "done": true,
     "context": "The Onboarding Next Steps Brief for the mid-market trial motion — same workstream as Colin’s Outbound draft, interlock Tuesday 12:15. He is explicitly blocked on your incentive call before it goes into the connect-data prompt. He also asked a smaller follow-up: do we use the term “feature” for IntentOne capabilities?",
     "link": "https://intent.slack.com/archives/C0BJ0UM7UMD/p1785768793161239",
     "draft": "Milan — good brief. Answers so you are not blocked:\n• Day-0 incentive: bonus trial days is the only one I would greenlight now — near-zero marginal cost and it sets no pricing precedent. Priority onboarding we cannot staff, a feature unlock fragments the trial product, and a stacking credit touches pricing so it needs commercial sign-off first.\n• Sign-off ownership: anything with cost or margin impact is @Colin and me jointly — nothing incentive-shaped reaches a prospect without both of us seeing it.\n• Your three for me and @Luca: value projection at data-connect should be feasible but there is a processing window — Luca, can you put a number on it? Cadence: revisit day-5/10 now automation is default. And yes to a UI-level trial feature list — @Luca, let us produce that from the mid-market build, not the enterprise docs.\n\nIf bonus days is enough for v1, we are in luck as you can write the connect-data prompt today. If you think it will not move anyone, I will prioritise the fuller incentive-menu conversation with Colin this week.\n\nHope that helps."
@@ -472,11 +499,13 @@ const ITEMS = [
     "tags": [
       "skills",
       "prototype",
-      "mtn"
+      "mtn",
+      "sent"
     ],
     "who": "Milan Tailor — group DM with Andy",
     "when": "Tue 4 Aug, 16:09",
-    "ask": "“This is me trying to answer the question you actually asked: where would it fall over on a real feed… It tests whether there's enough of the right kind of data. It doesn't test whether the data is any good… I don't think I can tell you whether that library would actually train on a real client until we point the scan at one. Hope this is helpful 😬”",
+    "ask": "Handled — you replied Monday (“happy for you to iterate! feel free to edit the PRD and the html file… I've already shown it to JL and he's very onboard”), and Andy is back and feeding in MRM requirements.",
+    "done": true,
     "context": "You asked him where the prototype breaks; he spent an afternoon finding out. Core finding: the data check tests quantity, not quality — three tests missing (fields populated, history evenly spread, feed reliable enough for weekly retrain), and MTN Nigeria's feed (half-empty usage rows, missing deliveries) would likely fail them. He is also on the hook to you for Thursday's model shortlist, so a reply keeps that thread moving.",
     "link": "https://intent.slack.com/archives/C0B8VGW5PT2/p1785856147236789",
     "draft": "Milan — this is exactly the review I wanted, thank you for going deep.\n\n• The data-check gap is the real finding: we test for enough data, not good data. Your three missing tests go into the PRD — I will fold them in before our Albert session.\n• On feasibility: agree we cannot know until the scan hits a real feed. MTN Nigeria is the right test precisely because it is messy — half-empty usage rows is the reality the check has to survive. Let's make that the acceptance test.\n• Data gaps need an owner and a route, not just a log button — let me think on where they land, probably the delivery manager per account.\n• The two states looking similar: fair, I will take that to @Mark.\n\nSignposting point noted too — if it took you a while cold, a client team will need more. Still on for your Thursday shortlist.\n\nHope that helps."
@@ -495,6 +524,80 @@ const ITEMS = [
     "context": "He built the hub off the back of your alignment (internal guide for onboarding and maintaining IntentOne customers, already using the Fishka access process as a worked example). Nobody in the group DM has answered his process question yet. Cheap to answer and it unblocks the whole doc.",
     "link": "https://intent.slack.com/archives/C0ATSLXJRB7/p1785930997238799",
     "draft": "Lidor — this is great, thank you for just getting on and building it.\n\nOn how to work the open questions:\n• Tag the right owner on each ⬛ directly in the doc — answers should live next to the questions, not in Slack. Me for product behaviour, @Adi for SDK and access, @Luca for anything commercial or trial-flow.\n• Batch by page rather than one ping per question, so nobody drowns in notifications.\n• If most of the unknowns are product behaviour, we are in luck as I can do one sitting on the doc this week and clear the bulk. If they lean SDK/deployment, I will prioritise getting @Adi to do the same.\n\nHope that helps."
+  },
+  {
+    "title": "Dipak: chase his Claude access, read his doc",
+    "category": "internal",
+    "tags": [
+      "mid-market",
+      "admin",
+      "quick"
+    ],
+    "who": "Dipak Vadera — DM",
+    "when": "Tue 11 Aug, 14:17",
+    "ask": "“btw I'm still waiting for access to Claude. I didn't hear back from Gary. Any chance you can chase for me?” Plus: “Let me know if you have any thoughts [on the Mid-Market / Enterprise separation criteria doc]. There's a number of things we need to figure out and agree on before we can start drafting that plan.”",
+    "context": "You sorted his extension with Gary the same afternoon (end September, proposal coming), but the Claude access chase and the doc read are still with you. Colin has already reviewed the doc and turned it into a decision paper, and the 100k vs 250k profile-numbers question still needs validating with JL — Kipp is running a parallel piece on the same decision.",
+    "link": "https://intent.slack.com/archives/D0BHYL6N7CN/p1786454231403269",
+    "draft": "Two things back to you:\n\n• Claude access: chasing @Gary now — you should hear today. If it is stuck on licensing, we are in luck as I can get you on under the team account as a stopgap.\n• Separation doc: read it. My main steer is that Colin's decision-paper format is the right vehicle — fold your content into that rather than running two docs. On the 100k vs 250k profile question: lead with 100k as you have been until JL validates otherwise, and let us force that decision at the next mid-market call rather than let it drift. Kipp is working the same decision from the ARR side, so the three of you should land one recommendation, not two.\n\nHope that helps."
+  },
+  {
+    "title": "Syed: walkthrough video brief needs your steer",
+    "category": "internal",
+    "tags": [
+      "marketing",
+      "video",
+      "review"
+    ],
+    "who": "Syed Shah — group DM with Colin",
+    "when": "Tue 11 Aug, 11:48",
+    "ask": "“I'd really value you reviewing it, correcting anything that's off, and adding your steer before you share it with Jerry… Is there a realistic timeline we can work toward, given the events coming up?… if your schedule's tight, I'm very happy to share it with Sam to keep it moving.”",
+    "context": "End-to-end IntentOne product walkthrough video for events, website and the mid-market motion — he has already drafted the brief for Jerry (v2 attached). He has offered you an out: route it through Sam. Given SLT week and Lisbon, taking the out and keeping a final pass for yourself is probably the honest answer.",
+    "link": "https://intent.slack.com/archives/C0BNZDKTW7R/p1786445314119539",
+    "draft": "Syed — thank you for not waiting on me and drafting this, it is the right asset to want.\n\n• Take the out you offered: share it with @Sam to keep it moving — he is close enough to the product story to correct anything material. I will do a final pass before it goes to Jerry.\n• On timeline, one question first: which event is the real forcing function? If it is the autumn calendar, we are in luck as there is time to do this against the shipped product rather than the demo. If you need it for September, I will prioritise scoping a shorter cut — a tight 3 minutes we can extend later beats a rushed full walkthrough.\n• One steer for the brief: lead with signals and insights, not the orchestration UI — that is the differentiated part of the story in every recent prospect conversation.\n\nHope that helps."
+  },
+  {
+    "title": "Lisa: job title + JD to unblock the change",
+    "category": "internal",
+    "tags": [
+      "people",
+      "quick",
+      "blocked"
+    ],
+    "who": "Lisa Bolsover — group DM with Sharifah",
+    "when": "Mon 10 Aug, 14:17",
+    "ask": "“A few questions for Shafeeq: What will the new job title be? • Please can you share the JD • I assume we are not expecting any compensation change with this. We've conducted some benchmarking and she is in a good place so I don't feel we need to but please let me know if I've misunderstood.”",
+    "context": "Lisa has closed the loop her side and can action immediately — the only thing missing is your title and JD. She has benchmarked comp and proposes no change unless you disagree. Two days idle, and it is someone's title change sitting on it.",
+    "link": "https://intent.slack.com/archives/C0BEC4T1PPG/p1786367829281429",
+    "draft": "Thanks Lisa — and sorry for the lag, SLT week.\n\n• Title: [confirm title]\n• JD: I will send you a one-pager by [day] — if a working draft is enough to start the process, we are in luck as I can share what I have today and polish after.\n• Comp: agreed, no change with this move — your benchmarking matches my read.\n\nHope that helps."
+  },
+  {
+    "title": "Netta: tell her the Ayesha plan has changed",
+    "category": "internal",
+    "tags": [
+      "sdk",
+      "people",
+      "sensitive"
+    ],
+    "who": "Netta Aizenbud — DM",
+    "when": "Mon 10 Aug, 10:57",
+    "ask": "“I started to list a plan for Ayesha to get going with the data dictionary and SDK data health in here… Has she started already?”",
+    "context": "Netta is building an onboarding plan for someone who is not coming — Laura told you on Friday the offer had to be withdrawn (right-to-work). Every day unanswered is Netta planning against a ghost. Needs a careful reply without the details, plus a decision on restarting the Applause search she was running.",
+    "link": "https://intent.slack.com/archives/D09UQ8TJ4NP/p1786355857843549",
+    "draft": "Netta — the plan you have built is exactly right, but I have to give you an update first: Ayesha will not be joining us after all. Offer-stage issue on our side to manage, nothing you need to worry about, but I am sorry — I know you had already invested in the onboarding thinking.\n\n• The SDK QA plan itself stands — keep it, it is the spec for whoever we bring in.\n• Can you and @Lidor restart the Applause shortlist this week? Same brief as before, and given what you flagged last time, weight data experience over automation experience.\n• If there is a second candidate still warm from the last round, we are in luck and could move quickly. If not, I will prioritise getting the search reopened this week so we do not lose the momentum.\n\nHope that helps."
+  },
+  {
+    "title": "Lidor: access request sitting unanswered",
+    "category": "internal",
+    "tags": [
+      "access",
+      "quick"
+    ],
+    "who": "Lidor Raviv — group DM with Luca",
+    "when": "Mon 10 Aug, 11:49",
+    "ask": "“Who can give me access for this?” (screenshot attached)",
+    "context": "Two days with no reply from you or Luca — and Luca was off sick Tuesday, so it has likely fallen between the two of you. Cheap unblock: open the screenshot, name the owner, tag them. He is mid-build on the Client Success Hub, so access gaps compound.",
+    "link": "https://intent.slack.com/archives/C0BLH94RK0W/p1786358976730229",
+    "draft": "Lidor — sorry, this fell between me and Luca.\n\n• If it is a workspace or environment, @Luca can grant it when he is back today. If it is a tool or drive, @Gary is your route.\n• Send me the link if neither lands by end of day and I will sort it directly — you should not be blocked on an access click.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
