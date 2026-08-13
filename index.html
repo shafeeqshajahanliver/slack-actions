@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 12 Aug, 10:07 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 13 Aug, 10:07 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -350,15 +350,30 @@ const ITEMS = [
       "nykaa",
       "demo",
       "bug",
-      "blocked"
+      "sent"
     ],
     "who": "Prathna Singh — DM",
     "when": "Wed 12 Aug, 10:02",
-    "due": "She is blocked today",
-    "ask": "“its failing to load the data in the nkyaa one - says fails to load groups” (screenshot attached). This morning: “will play around with Nykaa one today, this will allow me to meet more retail clients now, whilst we solve for the distribution challenge inbetween.”",
+    "ask": "Handled — you replied the same morning (“hmm it was working yesterday. ill chase”) with a workaround, and the conversation has moved on to scoping an EasyEquities view for mid-September.",
+    "done": true,
     "context": "You gave her the sign-up path and your Nykaa instance yesterday evening and she has since spun up a Pick n Pay one too. She is using these to open retail conversations, so a broken groups load blocks her outreach this week. Possibly the same synthetic-data pipeline Luca said was shipping to prod on Tuesday.",
     "link": "https://intent.slack.com/archives/D09P26469LY/p1786525357227349",
     "draft": "Thanks for flagging — annoying, but fixable.\n\n• Can you send me the exact URL you are on and roughly when it started failing? Want to rule out it being just a stale instance.\n• @Luca shipped a synthetic-data fix to prod this week — if this is a side effect of that, we are in luck as it is a known area and he can turn it around quickly. If not, I will prioritise getting it in front of the team today so your retail conversations are not sitting on a broken demo.\n\nEither way you will have a working Nykaa environment before your next client meeting.\n\nHope that helps."
+  },
+  {
+    "title": "Vivo: verify Signals + enrichments in Brazil env",
+    "category": "client",
+    "tags": [
+      "vivo",
+      "demo",
+      "presales"
+    ],
+    "who": "Nidhi Sharma — #edge-presales-vivo",
+    "when": "Wed 12 Aug, 13:06",
+    "ask": "“can you please verify we can get Signals and enrichments in Vivo brazil environment (using dummy data that we have currently have)?”",
+    "context": "A day old with no pick-up. The Vivo technical questionnaire is still stuck with Regalo (Bruno re-engaged him Wednesday) and the business session with Luciana is likely next week, so a verified signals-and-enrichments view on dummy data is what keeps the demo track moving while the real data path is blocked.",
+    "link": "https://intent.slack.com/archives/C084VQ42GRZ/p1786536364159029",
+    "draft": "Nidhi — yes, let me verify rather than assume.\n\n• Quick check so I test the right thing: is this for the Luciana business session, and do you need enrichments on top of Signals or is the signal layer enough for now?\n• I will run a pass on the Brazil environment with the dummy data. If Signals and enrichments both load cleanly, we are in luck as you can show it as-is next week. If enrichments misbehave, I will prioritise getting it fixed before the session so we are not demoing a half-loaded view — and I will tell you either way by [day].\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -598,6 +613,67 @@ const ITEMS = [
     "context": "Two days with no reply from you or Luca — and Luca was off sick Tuesday, so it has likely fallen between the two of you. Cheap unblock: open the screenshot, name the owner, tag them. He is mid-build on the Client Success Hub, so access gaps compound.",
     "link": "https://intent.slack.com/archives/C0BLH94RK0W/p1786358976730229",
     "draft": "Lidor — sorry, this fell between me and Luca.\n\n• If it is a workspace or environment, @Luca can grant it when he is back today. If it is a tool or drive, @Gary is your route.\n• Send me the link if neither lands by end of day and I will sort it directly — you should not be blocked on an access click.\n\nHope that helps."
+  },
+  {
+    "title": "Adi: goals missing in HiBob — confirm today's 1x1",
+    "category": "internal",
+    "tags": [
+      "people",
+      "goals",
+      "quick"
+    ],
+    "who": "Adi Dahan — DM",
+    "when": "Thu 13 Aug, 08:30",
+    "due": "1x1 is today",
+    "ask": "“I dont see my goals in HiBob… They were focused on: 1. Activations 2. Web SDK 3. Continious works and improvement of the SDK - new intelligence, data health improvements. Lets work it on on our 1x1 today??”",
+    "context": "Two-second confirm before the call. He has already reconstructed the three goal areas from memory, so the 1x1 is drafting them into HiBob, not inventing them. Worth checking your side beforehand whether the goals were never entered or are sitting unpublished in a HiBob draft.",
+    "link": "https://intent.slack.com/archives/D09KG4P5K6Y/p1786606214472499",
+    "draft": "Morning Adi — yes, let's do it in our 1x1 today.\n\n• Your three areas are the right frame: Activations, Web SDK, and continuous SDK improvement (new intelligence, data health).\n• Before the call I will check HiBob my side. If they are sitting in a draft, we are in luck as we just publish and tidy. If they were never entered, we will write them together in the session — ten minutes, done.\n\nHope that helps."
+  },
+  {
+    "title": "Adi: route for Gal + Lidor's IntentOne QA feedback",
+    "category": "internal",
+    "tags": [
+      "qa",
+      "fishka",
+      "process"
+    ],
+    "who": "Adi Dahan — group DM with Luca and Sam",
+    "when": "Wed 12 Aug, 12:56",
+    "ask": "“I have few feedbacks (QA related) for IntentOne - from Gal and Lidor. How do we want to approach this?”",
+    "context": "Nobody in the group DM has answered, so there is no agreed route for QA feedback yet. The forwarded items are concrete: a Windows scroll bug hiding microsegment names, Fishka microsegments 70 days stale with no refresh plan, an opportunities anomaly where matched and targetable show the same count, a Fishka Data Engine graph that makes no sense, and a question on whether we can see client logins.",
+    "link": "https://intent.slack.com/archives/C0ATED932HW/p1786535789366439",
+    "draft": "Adi — thank you for collecting these rather than letting them scatter.\n\n• Route: log each as a Linear ticket on the IntentOne board and tag me on anything client-visible — Slack threads are where QA feedback goes to die.\n• On the items themselves: the opportunities anomaly (matched = targetable) worries me most, as it misstates audience size to a client — @Luca can you take that one first? The scroll bug and the 70-day-stale microsegments are real but lower stakes.\n• Login visibility: we should have this — let me check what already exists before anyone builds anything.\n\nIf these all reproduce on Fishka, we are in luck as one environment gives us the full repro set. If not, I will prioritise a quick triage call with you and Gal this week.\n\nHope that helps."
+  },
+  {
+    "title": "Adam: Searce doc needs your first pass",
+    "category": "internal",
+    "tags": [
+      "searce",
+      "blocked",
+      "quick"
+    ],
+    "who": "Adam Wilson — DM",
+    "when": "Wed 12 Aug, 15:57",
+    "ask": "“I tried to click through that stuff but it needs to be done from the google account of the person writing it unfortunately. If you can so the initial bits then hand-off anything I can help with?”",
+    "context": "Follow-on from his morning chase: “We need that info from you on the Searce work - you asked me for some help with it.” He tried to unblock it himself, hit the Google-account wall, and has offered to take everything after your first pass. The blocker is now purely you.",
+    "link": "https://intent.slack.com/archives/D09KUEGMPR7/p1786546638636079",
+    "draft": "Adam — fair, this one is stuck on me.\n\n• I will do the initial bits from my account and hand off to you the moment they are in.\n• So I do the minimum needed: which sections actually block you — the whole thing, or specific fields? If it is a handful of fields, we are in luck as I can clear them in one sitting today. If it needs the full pass, I will prioritise a slot this week and tell you when it is done.\n\nHope that helps."
+  },
+  {
+    "title": "Elyse: statuses + reviewers on your enablement docs",
+    "category": "internal",
+    "tags": [
+      "enablement",
+      "admin",
+      "tracker"
+    ],
+    "who": "Elyse Tawiah — DM",
+    "when": "Wed 12 Aug, 14:42",
+    "ask": "“For everything currently Drafted (Agentic Demo Generation and Discover Me Demos), who's the reviewer?… Could you set a status on the items that have no status yet (Edge Enrichment & AutoML, POV Playbook, and User Guide)?… please could you also link the doc in the last column.”",
+    "context": "Housekeeping, but it gates real work: Vasilis asked the same afternoon for existing sales docs to be linked on the tracker so the Knowledge Hub team can process them, and reviews are due end of week. Ten minutes in the tracker clears all three asks.",
+    "link": "https://intent.slack.com/archives/D0BG00P64SD/p1786542156862009",
+    "draft": "Thanks Elyse — on it, all three in one pass.\n\n• Reviewers for the two Drafted items: I will assign them in the tracker today — likely @Sam for Agentic Demo Generation, and I will confirm the Discover Me one.\n• Statuses: honest picture — Edge Enrichment & AutoML and User Guide are in progress; the POV Playbook is the big one and needs a proper working session, so I will mark it accordingly with a note.\n• Doc links: yes, will add alongside.\n\nIf rough statuses are enough for now, we are in luck as this is one sitting today. If you need the POV Playbook itself moving for the Knowledge Hub, I will prioritise carving out time next week and say so in the notes.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
