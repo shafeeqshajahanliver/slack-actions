@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 13 Aug, 10:07 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 18 Aug, 10:07 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -303,14 +303,16 @@ const ITEMS = [
     "tags": [
       "boost",
       "adobe",
-      "review"
+      "review",
+      "sent"
     ],
     "who": "Kipp Gearhart — #sales (Boost Mobile thread)",
     "when": "Mon 3 Aug, 20:27",
-    "ask": "“Here is the client-facing version of the Adobe doc I would like to send to Boost and use for other Adobe-centric prospects as well. I think the wording could be a touch softer — easy fix… Once we agree on framing and content, I can get this to Jerry to polish.”",
+    "ask": "Handled — you replied Mon 17 Aug (“this is actually great framing - im gonna steal it… thank you!”) and are folding it into the partner / knowledge hub Vas is setting up.",
     "context": "This is the Adobe complementarity doc from the Boost meeting — their hard gate was ingestion ease into Adobe, and their bias is that IntentOne’s orchestration layer duplicates CX Enterprise. Kipp flagged in the original thread that the draft goes to you and JL for final editing before it is sent. It also cites Verizon figures, so worth a consent check before it leaves the building.",
     "link": "https://intent.slack.com/archives/C024Y8B9P/p1785785239710729?thread_ts=1784658117.055869&cid=C024Y8B9P",
-    "draft": "Kipp — thanks for turning this around, the framing is right: additive to the Adobe stack, not competitive with it.\n\nBefore it goes to Boost:\n• Softening: agree — I will do a wording pass and send it back marked up.\n• The martechture diagram: does it clearly show our signals flowing INTO Adobe at activation? Ingestion ease was their hard gate, so that one image carries the argument. If it already reads that way, we are in luck as the rest is polish. If not, I will prioritise fixing that before any wording.\n• It cites Verizon numbers — can you confirm we have consent to use them client-facing? Same flag Thomas raised on the SEA proposals.\n\nOnce my pass is back, go to @Jerry — and give @Jonathan a skim before it leaves the building.\n\nHope that helps."
+    "draft": "Kipp — thanks for turning this around, the framing is right: additive to the Adobe stack, not competitive with it.\n\nBefore it goes to Boost:\n• Softening: agree — I will do a wording pass and send it back marked up.\n• The martechture diagram: does it clearly show our signals flowing INTO Adobe at activation? Ingestion ease was their hard gate, so that one image carries the argument. If it already reads that way, we are in luck as the rest is polish. If not, I will prioritise fixing that before any wording.\n• It cites Verizon numbers — can you confirm we have consent to use them client-facing? Same flag Thomas raised on the SEA proposals.\n\nOnce my pass is back, go to @Jerry — and give @Jonathan a skim before it leaves the building.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "AIS: SDK permissions claim needs your call",
@@ -318,14 +320,16 @@ const ITEMS = [
     "tags": [
       "ais",
       "sdk",
-      "proposal"
+      "proposal",
+      "sent"
     ],
     "who": "Thomas Murdock — #intentone-presales-ais",
     "when": "Wed 5 Aug, 12:48",
-    "ask": "“Section 10 states the SDK uses \\\"standard operating system APIs that do not require sensitive permissions\\\"… Detecting installed or used competitor applications requires QUERY_ALL_PACKAGES on Android… Either the use case cannot be delivered as described, or the no-sensitive-permissions statement is inaccurate… perhaps Shafeeq can help with identifying the correct option below?”",
+    "ask": "Handled — Lewis confirmed “we've got this covered already; we don't use QUERY ALL PACKAGES”; you looped in Adi and thanked Lewis on Mon 17 Aug.",
     "context": "He has done the analysis for you: Option 1 is amend the Churn Prediction use case to drop the competitor-app claim; Option 2 is confirm the SDK infers competitor usage through standard APIs (network-level signals, not app enumeration) and re-word the method. Same permissions territory you defended on Parimatch yesterday, and your AIS PAG approval is still outstanding — one sitting could clear both.",
     "link": "https://intent.slack.com/archives/C080RGW1LG1/p1785930532208089",
-    "draft": "Thomas — good catch, and you are right that this is ours to fix, not AIS's.\n\n• @Adi — can you confirm exactly what the SDK can see for competitor usage: network-level signals, eSIM indicators, anything else that works through standard APIs? We do not enumerate installed apps via QUERY_ALL_PACKAGES, so the answer decides everything.\n• If Adi confirms network-level inference covers it, we are in luck as Option 2 stands — I will help you re-word the use case to describe the method accurately. If it does not, I will prioritise Option 1: amend Churn Prediction and caveat the competitor eSIM reference rather than ship a claim we cannot deliver.\n\nEither way the no-sensitive-permissions statement must stay true — it is the same position we took with Parimatch this week.\n\nHope that helps."
+    "draft": "Thomas — good catch, and you are right that this is ours to fix, not AIS's.\n\n• @Adi — can you confirm exactly what the SDK can see for competitor usage: network-level signals, eSIM indicators, anything else that works through standard APIs? We do not enumerate installed apps via QUERY_ALL_PACKAGES, so the answer decides everything.\n• If Adi confirms network-level inference covers it, we are in luck as Option 2 stands — I will help you re-word the use case to describe the method accurately. If it does not, I will prioritise Option 1: amend Churn Prediction and caveat the competitor eSIM reference rather than ship a claim we cannot deliver.\n\nEither way the no-sensitive-permissions statement must stay true — it is the same position we took with Parimatch this week.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Ben: test Mobileum demo before next week",
@@ -366,14 +370,31 @@ const ITEMS = [
     "tags": [
       "vivo",
       "demo",
-      "presales"
+      "presales",
+      "sent"
     ],
     "who": "Nidhi Sharma — #edge-presales-vivo",
     "when": "Wed 12 Aug, 13:06",
-    "ask": "“can you please verify we can get Signals and enrichments in Vivo brazil environment (using dummy data that we have currently have)?”",
+    "ask": "Handled — you replied Mon 17 Aug: “yes - we already have an env set up with signals”; Nidhi reacted thanks.",
     "context": "A day old with no pick-up. The Vivo technical questionnaire is still stuck with Regalo (Bruno re-engaged him Wednesday) and the business session with Luciana is likely next week, so a verified signals-and-enrichments view on dummy data is what keeps the demo track moving while the real data path is blocked.",
     "link": "https://intent.slack.com/archives/C084VQ42GRZ/p1786536364159029",
-    "draft": "Nidhi — yes, let me verify rather than assume.\n\n• Quick check so I test the right thing: is this for the Luciana business session, and do you need enrichments on top of Signals or is the signal layer enough for now?\n• I will run a pass on the Brazil environment with the dummy data. If Signals and enrichments both load cleanly, we are in luck as you can show it as-is next week. If enrichments misbehave, I will prioritise getting it fixed before the session so we are not demoing a half-loaded view — and I will tell you either way by [day].\n\nHope that helps."
+    "draft": "Nidhi — yes, let me verify rather than assume.\n\n• Quick check so I test the right thing: is this for the Luciana business session, and do you need enrichments on top of Signals or is the signal layer enough for now?\n• I will run a pass on the Brazil environment with the dummy data. If Signals and enrichments both load cleanly, we are in luck as you can show it as-is next week. If enrichments misbehave, I will prioritise getting it fixed before the session so we are not demoing a half-loaded view — and I will tell you either way by [day].\n\nHope that helps.",
+    "done": true
+  },
+  {
+    "title": "Verizon: two users locked out of the platform",
+    "category": "client",
+    "tags": [
+      "verizon",
+      "access",
+      "quick"
+    ],
+    "who": "Brandon Jones — group DM with Sam, Sharifah, Albert + team",
+    "when": "Mon 17 Aug, 21:12",
+    "ask": "“Is it possible to get access to or resend Welcome emails to cecile.rezazgui@verizonwireless.com & mariah.ore@verizon.com? They are running into the issue where they receive a \"Code Is Invalid\" error.”",
+    "context": "Nobody in the group DM has picked this up since last night, and Luca — the usual route for platform admin — is off this week. Two Verizon users stuck on invalid welcome codes is a small fix with outsized optics on the flagship account.",
+    "link": "https://intent.slack.com/archives/C0B4XPFG3C0/p1786997553155789",
+    "draft": "Brandon — thanks for flagging, let's not leave Verizon users locked out.\n\n• @Sam — can you check whether we can resend the welcome emails from the admin side? If it is just expired codes, we are in luck as a resend fixes this in minutes.\n• If the codes are failing on generation, I will prioritise getting it in front of engineering today — @Albert, who is best placed with Luca away?\n\nBrandon — once they are in, can you confirm with Cecile and Mariah directly so we close the loop with Verizon.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -591,14 +612,16 @@ const ITEMS = [
     "tags": [
       "sdk",
       "people",
-      "sensitive"
+      "sensitive",
+      "sent"
     ],
     "who": "Netta Aizenbud — DM",
     "when": "Mon 10 Aug, 10:57",
-    "ask": "“I started to list a plan for Ayesha to get going with the data dictionary and SDK data health in here… Has she started already?”",
+    "ask": "Handled — you told her Mon 17 Aug: offer withdrawn, Laura is getting a new QA eng in ASAP, the plan stands. She is away this week and hoping for good news when back.",
     "context": "Netta is building an onboarding plan for someone who is not coming — Laura told you on Friday the offer had to be withdrawn (right-to-work). Every day unanswered is Netta planning against a ghost. Needs a careful reply without the details, plus a decision on restarting the Applause search she was running.",
     "link": "https://intent.slack.com/archives/D09UQ8TJ4NP/p1786355857843549",
-    "draft": "Netta — the plan you have built is exactly right, but I have to give you an update first: Ayesha will not be joining us after all. Offer-stage issue on our side to manage, nothing you need to worry about, but I am sorry — I know you had already invested in the onboarding thinking.\n\n• The SDK QA plan itself stands — keep it, it is the spec for whoever we bring in.\n• Can you and @Lidor restart the Applause shortlist this week? Same brief as before, and given what you flagged last time, weight data experience over automation experience.\n• If there is a second candidate still warm from the last round, we are in luck and could move quickly. If not, I will prioritise getting the search reopened this week so we do not lose the momentum.\n\nHope that helps."
+    "draft": "Netta — the plan you have built is exactly right, but I have to give you an update first: Ayesha will not be joining us after all. Offer-stage issue on our side to manage, nothing you need to worry about, but I am sorry — I know you had already invested in the onboarding thinking.\n\n• The SDK QA plan itself stands — keep it, it is the spec for whoever we bring in.\n• Can you and @Lidor restart the Applause shortlist this week? Same brief as before, and given what you flagged last time, weight data experience over automation experience.\n• If there is a second candidate still warm from the last round, we are in luck and could move quickly. If not, I will prioritise getting the search reopened this week so we do not lose the momentum.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Lidor: access request sitting unanswered",
@@ -620,15 +643,16 @@ const ITEMS = [
     "tags": [
       "people",
       "goals",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Adi Dahan — DM",
     "when": "Thu 13 Aug, 08:30",
-    "due": "1x1 is today",
-    "ask": "“I dont see my goals in HiBob… They were focused on: 1. Activations 2. Web SDK 3. Continious works and improvement of the SDK - new intelligence, data health improvements. Lets work it on on our 1x1 today??”",
+    "ask": "Handled — you replied the same morning and agreed the three goal areas; the 1x1 moved to Mon then Tue 18 Aug, where the goals get drafted into HiBob.",
     "context": "Two-second confirm before the call. He has already reconstructed the three goal areas from memory, so the 1x1 is drafting them into HiBob, not inventing them. Worth checking your side beforehand whether the goals were never entered or are sitting unpublished in a HiBob draft.",
     "link": "https://intent.slack.com/archives/D09KG4P5K6Y/p1786606214472499",
-    "draft": "Morning Adi — yes, let's do it in our 1x1 today.\n\n• Your three areas are the right frame: Activations, Web SDK, and continuous SDK improvement (new intelligence, data health).\n• Before the call I will check HiBob my side. If they are sitting in a draft, we are in luck as we just publish and tidy. If they were never entered, we will write them together in the session — ten minutes, done.\n\nHope that helps."
+    "draft": "Morning Adi — yes, let's do it in our 1x1 today.\n\n• Your three areas are the right frame: Activations, Web SDK, and continuous SDK improvement (new intelligence, data health).\n• Before the call I will check HiBob my side. If they are sitting in a draft, we are in luck as we just publish and tidy. If they were never entered, we will write them together in the session — ten minutes, done.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Adi: route for Gal + Lidor's IntentOne QA feedback",
@@ -651,14 +675,16 @@ const ITEMS = [
     "tags": [
       "searce",
       "blocked",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Adam Wilson — DM",
     "when": "Wed 12 Aug, 15:57",
-    "ask": "“I tried to click through that stuff but it needs to be done from the google account of the person writing it unfortunately. If you can so the initial bits then hand-off anything I can help with?”",
+    "ask": "Handled — you did the initial bits Thu 13 Aug (MVA accepted, onboarding form underway with Satheesh's org details) and a walkthrough with Adam and Tom is set up.",
     "context": "Follow-on from his morning chase: “We need that info from you on the Searce work - you asked me for some help with it.” He tried to unblock it himself, hit the Google-account wall, and has offered to take everything after your first pass. The blocker is now purely you.",
     "link": "https://intent.slack.com/archives/D09KUEGMPR7/p1786546638636079",
-    "draft": "Adam — fair, this one is stuck on me.\n\n• I will do the initial bits from my account and hand off to you the moment they are in.\n• So I do the minimum needed: which sections actually block you — the whole thing, or specific fields? If it is a handful of fields, we are in luck as I can clear them in one sitting today. If it needs the full pass, I will prioritise a slot this week and tell you when it is done.\n\nHope that helps."
+    "draft": "Adam — fair, this one is stuck on me.\n\n• I will do the initial bits from my account and hand off to you the moment they are in.\n• So I do the minimum needed: which sections actually block you — the whole thing, or specific fields? If it is a handful of fields, we are in luck as I can clear them in one sitting today. If it needs the full pass, I will prioritise a slot this week and tell you when it is done.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Elyse: statuses + reviewers on your enablement docs",
@@ -666,14 +692,91 @@ const ITEMS = [
     "tags": [
       "enablement",
       "admin",
-      "tracker"
+      "tracker",
+      "sent"
     ],
     "who": "Elyse Tawiah — DM",
     "when": "Wed 12 Aug, 14:42",
-    "ask": "“For everything currently Drafted (Agentic Demo Generation and Discover Me Demos), who's the reviewer?… Could you set a status on the items that have no status yet (Edge Enrichment & AutoML, POV Playbook, and User Guide)?… please could you also link the doc in the last column.”",
+    "ask": "Handled — you replied Mon 17 Aug: “will get on top of this today”, and the user guide is drafted.",
     "context": "Housekeeping, but it gates real work: Vasilis asked the same afternoon for existing sales docs to be linked on the tracker so the Knowledge Hub team can process them, and reviews are due end of week. Ten minutes in the tracker clears all three asks.",
     "link": "https://intent.slack.com/archives/D0BG00P64SD/p1786542156862009",
-    "draft": "Thanks Elyse — on it, all three in one pass.\n\n• Reviewers for the two Drafted items: I will assign them in the tracker today — likely @Sam for Agentic Demo Generation, and I will confirm the Discover Me one.\n• Statuses: honest picture — Edge Enrichment & AutoML and User Guide are in progress; the POV Playbook is the big one and needs a proper working session, so I will mark it accordingly with a note.\n• Doc links: yes, will add alongside.\n\nIf rough statuses are enough for now, we are in luck as this is one sitting today. If you need the POV Playbook itself moving for the Knowledge Hub, I will prioritise carving out time next week and say so in the notes.\n\nHope that helps."
+    "draft": "Thanks Elyse — on it, all three in one pass.\n\n• Reviewers for the two Drafted items: I will assign them in the tracker today — likely @Sam for Agentic Demo Generation, and I will confirm the Discover Me one.\n• Statuses: honest picture — Edge Enrichment & AutoML and User Guide are in progress; the POV Playbook is the big one and needs a proper working session, so I will mark it accordingly with a note.\n• Doc links: yes, will add alongside.\n\nIf rough statuses are enough for now, we are in luck as this is one sitting today. If you need the POV Playbook itself moving for the Knowledge Hub, I will prioritise carving out time next week and say so in the notes.\n\nHope that helps.",
+    "done": true
+  },
+  {
+    "title": "Colin: AI Awards judge answers need you today",
+    "category": "internal",
+    "tags": [
+      "awards",
+      "review",
+      "deadline"
+    ],
+    "who": "Colin White — DM",
+    "when": "Mon 17 Aug, 23:12",
+    "due": "Due this week — Colin asked for Tuesday",
+    "ask": "“I have a few questions from the judges at the AI World Series Awards… Please could I ask you to review the Final Draft responses for technical and commercial accuracy… The deadline for a response is this week, so if you could look at it on Tuesday, please.”",
+    "context": "Two docs: AI Solution of the Year and AI-Enabled Product or Platform. Sangram has fed in; Colin still needs you and Tobie. The judges allow one round of questions, so these answers carry the whole entry — and the awards sit on the cover slide of every deck.",
+    "link": "https://intent.slack.com/archives/D09JY6FFLLX/p1787004743316649",
+    "draft": "Colin — on it today.\n\n• I will review both docs for technical and commercial accuracy and comment directly in the docs rather than back-and-forth here.\n• Two checks while I read: are we claiming anything as shipped that is still in validation (same discipline as the roadmap), and are the client numbers ones we have consent to cite to judges?\n• If Tobie's input is still outstanding by tomorrow morning, tell me and I will chase him — one round of questions means we cannot leave a technical gap.\n\nHope that helps."
+  },
+  {
+    "title": "Colin: Best Moment vs Opportunity Intelligence",
+    "category": "internal",
+    "tags": [
+      "gtm",
+      "mid-market",
+      "positioning"
+    ],
+    "who": "Colin White — DM",
+    "when": "Tue 18 Aug, 00:32",
+    "ask": "“Looking back at JL's deck, I'm thinking that Best Moment Intelligence is going to land so much better than Opportunity Intelligence in Mid-Market. What do you think about that? I feel that's a more accessible Category Entry Point.”",
+    "context": "Updated Message Maps attached (Enterprise v5, Mid-Market v2), with a Loyalty wedge section coming this week to underpin the Lightfield outbound work. Whatever name you bless here propagates into the outbound motion, the walkthrough video brief and the Tevus avatar — worth a real answer, not a thumbs-up.",
+    "link": "https://intent.slack.com/archives/D09JY6FFLLX/p1787009569408279",
+    "draft": "Colin — read both maps, thank you for turning these around.\n\nOn Best Moment vs Opportunity Intelligence:\n• I lean your way — “best moment” describes the value in the buyer's language, “opportunity” describes our object model. Mid-market buyers do not care about our nouns.\n• Two things before we commit: does Best Moment Intelligence survive contact with the enterprise map too, or are we running two category entry points? And check it against how @Jonathan frames it in his deck — his language tends to travel.\n• If we adopt it, we adopt it everywhere — outbound, the walkthrough video brief, the avatar script — or the category story fragments.\n\nSend the Loyalty wedge section when drafted and I will do a same-day pass.\n\nHope that helps."
+  },
+  {
+    "title": "Tevus test: Colin asks if you're backing it",
+    "category": "internal",
+    "tags": [
+      "tevus",
+      "mid-market",
+      "decision"
+    ],
+    "who": "Colin White & Luca Szabó — group DM with Milan S",
+    "when": "Mon 17 Aug, 12:30",
+    "ask": "“Shafeeq, given the blocker is predominantly product/sales channel integration, are you supporting this? If so, do you want to raise it in your next JL 1-2-1?” — following Luca's Friday ask: “if you agree with the approach, can you please help support Milan?”",
+    "context": "Luca's proposal: skip the full Tevus–IntentOne integration and ship a lightweight test (avatar + Calendly + Slack ping) needing no engineering time. Colin agrees but names the real blockers as people: who fields Calendly bookings before the CRO starts 1 Sept, and product committing to the Slack-ping channel. Luca is off this week, so the decision sits with you and Milan.",
+    "link": "https://intent.slack.com/archives/C0BQ8PDQPM1/p1786966259757079",
+    "draft": "Colin, Milan — yes, I am supporting this.\n\n• The lightweight test is the right call — we learn whether demand exists before committing engineering, which is the bar every integration should clear.\n• On the two people blockers: product can own the Slack ping — a booking alert into our channel costs nothing. The Calendly rota is the real question. If Colin's volume forecast is low pre-September, we are in luck as sales and I can absorb it between us. If not, I will prioritise agreeing a rota before we switch it on, not after.\n• And yes — I will raise it in my next JL 1-2-1 so it has air cover as an experiment, not a scope cut.\n\n@Milan — take this as the green light to move with Colin.\n\nHope that helps."
+  },
+  {
+    "title": "Adi: On-Device Campaigns PRD wants your review",
+    "category": "internal",
+    "tags": [
+      "sdk",
+      "prd",
+      "review"
+    ],
+    "who": "Adi Dahan — group DM with Albert, Tomer, Netta, Lidor",
+    "when": "Sun 16 Aug, 10:56",
+    "ask": "“Sharing with you all a first draft of the PRD: Support On-Device Campaigns in Intent-One… Would love to get your review on it and feedback/comments/questions. I can do a follow up meeting on it to discuss further.”",
+    "context": "Two versions — a TLDR and the full PRD that will drive the design prototype and dev. Next he wants the page-visits API to open up the unregistered-users use case. Nobody in the group has commented yet, and your 1x1 with him is today, so a pass before the call turns it into a working session.",
+    "link": "https://intent.slack.com/archives/C0BLU6LM7FG/p1786874217130689",
+    "draft": "Adi — read the TLDR, doing a proper pass on the full PRD.\n\n• So my review lands where it is useful: what is the one decision you need from me now — the scope of v1, or whether on-device campaigns live inside Campaigns or as their own object in IntentOne?\n• Two things I will test as I read: how a campaign manager sees and controls what runs on-device (it cannot be an SDK-only black box), and how this interacts with the activations work already in flight.\n• If v1 scope is tight, we are in luck as we can bring @Mark in on the design prototype straight away. If it is broad, I will prioritise a scoping session before anyone prototypes.\n\nLet's use today's 1x1 for the first pass together.\n\nHope that helps."
+  },
+  {
+    "title": "Paulius: send product video + resources",
+    "category": "internal",
+    "tags": [
+      "onboarding",
+      "quick"
+    ],
+    "who": "Paulius Butvilauskas — DM",
+    "when": "Mon 17 Aug, 16:28",
+    "ask": "“when you get a chance, if you could please send to me the Intent HQ Product video or any other resources you think might be useful - just to help me build a better understanding about the product, that would be great”",
+    "context": "New joiner you met on Monday. Two-minute job: the knowledge base link, JL's deck and the demo-environment sign-up path cover it. Worth noting the polished end-to-end walkthrough video he is really asking for does not exist yet — it is exactly the asset Syed is briefing (see Syed's card).",
+    "link": "https://intent.slack.com/archives/D0BQMKZQE4V/p1786980526213899",
+    "draft": "Great to meet you too, Paulius!\n\n• Best starting points: [knowledge base link], JL's latest IntentOne deck, and a demo environment — sign up here [link] and click around, it is the fastest way to get a feel for the product.\n• A proper end-to-end walkthrough video is in the works with marketing — not ready yet, but you will be an ideal test viewer when it lands.\n• Once you have had a look, grab 30 minutes with me and I will walk you through how the pieces fit.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
