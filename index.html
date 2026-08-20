@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 18 Aug, 10:07 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 20 Aug, 10:08 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -387,11 +387,13 @@ const ITEMS = [
     "tags": [
       "verizon",
       "access",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Brandon Jones — group DM with Sam, Sharifah, Albert + team",
     "when": "Mon 17 Aug, 21:12",
-    "ask": "“Is it possible to get access to or resend Welcome emails to cecile.rezazgui@verizonwireless.com & mariah.ore@verizon.com? They are running into the issue where they receive a \"Code Is Invalid\" error.”",
+    "ask": "Handled — you pulled in Sam on Tue morning; he resent the invites (Mariah to use the password-reset path). Cecile hit the invalid code again Wed evening — Sam is on point.",
+    "done": true,
     "context": "Nobody in the group DM has picked this up since last night, and Luca — the usual route for platform admin — is off this week. Two Verizon users stuck on invalid welcome codes is a small fix with outsized optics on the flagship account.",
     "link": "https://intent.slack.com/archives/C0B4XPFG3C0/p1786997553155789",
     "draft": "Brandon — thanks for flagging, let's not leave Verizon users locked out.\n\n• @Sam — can you check whether we can resend the welcome emails from the admin side? If it is just expired codes, we are in luck as a resend fixes this in minutes.\n• If the codes are failing on generation, I will prioritise getting it in front of engineering today — @Albert, who is best placed with Luca away?\n\nBrandon — once they are in, can you confirm with Cecile and Mariah directly so we close the loop with Verizon.\n\nHope that helps."
@@ -567,11 +569,13 @@ const ITEMS = [
     "tags": [
       "mid-market",
       "admin",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Dipak Vadera — DM",
     "when": "Tue 11 Aug, 14:17",
-    "ask": "“btw I'm still waiting for access to Claude. I didn't hear back from Gary. Any chance you can chase for me?” Plus: “Let me know if you have any thoughts [on the Mid-Market / Enterprise separation criteria doc]. There's a number of things we need to figure out and agree on before we can start drafting that plan.”",
+    "ask": "Handled — you replied Tue 18 Aug: approved his proposal (JL, Colin and George looped in via email) and booked Monday with him and Colin on the mid-market plan.",
+    "done": true,
     "context": "You sorted his extension with Gary the same afternoon (end September, proposal coming), but the Claude access chase and the doc read are still with you. Colin has already reviewed the doc and turned it into a decision paper, and the 100k vs 250k profile-numbers question still needs validating with JL — Kipp is running a parallel piece on the same decision.",
     "link": "https://intent.slack.com/archives/D0BHYL6N7CN/p1786454231403269",
     "draft": "Two things back to you:\n\n• Claude access: chasing @Gary now — you should hear today. If it is stuck on licensing, we are in luck as I can get you on under the team account as a stopgap.\n• Separation doc: read it. My main steer is that Colin's decision-paper format is the right vehicle — fold your content into that rather than running two docs. On the 100k vs 250k profile question: lead with 100k as you have been until JL validates otherwise, and let us force that decision at the next mid-market call rather than let it drift. Kipp is working the same decision from the ARR side, so the three of you should land one recommendation, not two.\n\nHope that helps."
@@ -597,11 +601,13 @@ const ITEMS = [
     "tags": [
       "people",
       "quick",
-      "blocked"
+      "blocked",
+      "sent"
     ],
     "who": "Lisa Bolsover — group DM with Sharifah",
     "when": "Mon 10 Aug, 14:17",
-    "ask": "“A few questions for Shafeeq: What will the new job title be? • Please can you share the JD • I assume we are not expecting any compensation change with this. We've conducted some benchmarking and she is in a good place so I don't feel we need to but please let me know if I've misunderstood.”",
+    "ask": "Handled — you replied Tue 18 Aug: no comp change agreed, and shared the new JD + title doc the same morning (moving once she's back from leave).",
+    "done": true,
     "context": "Lisa has closed the loop her side and can action immediately — the only thing missing is your title and JD. She has benchmarked comp and proposes no change unless you disagree. Two days idle, and it is someone's title change sitting on it.",
     "link": "https://intent.slack.com/archives/C0BEC4T1PPG/p1786367829281429",
     "draft": "Thanks Lisa — and sorry for the lag, SLT week.\n\n• Title: [confirm title]\n• JD: I will send you a one-pager by [day] — if a working draft is enough to start the process, we are in luck as I can share what I have today and polish after.\n• Comp: agreed, no change with this move — your benchmarking matches my read.\n\nHope that helps."
@@ -660,11 +666,13 @@ const ITEMS = [
     "tags": [
       "qa",
       "fishka",
-      "process"
+      "process",
+      "sent"
     ],
     "who": "Adi Dahan — group DM with Luca and Sam",
     "when": "Wed 12 Aug, 12:56",
-    "ask": "“I have few feedbacks (QA related) for IntentOne - from Gal and Lidor. How do we want to approach this?”",
+    "ask": "Handled — you split the items Mon 17 Aug (Sam took 1 and 3, you took 2 and 4; Thomas named on the first) and Sam confirmed 👍.",
+    "done": true,
     "context": "Nobody in the group DM has answered, so there is no agreed route for QA feedback yet. The forwarded items are concrete: a Windows scroll bug hiding microsegment names, Fishka microsegments 70 days stale with no refresh plan, an opportunities anomaly where matched and targetable show the same count, a Fishka Data Engine graph that makes no sense, and a question on whether we can see client logins.",
     "link": "https://intent.slack.com/archives/C0ATED932HW/p1786535789366439",
     "draft": "Adi — thank you for collecting these rather than letting them scatter.\n\n• Route: log each as a Linear ticket on the IntentOne board and tag me on anything client-visible — Slack threads are where QA feedback goes to die.\n• On the items themselves: the opportunities anomaly (matched = targetable) worries me most, as it misstates audience size to a client — @Luca can you take that one first? The scroll bug and the 70-day-stale microsegments are real but lower stakes.\n• Login visibility: we should have this — let me check what already exists before anyone builds anything.\n\nIf these all reproduce on Fishka, we are in luck as one environment gives us the full repro set. If not, I will prioritise a quick triage call with you and Gal this week.\n\nHope that helps."
@@ -709,12 +717,13 @@ const ITEMS = [
     "tags": [
       "awards",
       "review",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Colin White — DM",
     "when": "Mon 17 Aug, 23:12",
-    "due": "Due this week — Colin asked for Tuesday",
-    "ask": "“I have a few questions from the judges at the AI World Series Awards… Please could I ask you to review the Final Draft responses for technical and commercial accuracy… The deadline for a response is this week, so if you could look at it on Tuesday, please.”",
+    "ask": "Handled — you reviewed and answered in the docs Thu 20 Aug morning (including the AI Solution entry); Colin: “Thanks… I'll ping you if I have any questions.”",
+    "done": true,
     "context": "Two docs: AI Solution of the Year and AI-Enabled Product or Platform. Sangram has fed in; Colin still needs you and Tobie. The judges allow one round of questions, so these answers carry the whole entry — and the awards sit on the cover slide of every deck.",
     "link": "https://intent.slack.com/archives/D09JY6FFLLX/p1787004743316649",
     "draft": "Colin — on it today.\n\n• I will review both docs for technical and commercial accuracy and comment directly in the docs rather than back-and-forth here.\n• Two checks while I read: are we claiming anything as shipped that is still in validation (same discipline as the roadmap), and are the client numbers ones we have consent to cite to judges?\n• If Tobie's input is still outstanding by tomorrow morning, tell me and I will chase him — one round of questions means we cannot leave a technical gap.\n\nHope that helps."
@@ -725,11 +734,13 @@ const ITEMS = [
     "tags": [
       "gtm",
       "mid-market",
-      "positioning"
+      "positioning",
+      "sent"
     ],
     "who": "Colin White — DM",
     "when": "Tue 18 Aug, 00:32",
-    "ask": "“Looking back at JL's deck, I'm thinking that Best Moment Intelligence is going to land so much better than Opportunity Intelligence in Mid-Market. What do you think about that? I feel that's a more accessible Category Entry Point.”",
+    "ask": "Handled — you followed up Thu 20 Aug; the awards took priority and Colin stood the urgency down: “No great rush on that… it is based on your inputs anyway.”",
+    "done": true,
     "context": "Updated Message Maps attached (Enterprise v5, Mid-Market v2), with a Loyalty wedge section coming this week to underpin the Lightfield outbound work. Whatever name you bless here propagates into the outbound motion, the walkthrough video brief and the Tevus avatar — worth a real answer, not a thumbs-up.",
     "link": "https://intent.slack.com/archives/D09JY6FFLLX/p1787009569408279",
     "draft": "Colin — read both maps, thank you for turning these around.\n\nOn Best Moment vs Opportunity Intelligence:\n• I lean your way — “best moment” describes the value in the buyer's language, “opportunity” describes our object model. Mid-market buyers do not care about our nouns.\n• Two things before we commit: does Best Moment Intelligence survive contact with the enterprise map too, or are we running two category entry points? And check it against how @Jonathan frames it in his deck — his language tends to travel.\n• If we adopt it, we adopt it everywhere — outbound, the walkthrough video brief, the avatar script — or the category story fragments.\n\nSend the Loyalty wedge section when drafted and I will do a same-day pass.\n\nHope that helps."
@@ -755,11 +766,13 @@ const ITEMS = [
     "tags": [
       "sdk",
       "prd",
-      "review"
+      "review",
+      "sent"
     ],
     "who": "Adi Dahan — group DM with Albert, Tomer, Netta, Lidor",
     "when": "Sun 16 Aug, 10:56",
-    "ask": "“Sharing with you all a first draft of the PRD: Support On-Device Campaigns in Intent-One… Would love to get your review on it and feedback/comments/questions. I can do a follow up meeting on it to discuss further.”",
+    "ask": "Handled — you reacted 🙌 to the PRD and it is moving through your 1x1s with Adi (Tue 18 / Thu 20 Aug).",
+    "done": true,
     "context": "Two versions — a TLDR and the full PRD that will drive the design prototype and dev. Next he wants the page-visits API to open up the unregistered-users use case. Nobody in the group has commented yet, and your 1x1 with him is today, so a pass before the call turns it into a working session.",
     "link": "https://intent.slack.com/archives/C0BLU6LM7FG/p1786874217130689",
     "draft": "Adi — read the TLDR, doing a proper pass on the full PRD.\n\n• So my review lands where it is useful: what is the one decision you need from me now — the scope of v1, or whether on-device campaigns live inside Campaigns or as their own object in IntentOne?\n• Two things I will test as I read: how a campaign manager sees and controls what runs on-device (it cannot be an SDK-only black box), and how this interacts with the activations work already in flight.\n• If v1 scope is tight, we are in luck as we can bring @Mark in on the design prototype straight away. If it is broad, I will prioritise a scoping session before anyone prototypes.\n\nLet's use today's 1x1 for the first pass together.\n\nHope that helps."
@@ -769,14 +782,31 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "onboarding",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Paulius Butvilauskas — DM",
     "when": "Mon 17 Aug, 16:28",
-    "ask": "“when you get a chance, if you could please send to me the Intent HQ Product video or any other resources you think might be useful - just to help me build a better understanding about the product, that would be great”",
+    "ask": "Handled — you sent the full starter pack Tue 18 Aug (Coda hub, What We're Selling, demo sign-up, Jerry's gallery, roadmap); he 👍'd.",
+    "done": true,
     "context": "New joiner you met on Monday. Two-minute job: the knowledge base link, JL's deck and the demo-environment sign-up path cover it. Worth noting the polished end-to-end walkthrough video he is really asking for does not exist yet — it is exactly the asset Syed is briefing (see Syed's card).",
     "link": "https://intent.slack.com/archives/D0BQMKZQE4V/p1786980526213899",
     "draft": "Great to meet you too, Paulius!\n\n• Best starting points: [knowledge base link], JL's latest IntentOne deck, and a demo environment — sign up here [link] and click around, it is the fastest way to get a feel for the product.\n• A proper end-to-end walkthrough video is in the works with marketing — not ready yet, but you will be an ideal test viewer when it lands.\n• Once you have had a look, grab 30 minutes with me and I will walk you through how the pieces fit.\n\nHope that helps."
+  },
+  {
+    "title": "Lisa: raise Denis's access request (Applause QA)",
+    "category": "internal",
+    "tags": [
+      "people",
+      "access",
+      "quick"
+    ],
+    "who": "Lisa Bolsover — group DM with George, Lidor, Netta + team",
+    "when": "Tue 18 Aug, 17:27",
+    "ask": "“Shafeeq — here is the link to request access - select the Outsourced Supplier option. Mon 7th Sept might be best depending on what workplace tech needs there will be to get him up and running.”",
+    "context": "Follow-on from the Applause decision: you told Lidor on Tuesday night to proceed with Denis (Pergamenstschik) and to request more budget when month three kicks in. Lisa has the onboarding moving; the one action with your name on it is the Jira service-desk request, idle since Tuesday evening — and workplace tech lead time is what decides whether the Mon 7 Sept start holds.",
+    "link": "https://intent.slack.com/archives/C0BPJHQ7NR5/p1787070451849039",
+    "draft": "Thanks Lisa — raising the access request now via the portal, Outsourced Supplier option as you say.\n\n• Mon 7 Sept works for me as the start date. @Lidor — can you confirm Denis is good for that and let Applause know?\n• If workplace tech is the long pole, we are in luck as raising the request today gives them a two-week runway. If anything else is needed from our side — contract via @George, kit, accounts — I will prioritise it this week so he lands cleanly.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
