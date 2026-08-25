@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 24 Aug, 10:09 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 25 Aug, 10:06 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -397,6 +397,37 @@ const ITEMS = [
     "context": "Nobody in the group DM has picked this up since last night, and Luca — the usual route for platform admin — is off this week. Two Verizon users stuck on invalid welcome codes is a small fix with outsized optics on the flagship account.",
     "link": "https://intent.slack.com/archives/C0B4XPFG3C0/p1786997553155789",
     "draft": "Brandon — thanks for flagging, let's not leave Verizon users locked out.\n\n• @Sam — can you check whether we can resend the welcome emails from the admin side? If it is just expired codes, we are in luck as a resend fixes this in minutes.\n• If the codes are failing on generation, I will prioritise getting it in front of engineering today — @Albert, who is best placed with Luca away?\n\nBrandon — once they are in, can you confirm with Cecile and Mariah directly so we close the loop with Verizon.\n\nHope that helps."
+  },
+  {
+    "title": "YPF: migration timing + IntentOne vs Edge story",
+    "category": "client",
+    "tags": [
+      "ypf",
+      "migration",
+      "deadline"
+    ],
+    "who": "Sharifah Amirah — group DM with Federico Procaccini",
+    "when": "Mon 24 Aug, 21:40",
+    "due": "YPF lunch Wed",
+    "ask": "“1. Given the challenges we are facing with the legacy Edge Dashboard vs Console, the team is asking for estimated timing for IntentOne migration for YPF 2. And, if we have externally facing documentation/narrative of IntentOne vs legacy Edge (similar ask to the VZ video)… We meet YPF for lunch on Wednesday 🙃”",
+    "context": "Fede softened #1 an hour later: no specific date needed, just an estimate against the current backlog — he has seen the path-to-value site's four-client migration roadmap and wants to know where YPF sits after those. Alfonso raised the same migration question in #edge-clients-ypf that evening (see his card), so two routes are converging on one answer before Wednesday's lunch.",
+    "link": "https://intent.slack.com/archives/C0BS74F2EHZ/p1787604059619699",
+    "draft": "Sharifah, Fede — good timing, Alfonso raised the same thing from the pilot side yesterday, so let's land one answer.\n\n• Timing: honest picture is the migration roadmap currently carries four clients, and YPF is not yet sequenced behind them. The pilot finding that the Edge console cannot segment as expected is exactly the argument that pulls a client up the list — if the blocked campaigns are ones YPF actually wants to run, we are in luck as I can give you a where-in-the-queue answer before Wednesday. What I will not do is commit a date at a lunch and walk it back.\n• IntentOne vs legacy Edge narrative: nothing external-ready today. @Sam sent the first cut of the VZ video to Brandon yesterday — if it lands, the same narrative adapts for YPF quickly. For Wednesday, I would use JL's latest IntentOne deck plus a live demo rather than wait on a doc.\n\nHope that helps."
+  },
+  {
+    "title": "Alfonso: can YPF move to IntentOne Bluebox?",
+    "category": "client",
+    "tags": [
+      "ypf",
+      "migration",
+      "bluebox"
+    ],
+    "who": "Alfonso Urien — #edge-clients-ypf",
+    "when": "Mon 24 Aug, 20:10",
+    "ask": "“Seems that for most of the types of campaigns for YPF these would need to be performed as IntentOne because… Intent Edge campaign console cannot segment as it was initially thought. Would it be possible to migrate YPF to IntentOne Bluebox anytime? What would be required for this to happen?”",
+    "context": "Same underlying question Sharifah raised in the group DM an hour later — the YPF pilot has outgrown the Edge console's segmentation. Answer both in one voice before Wednesday's YPF lunch; Fede is the commercial route.",
+    "link": "https://intent.slack.com/archives/C082U83PXM5/p1787598633351549",
+    "draft": "Alfonso — thanks for flagging, and this matches what Sharifah has raised ahead of Wednesday's YPF lunch.\n\n• Two questions so I scope it properly: which campaign types are actually blocked by the Edge console's segmentation — audience splits, triggers, or both? And is YPF's data already in a warehouse route we support, or would ingestion need rework?\n• On feasibility: a Bluebox migration is possible — the real question is sequencing against the four clients already on the migration roadmap. If the blocked campaigns are revenue-carrying rather than pilot-only, we are in luck as that is the argument that moves YPF up the queue. If not, I will prioritise getting you an honest estimate against the backlog rather than a date we would miss.\n• Let's route the client-facing answer through @Fede so YPF hears one story.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -835,11 +866,13 @@ const ITEMS = [
     "tags": [
       "gtm",
       "mid-market",
-      "decision"
+      "decision",
+      "sent"
     ],
     "who": "Colin White — DM",
     "when": "Fri 21 Aug, 15:29",
-    "ask": "“Last week in the go-to-market board meeting, you took an action to create a decision tree. Have you made any progress?” — with the full Fellow recap attached to jog your memory.",
+    "ask": "Handled — you replied Mon 24 Aug (“agree on all poiints - will bring up decisioning tree today”, alongside your Dipak-contract answers); Colin: “Thanks for the nudge 🙂”. Colin has also proposed folding the tree into Dipak's extended remit.",
+    "done": true,
     "context": "Your own action from the 14 Aug Decisioning Paper Review: JL pushed back that profile count alone hides high-margin/low-profile cases (the Revolut example) that need red-box infrastructure and enterprise pricing, and you took the tree away on the spot — sourced from the SLT transcripts, covering the red-box/blue-box exception path plus ARPU/ROI and regulation as a routing flag. Ten days on, Colin is chasing, and the mid-market launch is Mon 1 Sept.",
     "link": "https://intent.slack.com/archives/D09JY6FFLLX/p1787322576264269",
     "draft": "Colin — fair chase, and thank you for the memory jog.\n\n• Honest status: not built yet. It is top of my list this week.\n• What I will bring: a first-pass tree covering profile count, ARPU/ROI and regulation as a routing flag — with the red-box/blue-box exception path JL pushed on (the Revolut case) called out explicitly, since that is the case profile count alone gets wrong.\n• If the SLT transcripts give me enough to draft from, we are in luck as I can have a v1 with you in the next couple of days to pressure-test together. If they do not, I will prioritise 30 minutes with you first so I do not build the wrong tree.\n\nHope that helps."
@@ -903,6 +936,66 @@ const ITEMS = [
     "context": "Interim DPIA finding, not a conclusion: the provider-per-user extract (one row per user per day, ~1,100 users since Feb) is pseudonymised, not anonymised — and pseudonymised is still personal data under GDPR. He is explicitly not criticising the design, but the answer decides whether the marketing claim needs rewording. You shared the data dictionary Friday morning; this is the one question left open, and it feeds the draft DPIA he will send you for review.",
     "link": "https://intent.slack.com/archives/D0BRLTGR8SD/p1787324727978519",
     "draft": "Fred — fair challenge, and the right question to ask before the DPIA hardens.\n\n• The identifier: let me get you the exact mechanism rather than my memory of it — @Adi can walk us through what the SDK user_id actually is, how it is generated, and whether it can be linked back to an individual by any reasonable means. I will set that up this week.\n• On the claim itself: you are right that pseudonymised-with-aggregation is a different statement from ‘no personal data leaves the device’. If the identifier is genuinely unlinkable, we are in luck as the marketing line survives with tighter wording. If it is not, I will prioritise correcting the claim in the materials — same position we took on the AIS permissions wording: the statement has to stay true.\n\nHope that helps."
+  },
+  {
+    "title": "Albert: SRE-style support rota needs your OK",
+    "category": "internal",
+    "tags": [
+      "engineering",
+      "process",
+      "decision"
+    ],
+    "who": "Albert Pastrana — group DM with Tobie, Javier, Sangram, Tom",
+    "when": "Mon 24 Aug, 14:01",
+    "ask": "“Quick Loom for you both — why the support rota hasn't quite been working and what we're proposing instead… TLDR: the core issue is lack of ownership.” Chased this morning: “Shafeeq and Tobie, if you have 5 min, we need confirmation about the above 👆”",
+    "context": "Proposal upgrades the weekly support rota into an SRE-style role that owns alert-noise triage, keeping PRs moving, the tech-debt ledger and shadow deployments/demos. Tobie has backed it twice this morning (“all in”) and wants the roster tracked via an MCP; Tom and Javier both flagged channel sprawl as part of the noise. The only confirmation outstanding is yours.",
+    "link": "https://intent.slack.com/archives/C0BS91DQWGJ/p1787646046537079",
+    "draft": "Albert — watched the Loom. Yes, I am supporting this.\n\n• The ownership diagnosis is right — “the team's problem” is nobody's problem, and we cannot carry that into production. PRs sitting for ages is exactly the last-mile drag I have been moaning to JL about.\n• Two things I want protected as we roll it out: the rota week cannot silently become a second full-time job — if triage plus PRs plus demos overloads one person, we are in luck if we find that out in week one and trim scope deliberately rather than burn someone. And client-facing incidents still outrank everything else on the list.\n• Agree with Tobie on visibility — put the roster somewhere trackable and let's look at an MCP for it.\n\nTake this as confirmed — run it from the next rotation.\n\nHope that helps."
+  },
+  {
+    "title": "Sangram: IntentAI HTML + SDK planning slot",
+    "category": "internal",
+    "tags": [
+      "intentai",
+      "scheduling",
+      "quick"
+    ],
+    "who": "Sangram Reddy — DM",
+    "when": "Tue 25 Aug, 10:01",
+    "ask": "“can you please share the latest version of the IntentAI HTML with me please?” … “also i proposed a time for the SDK planning, is that ok with you? I have a small errand to run at that time. Will need 1 hr”",
+    "context": "Two thirty-second unblocks: he needs the latest IntentAI HTML you have been iterating, and a yes/no on the SDK planning slot he proposed (he needs an hour for an errand at the original time). You are also meeting him at 10:30 this morning, so answering before then keeps the session on substance.",
+    "link": "https://intent.slack.com/archives/D09JYB07N5D/p1787648502596559",
+    "draft": "Morning! Two quick ones back:\n\n• IntentAI HTML: latest version here — [attach file/link]. Main changes since your last look are in the roadmap and skills sections.\n• SDK planning: your proposed time works, locked — and take the hour for your errand, no problem.\n\nHope that helps."
+  },
+  {
+    "title": "Gary: get Denis through the BYOD check",
+    "category": "internal",
+    "tags": [
+      "people",
+      "access",
+      "quick"
+    ],
+    "who": "Gary Kimmelman — DM",
+    "when": "Tue 25 Aug, 09:56",
+    "ask": "“Hello. Can you get Denis Pergamenstschik to complete the BYOD check: [Google Doc]”",
+    "context": "Next gate after Monday's access request for Denis (Applause QA, Outsourced Supplier) — workplace tech is processing and BYOD is what they need back. Denis is not on our Slack, so the route is via Lidor or Applause, and lead time here decides whether the Mon 7 Sept start holds.",
+    "link": "https://intent.slack.com/archives/D09L736NN0Y/p1787648185006099",
+    "draft": "Thanks Gary — on it.\n\n• @Lidor — can you get this BYOD check to Denis today and ask him to complete it this week? He is not on our Slack yet so it needs to go via you or Applause.\n• Gary — if anything else is pending your side for the 7 Sept start (licence, kit, accounts), tell me now and I will chase it in one go rather than gate by gate.\n\nHope that helps."
+  },
+  {
+    "title": "Company event: your two actions from JL's review",
+    "category": "internal",
+    "tags": [
+      "event",
+      "enablement",
+      "actions"
+    ],
+    "who": "Sarah Nelson — group DM (event team)",
+    "when": "Mon 24 Aug, 18:15",
+    "ask": "“Confirm whether Pratna joins in London or stays remote in South Africa — Shafeeq, checking with her and Conrad” and “Run additional sales enablement sessions ahead of Dragon's Den — JL flagged some confusion in a recent sales meeting on Intent 1 vs Edge positioning — Shafeeq, with JL”",
+    "context": "JL has signed off the 6 Oct event — date locked, agenda approved, Dragon's Den moving to multiple award categories. Your two actions gate Sarah's all-in costing (Pratna's travel is in it, and JL wants total cost before signing off travel spend) and the quality of the Den itself — the IntentOne vs Edge confusion is the same gap the YPF and walkthrough-video threads keep exposing.",
+    "link": "https://intent.slack.com/archives/C0BSBNKQY1Y/p1787591735028549",
+    "draft": "Thanks Sarah — great news on JL backing it. My two:\n\n• Pratna: checking with her and @Conrad today, will confirm London vs remote by Wednesday so your costing is not waiting on me.\n• Sales enablement: agreed, and JL has raised the same confusion with me directly. I will propose two short sessions ahead of Dragon's Den — one on IntentOne vs Edge positioning, one on working with opportunities — and lock dates with JL in our next 1-2-1.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
