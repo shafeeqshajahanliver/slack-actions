@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 26 Aug, 10:06 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 1 Sep, 10:06 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -430,6 +430,55 @@ const ITEMS = [
     "context": "Same underlying question Sharifah raised in the group DM an hour later — the YPF pilot has outgrown the Edge console's segmentation. Answer both in one voice before Wednesday's YPF lunch; Fede is the commercial route.",
     "link": "https://intent.slack.com/archives/C082U83PXM5/p1787598633351549",
     "draft": "Alfonso — thanks for flagging, and this matches what Sharifah has raised ahead of Wednesday's YPF lunch.\n\n• Two questions so I scope it properly: which campaign types are actually blocked by the Edge console's segmentation — audience splits, triggers, or both? And is YPF's data already in a warehouse route we support, or would ingestion need rework?\n• On feasibility: a Bluebox migration is possible — the real question is sequencing against the four clients already on the migration roadmap. If the blocked campaigns are revenue-carrying rather than pilot-only, we are in luck as that is the argument that moves YPF up the queue. If not, I will prioritise getting you an honest estimate against the backlog rather than a date we would miss.\n• Let's route the client-facing answer through @Fede so YPF hears one story.\n\nHope that helps."
+  },
+  {
+    "title": "Alfonso: Arcos Dorados want to connect IntentOne to their Databricks",
+    "category": "client",
+    "tags": [
+      "arcos-dorados",
+      "connectors",
+      "databricks",
+      "prospect"
+    ],
+    "who": "Alfonso Urien — #intent-one (tagging you and Tobie)",
+    "when": "Fri 28 Aug, 14:02",
+    "ask": "“We have just had a meeting with Arcos Dorados. They would connect IntentOne with their Databricks. How quick would it be to connect with their Databricks. Is it something plug&play? Could we arrange a call next week to chat about it?”",
+    "context": "Arcos Dorados (McDonald's LatAm franchisee) is a live prospect out of Alfonso's Argentina push. Lewis has half-picked it up (“there are some questions I can take you through, ideally through a technical conversation with Arcos D first”) but the product answer on Databricks is yours: the Nexus source tiles exist, Databricks-native is the other platform path, and the honest position is ‘configuration, not plug-and-play’ until Connectors testing on the MTN 1M-profile set lands this week. Tobie has not replied either.",
+    "link": "https://intent.slack.com/archives/C096PLD9MU2/p1787922121719279",
+    "draft": "Alfonso — great news, and sorry for the delay, I was on leave.\n\nShort answer: connecting to Databricks is a configuration job, not plug-and-play yet. A few things decide how quick it is:\n• What is in their Databricks? If it is CRM / transactions at customer level, we are in luck as that is exactly what the Connectors work is being tested on this week.\n• Do they want us to read from Databricks (we pull) or push into IntentOne? Reading is the faster path.\n• Do they have an Edge/app footprint they would add later, or is this data-only?\n\nHappy to do a call this week. If Lewis has already lined up a technical conversation with them, we are in luck as I would rather join that than run a second one. @Tobie can you join too so we cover infra questions in one go.\n\nHope that helps."
+  },
+  {
+    "title": "EE shadow deployment: Roberto needs committed engineering time from you + Tobie",
+    "category": "client",
+    "tags": [
+      "ee",
+      "deployment",
+      "engineering",
+      "deadline"
+    ],
+    "who": "Roberto Rocha — #ee-intentone-deploy",
+    "when": "Wed 26 Aug, 16:15",
+    "due": "Gate Mon 14 Sep (EE's 14-day notice before the 15 Sep break clause)",
+    "ask": "“Six questions we need answered this week, owners tagged… 2. Do we get dedicated engineering time? Tobie + Shafeeq — Vital we secure some committed time from Engineering around the OpenRouter options.” Plus: “Would appreciate feedback on whether any component is unachievable so we can work around it sooner rather than later.”",
+    "context": "Roberto has the EE IntentOne shadow deployment planned back from the 14 Sep gate (Nexus One in our SA AWS account, model serving in-region). Friday's session with Amer (Nexus) went well and Nexus's own LLM router may close the OpenRouter-vs-direct-keys question, so the ask has narrowed to: who from engineering is on this for the next two weeks. Tobie has engaged (nominated Yogesh for the Tuesday session); you have not replied. Prathna owns the go/no-go success criteria and is asking whether we pull in CRM data or stay like-for-like — which is your call as much as hers.",
+    "link": "https://intent.slack.com/archives/C0BSCT5RS6Q/p1787757306025909",
+    "draft": "Roberto — thanks for pulling this into one place, and for the Amer session update. Answering Q2 and the ‘anything unachievable’ question:\n\n• Engineering time: @Tobie and I will name one engineer as the IntentOne-side owner for the next two weeks. If Nexus's in-region router does what Amer described, we are in luck as the OpenRouter question mostly disappears and the work is ingestion + config. If it does not, I will prioritise getting a second person on the routing piece.\n• Scope: like-for-like on the current deployment first. Adding CRM data is the right showcase but not before the 14 Sep gate — let's put it in as phase 2 so it does not put the gate at risk.\n• Success criteria: @Prathna, let's define the baseline together this week so we know what ‘shadow parity’ means before ingestion starts.\n\nNothing looks unachievable to me on the plan; the risk is people not components.\n\nHope that helps."
+  },
+  {
+    "title": "JL: Beem wants a card-tapping (NFC) microsegment",
+    "category": "client",
+    "tags": [
+      "beem",
+      "edge",
+      "signals",
+      "prospect"
+    ],
+    "who": "Jonathan Lakin — group DM with Albert and Tobie",
+    "when": "Wed 26 Aug, 23:39",
+    "ask": "“want a microsegment on use of card tapping (ie nfc) for contactless devices etc. ie how many times per day has it been used?” — Tobie added in thread: “+ if 3 and more in short short time to indicate payment failure”.",
+    "context": "Straight after the Beem demo (“it went super well — they want to start right away”; JL was working on commercials the next day). Beem is a fintech, so tap-frequency and repeated-tap-as-failed-payment are natural Edge signals for them. Nobody has said whether the SDK captures NFC usage today or whether this is a new signal request; Albert and Tobie have not answered the feasibility question either. You are the product owner for what goes into the signal catalogue, and JL will assume silence means yes.",
+    "link": "https://intent.slack.com/archives/C0BR05PHAHX/p1787783996430749?thread_ts=1787783996.430749&cid=C0BR05PHAHX",
+    "draft": "JL — good one, and Tobie's failed-payment variant is the more valuable of the two.\n\nBefore I commit it to Beem, two questions for @Albert:\n• Does the SDK see NFC/tap events today on both platforms, or only Android? If it does, we are in luck as this is a new insight on an existing signal and can be in the catalogue quickly.\n• If not, what does capturing it need (a new permission, an OS restriction)? iOS is the likely blocker.\n\nIf it is capturable, I will prioritise two microsegments: daily tap frequency, and repeated taps in a short window as a failed-payment proxy. If it is not, I would rather tell Beem now than have it appear in the commercials.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -858,9 +907,9 @@ const ITEMS = [
     "when": "Fri 21 Aug, 21:24",
     "due": "Last offered slot: today 5pm",
     "ask": "“Do any of the following times work for you for our kickoff call (all in BST): Tuesday 8/25: 3pm, 5:30pm. Wednesday 8/26: 5pm. Also happy to provide more days and times if needed” — tagging you, George Beard and Jason Cornock.",
-    "context": "Orb is the new billing platform (the Orb | Adyen stack George has been contracting). The CS team introduced themselves Friday evening and nobody from our side has replied — the earliest option is tomorrow afternoon, so silence today costs the week. Cheap to answer: one message locks the kickoff.",
+    "context": "Orb is the new billing platform (the Orb | Adyen stack George has been contracting). Paige's proposed slots (25–26 Aug) have all passed and nobody from our side has replied in the channel — the kickoff has not been booked. One message offering new dates closes it; if George Beard or Jason has already spoken to Orb offline, just say so in the channel so Paige is not left hanging.",
     "link": "https://intent.slack.com/archives/C0BD45VMWBY/p1787343866500979",
-    "draft": "Thanks Paige — Tuesday 3pm BST works for me.\n\n• @George / @Jason — can one of you confirm 3pm works your side too? If we are all free, we are in luck as we can lock it in and Paige can send the invite. If not, I will prioritise Wednesday 5pm as the fallback so we do not lose the week.\n• Paige — ahead of the call, could you send over your standard onboarding checklist so we know what decisions you will need from us on day one?\n\nHope that helps."
+    "draft": "Hi Paige — apologies for the silence, I was on leave last week. Those slots have passed, so a few fresh options (all BST):\n• Wed 3 Sep: 3pm or 5pm\n• Thu 4 Sep: 3pm\n\nIf any of those work, we are in luck as @George Beard and @Jason Cornock can both make them. If not, send us two or three that suit you and we will fit round you.\n\nHope that helps."
   },
   {
     "title": "Colin: GTM decision tree — progress chase",
@@ -1007,7 +1056,7 @@ const ITEMS = [
     "who": "Sarah Nelson — group DM (event team)",
     "when": "Mon 24 Aug, 18:15",
     "ask": "“Confirm whether Pratna joins in London or stays remote in South Africa — Shafeeq, checking with her and Conrad” and “Run additional sales enablement sessions ahead of Dragon's Den — JL flagged some confusion in a recent sales meeting on Intent 1 vs Edge positioning — Shafeeq, with JL”",
-    "context": "JL has signed off the 6 Oct event — date locked, agenda approved, Dragon's Den moving to multiple award categories. Your two actions gate Sarah's all-in costing (Pratna's travel is in it, and JL wants total cost before signing off travel spend) and the quality of the Den itself — the IntentOne vs Edge confusion is the same gap the YPF and walkthrough-video threads keep exposing.",
+    "context": "JL has signed off the 6 Oct event. Your two actions gate Sarah's all-in costing (Paulius flagged again on Wed 26 Aug that Prathna's attendance is still not locked in, and JL wants total cost before signing off travel) and the Dragon's Den itself. New wrinkle from Paulius (Fri 28 Aug): Lewis has a strong view that the sales Dragon's Den should not go ahead right now given the organisational changes — so the enablement sessions you own with JL may need reframing before they are scheduled. Also worth noting your own SA trip has been cancelled, so the Prathna conversation is a call, not a coffee.",
     "link": "https://intent.slack.com/archives/C0BSBNKQY1Y/p1787591735028549",
     "draft": "Thanks Sarah — great news on JL backing it. My two:\n\n• Pratna: checking with her and @Conrad today, will confirm London vs remote by Wednesday so your costing is not waiting on me.\n• Sales enablement: agreed, and JL has raised the same confusion with me directly. I will propose two short sessions ahead of Dragon's Den — one on IntentOne vs Edge positioning, one on working with opportunities — and lock dates with JL in our next 1-2-1.\n\nHope that helps."
   },
@@ -1018,15 +1067,16 @@ const ITEMS = [
       "finance",
       "approval",
       "quick",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Clare Edwards — DM",
     "when": "Wed 26 Aug, 09:58",
-    "due": "Payment due Thu 27",
-    "ask": "“Good morning Shafeeq, Can you please approve Dipak Vadera invoice as the payment is due tomorrow? Thanks”",
+    "ask": "Handled — you replied “done” to Clare at 11:11 on Wed 26 Aug; Dipak's invoice was approved before the payment run.",
     "context": "The Approvalmax step so Clare can pay Dipak on time — you approved his proposal and extension last week, so this is the money catching up with the decision. You are at Lost Village Wed–Mon; if it is not done from your phone today it misses tomorrow's payment run.",
     "link": "https://intent.slack.com/archives/D0A359U01HT/p1787734736482459",
-    "draft": "Morning Clare — approving now in Approvalmax.\n\n• If anything blocks it my side (approval chain or login while I am away), I will tell you by midday so you can reroute rather than miss tomorrow's run.\n\nHope that helps."
+    "draft": "Morning Clare — approving now in Approvalmax.\n\n• If anything blocks it my side (approval chain or login while I am away), I will tell you by midday so you can reroute rather than miss tomorrow's run.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Sam: one-click Friday off in Bob",
@@ -1034,14 +1084,16 @@ const ITEMS = [
     "tags": [
       "people",
       "approval",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Sam Rayner — DM",
     "when": "Wed 26 Aug, 09:38",
-    "ask": "“can you approve my friday off in bob please when you get a chance. should be one click in bobslack channell”",
+    "ask": "Handled — you replied “Done x” to Sam at 11:08 on Wed 26 Aug; the Friday-off request is approved in Bob.",
     "context": "Thirty-second job from your phone. You booked the Barcelona flights together yesterday (Weds out, Friday back) and Sam already told Laura he is off Friday — this is just the formal Bob approval so the records match.",
     "link": "https://intent.slack.com/archives/D0ARET4GTB6/p1787733532534469",
-    "draft": "Done — approved in Bob. Enjoy Friday, you have earned it after this sprint."
+    "draft": "Done — approved in Bob. Enjoy Friday, you have earned it after this sprint.",
+    "done": true
   },
   {
     "title": "Fred: health-provider field + DPIA evidence run",
@@ -1054,7 +1106,7 @@ const ITEMS = [
     "who": "Fred Oberholzer — DM",
     "when": "Tue 25 Aug, 12:53",
     "ask": "“I also wanted to touch on the health-provider field. It's the one field in the warehouse that's arguably special category data… I suggest we switch it off. Can you confirm (a) nothing downstream consumes it, and (b) who actions that config change?” He also asked you to run a workspace-evidence prompt in your Claude for the mid-market DPIA.",
-    "context": "Follow-on from your two-flavours exchange (Edge-only vs Edge+CRM via shared hash IDs) — he called the health-provider field the single biggest legal risk in the whole picture. The evidence prompt covers SDK app-lexicon configurability, change control and retention. Adi and Albert are the ones who can actually answer the consumption and config questions; the exec-level two-flavours decision he wants is a separate, bigger conversation with JL.",
+    "context": "You replied “agree on two flavours” ten minutes after Fred's message, but the health-provider field question (does anything consume it, who flips the config) and the workspace-evidence prompt are still unanswered — and he called that field the single biggest legal risk in the whole picture. Adi and Albert are the ones who can actually answer (a) and (b); the exec-level two-flavours decision he wants is a separate, bigger conversation with JL. A short reply delegating (a)/(b) and confirming when you will run the prompt is enough to move it.",
     "link": "https://intent.slack.com/archives/D0BRLTGR8SD/p1787658791248619",
     "draft": "Fred — on the health-provider field:\n\n• I support switching it off. @Adi / @Albert — can you confirm (a) nothing downstream reads it (dashboards, exports, scheduled jobs) and (b) whose config change it is? If nothing consumes it, we are in luck as it is a low-risk switch-off and we do it this week. If something does, I will prioritise finding out why before we pull it.\n• The evidence run for the DPIA: I will run it when I am back Monday and send you the output — flagging now so you are not waiting on silence.\n• The two-flavours decision: agree it needs exec sign-off, not a DM. I will put it on the agenda with JL — the marketing claim gets corrected to whatever we decide, not the other way round.\n\nSame principle as the AIS permissions wording: if we would not defend it in front of a regulator, it does not ship.\n\nHope that helps."
   },
@@ -1064,14 +1116,78 @@ const ITEMS = [
     "tags": [
       "mid-market",
       "gtm",
-      "review"
+      "review",
+      "sent"
     ],
     "who": "Colin White & Dipak Vadera — group DM",
     "when": "Tue 25 Aug, 12:59",
-    "ask": "“V2 of the landing page for mid-market. Let me have your feedback.” Chased before your leave: “any feedback before you head to LostVillage? Otherwise we will move forward on this basis.” Dipak also asked you to look at the account segmentation decision tree on Miro (you are invited as editor).",
+    "ask": "Handled — you replied in the group DM this morning (Tue 1 Sep, 09:56): asked Dipak to extract the decision-tree outcomes as bullets so you can fold them into the ‘qualify’ section of the Product Hub.",
     "context": "Colin has given himself a fallback — they move forward without you, and it is a digital asset they can update later — so this is a fast-pass job, not a blocker. The decision tree is your own action from the JL decisioning review that Dipak has now built a version of; launch is Mon 1 Sept. A quick steer from your phone beats a perfect pass next week.",
     "link": "https://intent.slack.com/archives/C0BNVQRN0LU/p1787659159031739",
-    "draft": "Colin, Dipak — quick pass from the festival queue:\n\n• Landing page: move forward on this basis — do not wait on me for launch. Two checks as you finalise: the hero leads with signals and insights (not the orchestration UI), and nothing on the page claims a capability still in flight — same discipline as the roadmap.\n• Decision tree: Dipak, good build. One test before it goes near a prospect: run the Revolut-style case through it (high margin, low profile count) and make sure it routes to red-box/enterprise, not mid-market — that is exactly the case JL pushed on. If it routes right, we are in luck and I will do a fuller pass Monday. If it does not, park that branch until I am back.\n\nHope that helps."
+    "draft": "Colin, Dipak — quick pass from the festival queue:\n\n• Landing page: move forward on this basis — do not wait on me for launch. Two checks as you finalise: the hero leads with signals and insights (not the orchestration UI), and nothing on the page claims a capability still in flight — same discipline as the roadmap.\n• Decision tree: Dipak, good build. One test before it goes near a prospect: run the Revolut-style case through it (high margin, low profile count) and make sure it routes to red-box/enterprise, not mid-market — that is exactly the case JL pushed on. If it routes right, we are in luck and I will do a fuller pass Monday. If it does not, park that branch until I am back.\n\nHope that helps.",
+    "done": true
+  },
+  {
+    "title": "Adam: Searce call TODAY 10:30 — plus the pricing form Searce say is outstanding",
+    "category": "internal",
+    "tags": [
+      "searce",
+      "gcp-marketplace",
+      "deadline",
+      "quick"
+    ],
+    "who": "Adam Wilson — DM (and #p-searce_gcp_bt thread)",
+    "when": "Thu 27 Aug, 11:13",
+    "due": "Today Tue 1 Sep, 10:30",
+    "ask": "“We really need your IntentOne product knowledge at the Searce call next Tuesday at 10:30 please. I've forwarded on the invite to you and it's crucial you are there please — it looks like you are free for the first 30 mins, but let me know if you can't make that time.” Separately in #p-searce_gcp_bt (Wed 26 Aug): “Searce have said the pricing form is still outstanding and urgently required. Have you been working on this with Iwona Jordan? Where can we find this information and is it near completion?”",
+    "context": "Google Cloud Marketplace onboarding via Searce. Adam's thread (https://intent.slack.com/archives/C0B870Z9G13/p1787739944999899) had Google's clarification questions due ‘end of tomorrow’ and Tom going on leave, so time was already tight before your week off. You have not replied to either message. The call is in the next half hour; a one-line ‘on it, joining’ plus a pointer on where the pricing form sits (or that Iwona owns it) is all that is needed.",
+    "link": "https://intent.slack.com/archives/D09KUEGMPR7/p1787825635958879",
+    "draft": "Adam — back today and I will be on the 10:30, first 30 mins.\n\nOn the pricing form:\n• I have not been working on it with Iwona, so if Searce are waiting on it we should not assume it is in progress. @Iwona can you confirm where it sits?\n• If it needs product input (tiers, what is metered), we are in luck as the 45-day trial work has already defined that — I can turn it round today. If it is commercial pricing, that is @Lewis / JL rather than me.\n\nHope that helps."
+  },
+  {
+    "title": "Martyna: HiBob peer feedback for Andy, Ben and Lidor",
+    "category": "internal",
+    "tags": [
+      "people",
+      "hibob",
+      "quick"
+    ],
+    "who": "Martyna Jaskowiak — DM (on behalf of Sharifah)",
+    "when": "Tue 1 Sep, 06:54",
+    "ask": "“Please could you complete the peer feedback in HiBob? You should have requests for Andy, Ben and Lidor. Just as a reminder, your feedback won't be visible to them directly, it will only be visible to Sharifah.”",
+    "context": "Sharifah is running the review cycle and this is a nudge, so the requests have probably been sitting since before your leave. Lidor's is the one with weight — Lisa's group DM is finalising her expanded Israel office leadership remit this week (see the Lisa card), so your feedback lands into a live decision. Fifteen minutes in Bob; no Slack reply strictly needed, but Martyna will chase again if nothing moves.",
+    "link": "https://intent.slack.com/archives/D09MH2L443U/p1788242063194489",
+    "draft": "Thanks Martyna — back today, will get all three done by end of tomorrow. Production went well, thank you for asking!"
+  },
+  {
+    "title": "Lisa: thumbs up/down on Lidor's Israel office leadership remit",
+    "category": "internal",
+    "tags": [
+      "people",
+      "lidor",
+      "decision",
+      "quick"
+    ],
+    "who": "Lisa Bolsover — group DM with Lawrence, Sharifah, Tobie",
+    "when": "Fri 28 Aug, 16:01",
+    "ask": "“Please give a 👍 or 👎 … it seems there is broad support for Lidor to take this on. I've drafted below what I think that looks like, to add to the JD… What do you think? If you agree, I'll get this all finalised.”",
+    "context": "Lisa has landed the debate (Tobie preferred a General Manager but backs Lidor 100%; Lisa says the org cannot carry a GM overhead now). Sharifah has given her 👍 and will take the details 1:1; you and Lawrence have not reacted. The proposed remit is ‘Local Office Leadership’ — on-the-ground decisions, translating strategy locally, representing Israel back to SLT, morale — with a three-month review. Lidor already reports to you on Client Success Hub work, so the only thing worth adding is whether this eats into that.",
+    "link": "https://intent.slack.com/archives/C0BRW0J1ZJB/p1787929319378309",
+    "draft": "👍 from me Lisa — Lidor is the right person and the remit reads well.\n\nOne addition: Lidor is also carrying the IntentOne Client Success Hub for me, which will grow as the first mid-market customers land. If the local-leadership piece stays at the level you describe (voice and escalation, not admin), we are in luck as the two fit together. If it starts to pull real hours, I would rather we know at the three-month review than find out through the CS work slipping. Happy to be part of that review.\n\nHope that helps."
+  },
+  {
+    "title": "Elle: 19 Ninjio security trainings outstanding",
+    "category": "internal",
+    "tags": [
+      "compliance",
+      "admin"
+    ],
+    "who": "Elle St George-McKenzie — DM",
+    "when": "Thu 27 Aug, 14:15",
+    "ask": "“Quick reminder to please complete any outstanding Ninjio security awareness training as soon as you can. Thanks! P.s You have 19 outstanding 😄”",
+    "context": "Nineteen is the whole backlog since you joined, and the Ninjio bot is now nudging you three times a day. Each episode is a few minutes; this is a block-an-hour job, not a reply. Worth doing before the ISO/DPIA conversations with Fred make ‘VP Product has not done security training’ an awkward line.",
+    "link": "https://intent.slack.com/archives/D0AQDDZV9U4/p1787836553314749",
+    "draft": "Thanks Elle — back from leave today, will chip through them this week."
   }
 ];
 /* ITEMS:END */
