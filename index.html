@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 1 Sep, 10:06 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 3 Sep, 10:09 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -443,7 +443,7 @@ const ITEMS = [
     "who": "Alfonso Urien — #intent-one (tagging you and Tobie)",
     "when": "Fri 28 Aug, 14:02",
     "ask": "“We have just had a meeting with Arcos Dorados. They would connect IntentOne with their Databricks. How quick would it be to connect with their Databricks. Is it something plug&play? Could we arrange a call next week to chat about it?”",
-    "context": "Arcos Dorados (McDonald's LatAm franchisee) is a live prospect out of Alfonso's Argentina push. Lewis has half-picked it up (“there are some questions I can take you through, ideally through a technical conversation with Arcos D first”) but the product answer on Databricks is yours: the Nexus source tiles exist, Databricks-native is the other platform path, and the honest position is ‘configuration, not plug-and-play’ until Connectors testing on the MTN 1M-profile set lands this week. Tobie has not replied either.",
+    "context": "Arcos Dorados (McDonald's LatAm franchisee) is a live prospect out of Alfonso's Argentina push. Lewis has half-picked it up (“there are some questions I can take you through, ideally through a technical conversation with Arcos D first”) but the product answer on Databricks is yours: the Nexus source tiles exist, Databricks-native is the other platform path, and the honest position is ‘configuration, not plug-and-play’ until Connectors testing on the MTN 1M-profile set lands this week. Tobie has not replied either. Escalated since: Alfonso raised it again in #sales (Wed 2 Sep) — Arcos are heavy Databricks-on-Azure users, there is a hard window to present to their full marketing team in Lima on 22 Sep, and Marc de Fontenay at Databricks never came back to him. Tobie has still not replied on either thread.",
     "link": "https://intent.slack.com/archives/C096PLD9MU2/p1787922121719279",
     "draft": "Alfonso — great news, and sorry for the delay, I was on leave.\n\nShort answer: connecting to Databricks is a configuration job, not plug-and-play yet. A few things decide how quick it is:\n• What is in their Databricks? If it is CRM / transactions at customer level, we are in luck as that is exactly what the Connectors work is being tested on this week.\n• Do they want us to read from Databricks (we pull) or push into IntentOne? Reading is the faster path.\n• Do they have an Edge/app footprint they would add later, or is this data-only?\n\nHappy to do a call this week. If Lewis has already lined up a technical conversation with them, we are in luck as I would rather join that than run a second one. @Tobie can you join too so we cover infra questions in one go.\n\nHope that helps."
   },
@@ -454,15 +454,16 @@ const ITEMS = [
       "ee",
       "deployment",
       "engineering",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Roberto Rocha — #ee-intentone-deploy",
     "when": "Wed 26 Aug, 16:15",
-    "due": "Gate Mon 14 Sep (EE's 14-day notice before the 15 Sep break clause)",
-    "ask": "“Six questions we need answered this week, owners tagged… 2. Do we get dedicated engineering time? Tobie + Shafeeq — Vital we secure some committed time from Engineering around the OpenRouter options.” Plus: “Would appreciate feedback on whether any component is unachievable so we can work around it sooner rather than later.”",
+    "ask": "Handled — you re-engaged in the channel Tue (pushing Roberto to turn the progress into MTN South Africa migration timelines); Nexus engineers now have the permissions they need and infra is targeted for end of this week. Nidhi’s migrate-page follow-up is its own card.",
     "context": "Roberto has the EE IntentOne shadow deployment planned back from the 14 Sep gate (Nexus One in our SA AWS account, model serving in-region). Friday's session with Amer (Nexus) went well and Nexus's own LLM router may close the OpenRouter-vs-direct-keys question, so the ask has narrowed to: who from engineering is on this for the next two weeks. Tobie has engaged (nominated Yogesh for the Tuesday session); you have not replied. Prathna owns the go/no-go success criteria and is asking whether we pull in CRM data or stay like-for-like — which is your call as much as hers.",
     "link": "https://intent.slack.com/archives/C0BSCT5RS6Q/p1787757306025909",
-    "draft": "Roberto — thanks for pulling this into one place, and for the Amer session update. Answering Q2 and the ‘anything unachievable’ question:\n\n• Engineering time: @Tobie and I will name one engineer as the IntentOne-side owner for the next two weeks. If Nexus's in-region router does what Amer described, we are in luck as the OpenRouter question mostly disappears and the work is ingestion + config. If it does not, I will prioritise getting a second person on the routing piece.\n• Scope: like-for-like on the current deployment first. Adding CRM data is the right showcase but not before the 14 Sep gate — let's put it in as phase 2 so it does not put the gate at risk.\n• Success criteria: @Prathna, let's define the baseline together this week so we know what ‘shadow parity’ means before ingestion starts.\n\nNothing looks unachievable to me on the plan; the risk is people not components.\n\nHope that helps."
+    "draft": "Roberto — thanks for pulling this into one place, and for the Amer session update. Answering Q2 and the ‘anything unachievable’ question:\n\n• Engineering time: @Tobie and I will name one engineer as the IntentOne-side owner for the next two weeks. If Nexus's in-region router does what Amer described, we are in luck as the OpenRouter question mostly disappears and the work is ingestion + config. If it does not, I will prioritise getting a second person on the routing piece.\n• Scope: like-for-like on the current deployment first. Adding CRM data is the right showcase but not before the 14 Sep gate — let's put it in as phase 2 so it does not put the gate at risk.\n• Success criteria: @Prathna, let's define the baseline together this week so we know what ‘shadow parity’ means before ingestion starts.\n\nNothing looks unachievable to me on the plan; the risk is people not components.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "JL: Beem wants a card-tapping (NFC) microsegment",
@@ -479,6 +480,52 @@ const ITEMS = [
     "context": "Straight after the Beem demo (“it went super well — they want to start right away”; JL was working on commercials the next day). Beem is a fintech, so tap-frequency and repeated-tap-as-failed-payment are natural Edge signals for them. Nobody has said whether the SDK captures NFC usage today or whether this is a new signal request; Albert and Tobie have not answered the feasibility question either. You are the product owner for what goes into the signal catalogue, and JL will assume silence means yes.",
     "link": "https://intent.slack.com/archives/C0BR05PHAHX/p1787783996430749?thread_ts=1787783996.430749&cid=C0BR05PHAHX",
     "draft": "JL — good one, and Tobie's failed-payment variant is the more valuable of the two.\n\nBefore I commit it to Beem, two questions for @Albert:\n• Does the SDK see NFC/tap events today on both platforms, or only Android? If it does, we are in luck as this is a new insight on an existing signal and can be in the catalogue quickly.\n• If not, what does capturing it need (a new permission, an OS restriction)? iOS is the likely blocker.\n\nIf it is capturable, I will prioritise two microsegments: daily tap frequency, and repeated taps in a short window as a failed-payment proxy. If it is not, I would rather tell Beem now than have it appear in the commercials.\n\nHope that helps."
+  },
+  {
+    "title": "Beem PAG approval — due Friday EOD",
+    "category": "client",
+    "tags": [
+      "beem",
+      "approval",
+      "deadline"
+    ],
+    "who": "Adam Wilson — #intent-one-presales-beem",
+    "when": "Wed 2 Sep, 16:32",
+    "due": "Due Fri 4 Sep, EOD",
+    "ask": "“Please provide your PAG outcome for the CP-041-Beem Credit Card-IntentOne sales proposal… The Proposal Assurance Gate form to enter your approval outcome can be found here…” Follow-up in thread: “All approvers: I neglected to mention the deadline - please complete this by end of day Fri 04-Sep-26.”",
+    "context": "The Beem deal moving to paper after the demo JL called a big win. Kipp says he used a modified version of your 45-day trial structure for this proposal. Two live wrinkles worth checking before you approve: the NFC microsegment JL floated to Beem is still unconfirmed with Albert (its card is open), and you said Wed that JL appears to have promised Beem MCP access that is not ready until Q4 — make sure the proposal does not commit to either.",
+    "link": "https://intent.slack.com/archives/C0BTAPAMDNG/p1788363131876389",
+    "draft": "Thanks Adam — I will have my PAG outcome in before Friday EOD.\n\nTwo checks before I approve, flagging early rather than sitting on the form:\n• @Kipp — you mentioned this adapts my 45-day trial structure. Can you point me at the sections that changed from the standard shape so I review the deltas rather than the whole doc? If it stays within what is shipped or landing this month, we are in luck as I can approve straight through.\n• Does the proposal promise MCP/agent access or the NFC microsegments anywhere? MCP is Q4 at the earliest and the NFC signal is still unconfirmed with @Albert — I would rather caveat both now than walk them back with Beem later.\n\nHope that helps."
+  },
+  {
+    "title": "Nidhi: migrate page wrong for EasyEquities",
+    "category": "client",
+    "tags": [
+      "easyequities",
+      "migration",
+      "quick"
+    ],
+    "who": "Nidhi Sharma — #ee-intentone-deploy",
+    "when": "Wed 2 Sep, 15:59",
+    "ask": "“intentonepathtovalue1.vercel.app/#migrate needs to be updated for Easy equities, it does not state reality the way I read it.”",
+    "context": "The migrate section of your own path-to-value site — drafted around the YPF plan and now out of step with the EasyEquities shadow deployment, which is moving fast (Nexus engineers have permissions, infra targeted end of this week, 14 Sep gate). Sharifah also asked you Tue to check the SA environment’s impact on EE timings, so more people will read this page against reality soon. Worth finding out exactly what Nidhi thinks it misstates before editing.",
+    "link": "https://intent.slack.com/archives/C0BSCT5RS6Q/p1788361142941639",
+    "draft": "Thanks Nidhi — I would rather fix it now than let the page drift from reality.\n\n• Can you give me the two or three specific points where it does not match how you read the EasyEquities plan? If it is sequencing and timing, we are in luck as I can update the page today. If it is a scope disagreement about what the shadow deployment actually delivers, I will prioritise a quick call with you and @Roberto so the page reflects one agreed plan rather than my best guess.\n• Guiding principle: the page should track the 14 Sep gate plan, not aspiration — same discipline as the roadmap.\n\nHope that helps."
+  },
+  {
+    "title": "Ben: plug new MTN Nigeria goals into the workspace",
+    "category": "client",
+    "tags": [
+      "mtn",
+      "goals",
+      "delegate"
+    ],
+    "who": "Ben Marnan — DM",
+    "when": "Wed 2 Sep, 16:13",
+    "ask": "“I’ve been working on redefining the Business outcome titles, goal groups and goal definitions for MTN Nigeria — please see the spreadsheet… Please could you or one of your lovely team plug these in to the new MTN Nigeria workspace?”",
+    "context": "Consolidated in the final tab of his sheet; one goal is highlighted yellow because the enabling data does not exist yet. Timing matters: the MTN Nigeria workspace was just refreshed with the latest indices and features, and you are mid-flight getting Ovashen (MTN Group) external access to it — better the new goals are in before the client looks. Cleanly delegable to Sam or Luca.",
+    "link": "https://intent.slack.com/archives/D09L7SQD16U/p1788362000566009",
+    "draft": "Ben — this is exactly the groundwork the workspace needs, thank you.\n\n• Yes, we will plug them in. @Sam — can you take the final tab of Ben’s sheet and load the business outcome titles, goal groups and definitions into the new MTN Nigeria workspace?\n• The yellow-highlighted goal with no enabling data yet: include it but label it honestly rather than leave it out — it shows MTN where the data roadmap is going.\n• If the definitions map cleanly onto our goals model, we are in luck as this is a same-day job. If any need restructuring, I will prioritise a 15-minute pass with you first so we do not mangle your intent.\n\nGood timing too — I want these in before Ovashen gets his access.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1134,15 +1181,16 @@ const ITEMS = [
       "searce",
       "gcp-marketplace",
       "deadline",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Adam Wilson — DM (and #p-searce_gcp_bt thread)",
     "when": "Thu 27 Aug, 11:13",
-    "due": "Today Tue 1 Sep, 10:30",
-    "ask": "“We really need your IntentOne product knowledge at the Searce call next Tuesday at 10:30 please. I've forwarded on the invite to you and it's crucial you are there please — it looks like you are free for the first 30 mins, but let me know if you can't make that time.” Separately in #p-searce_gcp_bt (Wed 26 Aug): “Searce have said the pricing form is still outstanding and urgently required. Have you been working on this with Iwona Jordan? Where can we find this information and is it near completion?”",
+    "ask": "Handled — you replied to Adam and have been active on Searce since (Google replied Tue; GCP EULA terms landed with Thomas on Thu). Satheesh’s solution-validation session is its own card.",
     "context": "Google Cloud Marketplace onboarding via Searce. Adam's thread (https://intent.slack.com/archives/C0B870Z9G13/p1787739944999899) had Google's clarification questions due ‘end of tomorrow’ and Tom going on leave, so time was already tight before your week off. You have not replied to either message. The call is in the next half hour; a one-line ‘on it, joining’ plus a pointer on where the pricing form sits (or that Iwona owns it) is all that is needed.",
     "link": "https://intent.slack.com/archives/D09KUEGMPR7/p1787825635958879",
-    "draft": "Adam — back today and I will be on the 10:30, first 30 mins.\n\nOn the pricing form:\n• I have not been working on it with Iwona, so if Searce are waiting on it we should not assume it is in progress. @Iwona can you confirm where it sits?\n• If it needs product input (tiers, what is metered), we are in luck as the 45-day trial work has already defined that — I can turn it round today. If it is commercial pricing, that is @Lewis / JL rather than me.\n\nHope that helps."
+    "draft": "Adam — back today and I will be on the 10:30, first 30 mins.\n\nOn the pricing form:\n• I have not been working on it with Iwona, so if Searce are waiting on it we should not assume it is in progress. @Iwona can you confirm where it sits?\n• If it needs product input (tiers, what is metered), we are in luck as the 45-day trial work has already defined that — I can turn it round today. If it is commercial pricing, that is @Lewis / JL rather than me.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Martyna: HiBob peer feedback for Andy, Ben and Lidor",
@@ -1188,6 +1236,21 @@ const ITEMS = [
     "context": "Nineteen is the whole backlog since you joined, and the Ninjio bot is now nudging you three times a day. Each episode is a few minutes; this is a block-an-hour job, not a reply. Worth doing before the ISO/DPIA conversations with Fred make ‘VP Product has not done security training’ an awkward line.",
     "link": "https://intent.slack.com/archives/D0AQDDZV9U4/p1787836553314749",
     "draft": "Thanks Elle — back from leave today, will chip through them this week."
+  },
+  {
+    "title": "Searce: book the solution-validation working session",
+    "category": "internal",
+    "tags": [
+      "searce",
+      "gcp-marketplace",
+      "scheduling"
+    ],
+    "who": "Satheesh Thangadhurai — #external-intenthq-searce",
+    "when": "Wed 2 Sep, 14:53",
+    "ask": "“The GCP infrastructure diagram and the pricing calculator are ready. If you have any free time today, we can have a working session to complete the solution validation form.” — tagging you, Tom Reeve and Adam Wilson.",
+    "context": "GCP Marketplace onboarding. The diagram and pricing calculator are done, so the validation form is the remaining gate — and nobody from our side has offered a slot since Wednesday. Tom shared the AWS network diagram and Google has replied to the clarification questions, so the inputs exist; this is now a scheduling problem. Adam usually drives Searce, so one message offering times (or delegating to Adam) closes it.",
+    "link": "https://intent.slack.com/archives/C0BFETMR64C/p1788357234475269",
+    "draft": "Hi Satheesh — thanks for getting the diagram and pricing calculator over the line.\n\n• @Adam — can you propose a 45-minute slot for the working session this week? I can flex around you both.\n• So we use the time well: Satheesh, can you share the solution validation form ahead of the call? We will pre-fill what we can and only work the open questions live.\n• If the form mostly needs infra answers, we are in luck as Tom’s diagram covers it. If it needs product and pricing input, I will bring the trial metering work so we answer it once, properly.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
