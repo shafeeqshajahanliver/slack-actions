@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Fri 4 Sep, 10:07 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 7 Sep, 10:06 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -487,12 +487,13 @@ const ITEMS = [
     "tags": [
       "beem",
       "approval",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Adam Wilson — #intent-one-presales-beem",
     "when": "Wed 2 Sep, 16:32",
-    "due": "Due Fri 4 Sep, EOD",
-    "ask": "“Please provide your PAG outcome for the CP-041-Beem Credit Card-IntentOne sales proposal… The Proposal Assurance Gate form to enter your approval outcome can be found here…” Follow-up in thread: “All approvers: I neglected to mention the deadline - please complete this by end of day Fri 04-Sep-26.”",
+    "ask": "Handled — your PAG outcome went in before the Friday deadline (all approvals received Fri evening; initial overall outcome Rejected). JL and Kipp then resolved the open comments — including your MCP-wording flag — and JL had Kipp send the proposal to Beem on Saturday.",
+    "done": true,
     "context": "The Beem deal moving to paper after the demo JL called a big win. Kipp says he used a modified version of your 45-day trial structure for this proposal. Two live wrinkles worth checking before you approve: the NFC microsegment JL floated to Beem is still unconfirmed with Albert (its card is open), and you said Wed that JL appears to have promised Beem MCP access that is not ready until Q4 — make sure the proposal does not commit to either.",
     "link": "https://intent.slack.com/archives/C0BTAPAMDNG/p1788363131876389",
     "draft": "Thanks Adam — I will have my PAG outcome in before Friday EOD.\n\nTwo checks before I approve, flagging early rather than sitting on the form:\n• @Kipp — you mentioned this adapts my 45-day trial structure. Can you point me at the sections that changed from the standard shape so I review the deltas rather than the whole doc? If it stays within what is shipped or landing this month, we are in luck as I can approve straight through.\n• Does the proposal promise MCP/agent access or the NFC microsegments anywhere? MCP is Q4 at the earliest and the NFC signal is still unconfirmed with @Albert — I would rather caveat both now than walk them back with Beem later.\n\nHope that helps."
@@ -1261,11 +1262,13 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "pricing",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Adam Wilson — DM",
     "when": "Thu 3 Sep, 10:59",
-    "ask": "“Do you have a link to the pricing stuff you were working on please — Martin wants to go through it to make sure it's aligned with the conversations he's having with BT.”",
+    "ask": "Handled — you sent Adam the pricing sheet link 13 minutes after the ask on Thu morning; he passed it on with thanks (👍🙏).",
+    "done": true,
     "context": "One-link unblock, unanswered since Thursday morning. The commercial pack is assembling around it: Thomas sent you the GCP mid-market EULA the same morning (45-day trial terms in final Privacy/Infosec checks), and Martin is also asking you separately for an iGaming wedge pass — so getting him the pricing shape early keeps his BT conversations from drifting off what you have actually defined.",
     "link": "https://intent.slack.com/archives/D09KUEGMPR7/p1788429581602569",
     "draft": "Adam — yes, link here: [pricing doc link].\n\n• One caveat for Martin: this is the 45-day trial / metering shape, and parts are still moving with the GCP terms Thomas is finalising. Directionally right, not contract-ready.\n• If BT's conversations fit the standard tiers, we are in luck as Martin can use it as-is. If he is being pushed on anything custom (volume, red-box territory), I will prioritise a 20-minute pass with him before he commits language.\n\nHope that helps."
@@ -1298,6 +1301,51 @@ const ITEMS = [
     "context": "Two-line unblock. She needs a routing decision (you take QA to Lawrence directly, or it goes on the leaders weekly agenda), and her “??” means whatever you said just before did not land — leaving both the question and the confusion hanging since Thursday afternoon. QA is live in several places right now (Denis/Applause onboarding, the QA tribe, Sharifah's IntentOne QA feedback), so worth saying which QA you each mean before routing it.",
     "link": "https://intent.slack.com/archives/D0B18U6AZ0F/p1788442909583819",
     "draft": "Sorry Sarah — that last message of mine was half a thought, ignore it.\n\n• On QA: I have not raised it with Lawrence yet. If it is the resourcing/ownership question, we are in luck as I am seeing him this week and can raise it directly — cleaner than a leaders-weekly item. If it is broader process, put it on the leaders weekly agenda and I will back it in the room.\n• Quick check so we route the right thing: which QA are you meaning — the Applause/Denis onboarding, or platform QA generally?\n\nHope that helps."
+  },
+  {
+    "title": "Lewis: edge-activation privacy challenge needs a real answer",
+    "category": "internal",
+    "tags": [
+      "privacy",
+      "edge",
+      "positioning"
+    ],
+    "who": "Lewis Longman-Jones — group DM with Sam",
+    "when": "Sat 5 Sep, 11:16",
+    "ask": "“I don't understand how that maintains the privacy stance. If activated on edge the campaign rule following this logic would have everyone's contact rules for the rule to fire locally.”",
+    "context": "Your Thursday-night reply (“have you asked the copilot?”) did not land, and his challenge is substantive: if on-device activation means shipping everyone's contact rules to every device, the privacy story has a hole. He is mid-build on the against-Huawei local-brands demo (Alex is generating synthetic results for it), so how this gets worded will reach prospects. Same territory you defended on AIS permissions and in Fred's DPIA thread — worth an answer that would survive a regulator, not a deflection.",
+    "link": "https://intent.slack.com/archives/C0BT5M57WTV/p1788603397407249?thread_ts=1788559080.275539&cid=C0BT5M57WTV",
+    "draft": "Lewis — fair push, and you deserve a better answer than ‘ask the copilot’.\n\n• You are right that naively shipping every customer's contact rules to every device would break the stance. That is not the design we should ever describe: the rule logic can be broadcast, but evaluation has to happen against that user's own local signals only — nothing about anyone else on the device.\n• @Adi — can you confirm exactly what an edge-activated campaign ships to the device today: the rule definition only, or anything derived from other users? That answer decides the wording.\n• If evaluation is purely local, we are in luck as the privacy story holds and I will write it down properly so your demo and the Huawei comparison use language we can defend. If anything cross-user reaches the device, I will prioritise fixing how we pitch it before it goes near a prospect — same discipline as the AIS permissions wording.\n\nHope that helps."
+  },
+  {
+    "title": "Sangram: second nudge for a slot to chat",
+    "category": "internal",
+    "tags": [
+      "intentai",
+      "scheduling",
+      "quick"
+    ],
+    "who": "Sangram Reddy — DM",
+    "when": "Mon 7 Sep, 09:18",
+    "ask": "“Hey Shaf, Morning! Let me know when you are free to chat!” — following Thursday's “call me when free today”, which went unanswered.",
+    "context": "Second nudge on the same thread since Thursday. Most likely IntentAI — he is running the AI Research Engineer hiring with you in the interview loop and you two have been pairing on the roadmap and SDK planning. Thirty seconds to offer a slot, and worth doing before your Africa trip next week eats the diary.",
+    "link": "https://intent.slack.com/archives/D09JYB07N5D/p1788769099310509?thread_ts=1788441456.099539&cid=D09JYB07N5D",
+    "draft": "Morning! Sorry — Thursday ran away from me.\n\n• I can do late morning or after 4 today — grab whichever works and call me then.\n• One line on what it is about so I come prepared? If it is IntentAI sequencing or the hiring loop, we are in luck as I have the latest thinking ready. If it is something new, I will prioritise proper time for it rather than squeeze it — I am in Africa next week so this week is the window.\n\nHope that helps."
+  },
+  {
+    "title": "Manuel: confirm which team he joins this week",
+    "category": "internal",
+    "tags": [
+      "team",
+      "enrichments",
+      "quick"
+    ],
+    "who": "Manuel Fidalgo — group DM with Albert and Luca",
+    "when": "Mon 7 Sep, 09:32",
+    "ask": "“Which team should I spend this week with? - I guess data ingestion and enrichments but I just wanted to confirm first 🙏”",
+    "context": "His guess matches where the pull is: you told Adam's risk bot this morning that enrichment ownership (RI-373) sits with you and the data-ingestion-enrichments pod, and Manuel is already helping Alfonso get the Arcos Dorados synthetic data into Databricks/UC. Cheap confirm — a day of him idling on the wrong team costs more than the ten seconds this takes. Albert and Luca are in the DM if logistics need settling.",
+    "link": "https://intent.slack.com/archives/C0C01BGR0KC/p1788769960993499",
+    "draft": "Morning Manuel! Yes — data ingestion and enrichments is the right call this week.\n\n• It is where the live pull is: the enrichment ownership work (RI-373) lands with me and that pod, and your Arcos Dorados Databricks work sits right on top of it — keep going with Alfonso on that.\n• @Albert — anything on your side that should trump this for the week? If not, we are in luck as Manuel carries straight on. If there is, I will prioritise a quick reshuffle rather than have him split badly across two teams.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
