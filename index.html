@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 7 Sep, 10:06 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 8 Sep, 10:07 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -438,11 +438,13 @@ const ITEMS = [
       "arcos-dorados",
       "connectors",
       "databricks",
-      "prospect"
+      "prospect",
+      "sent"
     ],
     "who": "Alfonso Urien — #intent-one (tagging you and Tobie)",
     "when": "Fri 28 Aug, 14:02",
-    "ask": "“We have just had a meeting with Arcos Dorados. They would connect IntentOne with their Databricks. How quick would it be to connect with their Databricks. Is it something plug&play? Could we arrange a call next week to chat about it?”",
+    "ask": "Handled — moved into delivery: you, Alfonso and Manuel are working it in your group DM (you pulled the Arcos request into Monday's ingestion-pod planning, and Alfonso's synthetic data is now in UC). His live follow-up is its own card.",
+    "done": true,
     "context": "Arcos Dorados (McDonald's LatAm franchisee) is a live prospect out of Alfonso's Argentina push. Lewis has half-picked it up (“there are some questions I can take you through, ideally through a technical conversation with Arcos D first”) but the product answer on Databricks is yours: the Nexus source tiles exist, Databricks-native is the other platform path, and the honest position is ‘configuration, not plug-and-play’ until Connectors testing on the MTN 1M-profile set lands this week. Tobie has not replied either. Escalated since: Alfonso raised it again in #sales (Wed 2 Sep) — Arcos are heavy Databricks-on-Azure users, there is a hard window to present to their full marketing team in Lima on 22 Sep, and Marc de Fontenay at Databricks never came back to him. Tobie has still not replied on either thread.",
     "link": "https://intent.slack.com/archives/C096PLD9MU2/p1787922121719279",
     "draft": "Alfonso — great news, and sorry for the delay, I was on leave.\n\nShort answer: connecting to Databricks is a configuration job, not plug-and-play yet. A few things decide how quick it is:\n• What is in their Databricks? If it is CRM / transactions at customer level, we are in luck as that is exactly what the Connectors work is being tested on this week.\n• Do they want us to read from Databricks (we pull) or push into IntentOne? Reading is the faster path.\n• Do they have an Edge/app footprint they would add later, or is this data-only?\n\nHappy to do a call this week. If Lewis has already lined up a technical conversation with them, we are in luck as I would rather join that than run a second one. @Tobie can you join too so we cover infra questions in one go.\n\nHope that helps."
@@ -529,6 +531,21 @@ const ITEMS = [
     "context": "Consolidated in the final tab of his sheet; one goal is highlighted yellow because the enabling data does not exist yet. Timing matters: the MTN Nigeria workspace was just refreshed with the latest indices and features, and you are mid-flight getting Ovashen (MTN Group) external access to it — better the new goals are in before the client looks. Cleanly delegable to Sam or Luca.",
     "link": "https://intent.slack.com/archives/D09L7SQD16U/p1788362000566009",
     "draft": "Ben — this is exactly the groundwork the workspace needs, thank you.\n\n• Yes, we will plug them in. @Sam — can you take the final tab of Ben’s sheet and load the business outcome titles, goal groups and definitions into the new MTN Nigeria workspace?\n• The yellow-highlighted goal with no enabling data yet: include it but label it honestly rather than leave it out — it shows MTN where the data roadmap is going.\n• If the definitions map cleanly onto our goals model, we are in luck as this is a same-day job. If any need restructuring, I will prioritise a 15-minute pass with you first so we do not mangle your intent.\n\nGood timing too — I want these in before Ovashen gets his access.\n\nHope that helps."
+  },
+  {
+    "title": "Alfonso: Arcos demo — confirm timing + ingestion shape",
+    "category": "client",
+    "tags": [
+      "arcos-dorados",
+      "demo",
+      "databricks"
+    ],
+    "who": "Alfonso Urien — group DM with Manuel",
+    "when": "Mon 7 Sep, 11:59",
+    "ask": "“How does the data ingestion work? I generated the separated datasets that are linked to each other using keys. Does Intent One ingest them separately or you need me to generate a single dataset with all the data?” — and on your ‘end of week ok?’: “If possible. We need to generate the slide for Diego to present to the whole of the marketing ecosystem at Arcos Dorado on the benefits of IntentOne… and how easy it is to connect it with their Databricks UC, and demo him IntentOne with synthetic CRM and transactional data.”",
+    "context": "The Arcos work is moving fast: Alfonso got the synthetic data into UC on Monday (ihq_eu_prod_demo_retail.arcos_dorados_synthetic) and says he can rework tables himself quickly. Two things have been waiting on you since Monday lunchtime — the ingestion shape (separate keyed tables vs one merged dataset) and a firm yes on end-of-week for the Diego slide + demo. The Lima presentation to Arcos' full marketing team (22 Sep) is the hard backstop, and you fly to Africa Wednesday morning, so whatever needs your hands has a one-day window.",
+    "link": "https://intent.slack.com/archives/C0BUQ25ARSB/p1788778735867269",
+    "draft": "Alfonso — end of week works, and you have done the hard part already.\n\n• Ingestion: keep the tables separate with the keys you built — that matches how the stitching work wants them. @Manuel — can you confirm the exact shape with Alfonso directly and run the ingest, so this does not wait on me while I travel?\n• If the UC datasets load cleanly, we are in luck as the demo workspace can generate off them this week. If anything needs restructuring, I will prioritise a quick call with you both before I fly Wednesday morning so it does not slip while I am in Africa.\n• Slide for Diego: draft it around ‘configuration, not months’ — one visual of their UC flowing into IntentOne. Send it over and I will do a same-day pass.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1323,11 +1340,13 @@ const ITEMS = [
     "tags": [
       "intentai",
       "scheduling",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Sangram Reddy — DM",
     "when": "Mon 7 Sep, 09:18",
-    "ask": "“Hey Shaf, Morning! Let me know when you are free to chat!” — following Thursday's “call me when free today”, which went unanswered.",
+    "ask": "Handled — you replied a minute later (“sorry was a crazy day on thursday… free now!”) and picked things up; you messaged him again Tue morning.",
+    "done": true,
     "context": "Second nudge on the same thread since Thursday. Most likely IntentAI — he is running the AI Research Engineer hiring with you in the interview loop and you two have been pairing on the roadmap and SDK planning. Thirty seconds to offer a slot, and worth doing before your Africa trip next week eats the diary.",
     "link": "https://intent.slack.com/archives/D09JYB07N5D/p1788769099310509?thread_ts=1788441456.099539&cid=D09JYB07N5D",
     "draft": "Morning! Sorry — Thursday ran away from me.\n\n• I can do late morning or after 4 today — grab whichever works and call me then.\n• One line on what it is about so I come prepared? If it is IntentAI sequencing or the hiring loop, we are in luck as I have the latest thinking ready. If it is something new, I will prioritise proper time for it rather than squeeze it — I am in Africa next week so this week is the window.\n\nHope that helps."
@@ -1338,14 +1357,31 @@ const ITEMS = [
     "tags": [
       "team",
       "enrichments",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Manuel Fidalgo — group DM with Albert and Luca",
     "when": "Mon 7 Sep, 09:32",
-    "ask": "“Which team should I spend this week with? - I guess data ingestion and enrichments but I just wanted to confirm first 🙏”",
+    "ask": "Handled — you confirmed Mon morning with the full plan (MTN Nigeria Postgres upgrade → sample data into UC via Tobie's connectors → staging tests → prod), added the Arcos Dorados request, and invited Manuel to the planning session.",
+    "done": true,
     "context": "His guess matches where the pull is: you told Adam's risk bot this morning that enrichment ownership (RI-373) sits with you and the data-ingestion-enrichments pod, and Manuel is already helping Alfonso get the Arcos Dorados synthetic data into Databricks/UC. Cheap confirm — a day of him idling on the wrong team costs more than the ten seconds this takes. Albert and Luca are in the DM if logistics need settling.",
     "link": "https://intent.slack.com/archives/C0C01BGR0KC/p1788769960993499",
     "draft": "Morning Manuel! Yes — data ingestion and enrichments is the right call this week.\n\n• It is where the live pull is: the enrichment ownership work (RI-373) lands with me and that pod, and your Arcos Dorados Databricks work sits right on top of it — keep going with Alfonso on that.\n• @Albert — anything on your side that should trump this for the week? If not, we are in luck as Manuel carries straight on. If there is, I will prioritise a quick reshuffle rather than have him split badly across two teams.\n\nHope that helps."
+  },
+  {
+    "title": "Adi: audience-splits tickets want your thoughts",
+    "category": "internal",
+    "tags": [
+      "opportunities",
+      "on-device",
+      "roadmap"
+    ],
+    "who": "Adi Dahan — #team-product (tagging you and Albert)",
+    "when": "Mon 7 Sep, 11:41",
+    "ask": "“Wanted to share with you 2 tickets which are an outcome from my last discussions with Luca last week: ‘Opportunities can have fewer than three audience splits’ and ‘Audience splits should feel relevant and clearly related’. As I see those two tickets eventually are needed to support on device campaigns, structuring an audience into an input which the actuator can contain and send to the device… Thoughts?”",
+    "context": "He is framing these as prerequisites for on-device campaigns, not UX polish — the actuator needs a structured audience input to ship to the device. That connects to the On-Device Campaigns PRD you two have been working through in 1x1s, and to Lewis's still-open privacy challenge about what an edge-activated campaign actually sends to the device — the answer to Adi's framing and the answer to Lewis should be the same sentence. Albert was asked too and has not replied; a day of silence in #team-product on a JL-visible workstream reads as no opinion.",
+    "link": "https://intent.slack.com/archives/C03GG6U7VT9/p1788777716481289",
+    "draft": "Adi — read both, and I agree they matter beyond polish.\n\n• Fewer than three splits: yes. Forcing three manufactures artificial audiences, which is exactly what makes splits feel irrelevant — the two tickets are really one principle: a split has to earn its place.\n• On the on-device link: agree these shape the actuator input, but let us be precise about what ships to the device — the rule definition only, evaluated against that user's own local signals, nothing derived from other users. That is the same question Lewis raised on the privacy stance, so let us write the answer once and reuse it in both places.\n• @Albert — anything in the current opportunity model that makes a variable split count expensive? If not, we are in luck as this is mostly generation-side work and can move now. If it touches the actuator contract, I will prioritise scoping it with you both before it gets tied to the Beem timeline.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
