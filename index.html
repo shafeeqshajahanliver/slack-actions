@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 9 Sep, 10:05 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 10 Sep, 10:07 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -548,6 +548,36 @@ const ITEMS = [
     "context": "The Arcos work is moving fast: Alfonso got the synthetic data into UC on Monday (ihq_eu_prod_demo_retail.arcos_dorados_synthetic) and says he can rework tables himself quickly. Two things have been waiting on you since Monday lunchtime — the ingestion shape (separate keyed tables vs one merged dataset) and a firm yes on end-of-week for the Diego slide + demo. The Lima presentation to Arcos' full marketing team (22 Sep) is the hard backstop, and you fly to Africa Wednesday morning, so whatever needs your hands has a one-day window.",
     "link": "https://intent.slack.com/archives/C0BUQ25ARSB/p1788778735867269",
     "draft": "Alfonso — end of week works, and you have done the hard part already.\n\n• Ingestion: keep the tables separate with the keys you built — that matches how the stitching work wants them. @Manuel — can you confirm the exact shape with Alfonso directly and run the ingest, so this does not wait on me while I travel?\n• If the UC datasets load cleanly, we are in luck as the demo workspace can generate off them this week. If anything needs restructuring, I will prioritise a quick call with you both before I fly Wednesday morning so it does not slip while I am in Africa.\n• Slide for Diego: draft it around ‘configuration, not months’ — one visual of their UC flowing into IntentOne. Send it over and I will do a same-day pass.\n\nHope that helps."
+  },
+  {
+    "title": "YPF: does IntentOne need the SDK upgrade for campaigns?",
+    "category": "client",
+    "tags": [
+      "ypf",
+      "sdk",
+      "migration"
+    ],
+    "who": "Nidhi Sharma & Alfonso Urien — #edge-clients-ypf",
+    "when": "Wed 9 Sep, 13:59",
+    "ask": "Nidhi: “Without the new SDK version, how will the campaigns work from Intent One as it needs unique user id, either through CMS (or hashed ID). This is my understanding. @Shafeeq @Bruno do you agree?” — after Alfonso asked you directly: “As far as I initially understood we did not need to get the SDK updated for a shadow migration… Has there been a change in this topic?”",
+    "context": "The two questions are really one: shadow-migrating the data vs activating campaigns from IntentOne have different SDK requirements, and YPF have not yet been told an SDK update might be needed. Alfonso wants a plan and roadmap presented to YPF ASAP if it is mandatory, and has booked a Wednesday sync to align; Bruno is working audience definitions with Netta and Yurii for the YPF readout in the week of 14 Sep. Your answer decides what gets communicated to the client and when.",
+    "link": "https://intent.slack.com/archives/C082U83PXM5/p1788958763423309?thread_ts=1788525066.154759&cid=C082U83PXM5",
+    "draft": "Nidhi, Alfonso — good challenge, and let's land one answer before anything reaches YPF.\n\n• Nidhi's read matches mine on the mechanism: IntentOne campaign activation needs a stable per-user ID (CMS or hashed ID), which the current SDK version does not give us. So the split is: shadow migration of the data — no SDK update needed; activating campaigns FROM IntentOne — yes, it needs the newer SDK.\n• That fits Alfonso's sequencing: first campaigns run through the Engagement Console on the current SDK, while the IntentOne shadow runs on migrated data. The SDK upgrade conversation then goes to YPF as part of the IntentOne transition plan, not as a surprise blocker.\n• If the sync lands that sequencing, we are in luck as nothing urgent needs to reach YPF this week. If we want IntentOne-activated campaigns sooner, I will prioritise building the SDK-upgrade plan and roadmap with @Bruno so Alfonso presents a plan, not a problem.\n\nHope that helps."
+  },
+  {
+    "title": "Capgemini: Bruno wants a signals dataset, not a demo",
+    "category": "client",
+    "tags": [
+      "capgemini",
+      "travel",
+      "synthetic-data"
+    ],
+    "who": "Bruno Barauskas — #capgemini-partnership-opportunities",
+    "when": "Wed 9 Sep, 13:33",
+    "ask": "“Just to clarify the immediate scope: Capgemini is building the demo journey on their side. What they need from us at this stage is a sample dataset of Edge behavioural signals and insights to enrich their mock personas in Salesforce, rather than a separate IntentOne demo. Could we focus the initial effort on preparing that dataset, in CSV or another practical format, tailored to the travel use cases?”",
+    "context": "This steers you off the path you announced Tuesday (“perhaps even start scoping up a synthetic demo”) — the deliverable is a dataset, not an IntentOne instance. Kipp asks that the real Brazilian Edge My Network Assistant data seed the synthetic set so local apps and locations look right; the Capgemini Brazil NDA is fully executed and CONAREC 2026 is the forcing event. Sharifah has asked whether synthetic data for the travel sector can be spun up 'easily' — same question from the other side.",
+    "link": "https://intent.slack.com/archives/C0B109FBXNC/p1788957187440999",
+    "draft": "Bruno — understood, and thank you for catching me before I built the wrong thing.\n\n• Agreed: the deliverable is a dataset, not an IntentOne instance. We will produce a sample of Edge behavioural signals and insights per persona, in CSV, that Capgemini can load straight into their Salesforce mock personas.\n• Two questions so we get it right first pass:\n  • How many personas, and do they need consistent history (say 90 days of signals each) or a snapshot?\n  • On seeding from the real Brazilian My Network Assistant data — @Fred, any consent or anonymisation line we should hold before real data seeds a partner-facing synthetic set? Same discipline as the DPIA work.\n• If the synthetic pipeline takes the travel skew cleanly, we are in luck as I can get you a first sample this week from the road. If it fights me, I will prioritise a hand-built persona set for CONAREC and automate after.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1037,11 +1067,13 @@ const ITEMS = [
     "tags": [
       "connectors",
       "nexus",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Elyse Tawiah — DM",
     "when": "Fri 21 Aug, 15:52",
-    "ask": "“Please check its all correct 🙏” — she has set up the HubSpot sandbox for the Nexus source-hubspot tile and verified the credential returns 200s on contacts, companies and deals. Third nudge: “could you check i did it right?” (12:55) and “is it okay?” (14:08) came first.",
+    "ask": "Handled — you replied “done 🙂” on Thu 10 Sep morning; the sandbox check is confirmed.",
+    "done": true,
     "context": "This is one of the two platform-exclusive tiles Tobie flagged as P1 — the only sources that exist for Nexus and not Databricks, so they are the reason platform filtering exists at all. She worked through her own confusion about the ask and delivered anyway; a two-minute login check closes it and unblocks proving Connect on a real account.",
     "link": "https://intent.slack.com/archives/D0BG00P64SD/p1787323954843779",
     "draft": "Elyse — sorry, this sat with me over the weekend. You did exactly the right thing, and moving it to HubSpot was the correct call.\n\n• Checking the sandbox today. If contacts, companies and deals all come back cleanly on the portal you set up, we are in luck as that is everything the Nexus tile needs and I will confirm it done in one message.\n• If anything looks off I will fix it with you on a ten-minute screen share rather than volley messages here.\n\nThank you for pushing this over the line while I was heads-down. Hope that helps."
@@ -1423,11 +1455,13 @@ const ITEMS = [
     "tags": [
       "intentai",
       "scheduling",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Sangram Reddy — DM",
     "when": "Wed 9 Sep, 09:46",
-    "ask": "“Hey Shaf, how are you doing? I had a chat with Gil in the morning. Let me know when you have some time for a quick catch-up. 5 min tops”",
+    "ask": "Handled — you replied from the plane (“I'm on the plane today! But send a voice note!”) and Sangram sent one.",
+    "done": true,
     "context": "Sangram only pings when something is moving, and this one follows a morning conversation with Gil — most likely the AI Research Engineer hiring loop you are running together, possibly a candidate or an offer decision. You fly to Kenya today, so a call from the airport beats a slot next week.",
     "link": "https://intent.slack.com/archives/D09JYB07N5D/p1788943597109009",
     "draft": "Sangram — travelling today but 5 minutes is findable.\n\n• Call me when you see this — airport wifi permitting, otherwise I will ring you when I land.\n• One line on the Gil conversation so I come prepared? If it is the hiring loop, we are in luck as I can give you answers on the spot. If it is something bigger, I will prioritise proper time once I am set up in Kenya rather than squeeze it into a queue.\n\nHope that helps."
@@ -1437,14 +1471,33 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "scheduling",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Lawrence Chapman — DM",
     "when": "Wed 9 Sep, 09:47",
-    "ask": "“Safe travels, hope you have a good flight. Assuming you'll be flying during our usual 1:1 time so I'll cancel that…?”",
+    "ask": "Handled — you confirmed (“yes - will be landing in the eve!”) and messaged him again on landing.",
+    "done": true,
     "context": "Ten-second confirm — he is waiting on a yes before cancelling. Worth pairing with a pointer at the transition-plan Miro you drafted for Sarah this morning: Lawrence is the one pushing for the position update this week and you will miss the IntentOne weekly, so routing him to the draft keeps the plan moving while you are in the air.",
     "link": "https://intent.slack.com/archives/D09KBLZ71T8/p1788943621787819?thread_ts=1788858948.451999&cid=D09KBLZ71T8",
     "draft": "Thanks Lawrence — yes, cancel today's, I will be mid-air. Two things so the week does not slip:\n• The IntentOne transition-plan position you asked Sarah for: I did a rough first pass in Miro this morning and Sarah has the link. I would rather you two tear into it while I travel than wait on me.\n• Anything needing a decision from me this week, drop it here and I will pick it up on landing.\n\nHope that helps."
+  },
+  {
+    "title": "WhatsApp demo in prod: Bruce says it needs proper planning",
+    "category": "internal",
+    "tags": [
+      "whatsapp",
+      "activation",
+      "demo",
+      "decision"
+    ],
+    "who": "Bruce Vaughan — group DM with Adi, Tom, Artem",
+    "when": "Thu 10 Sep, 08:53",
+    "due": "Demo slots Thu/Fri AM",
+    "ask": "“This is actually becoming a big task. I feel it needs to be planned properly so we know exactly what needs to be done. We will also need click-service deployed in each environment, the /click and /image endpoints opened to public via a cloudfront domain and the 4 templates (per environment) in twilio created and approved to support each environment.” — plus his ask to Adi for a sync meeting; James is asking about the services that need deployment.",
+    "context": "Your Tuesday-night question (“let me know what i can or cant demo”) has no direct answer yet, and Adi is out today and Sunday, leaving you to steer the channel yourself — he said as much. Tom has ruled out linking MTN to staging and prefers prod, but prod needs Sandra (busy on the EE South Africa deployment) and Artem on the UI side. The realistic call for this week is demoing WhatsApp push from staging on demo_telco, with prod WhatsApp treated as a planned piece of work rather than a scramble before your Thursday and Friday morning demos.",
+    "link": "https://intent.slack.com/archives/C0C0H9UNX1B/p1789026790298439",
+    "draft": "Bruce — agreed, let's not brute-force this while I am on the road.\n\n• For this week: I will demo WhatsApp push from staging on demo_telco and keep the prod workspaces for the core IntentOne story — so nothing here blocks my Thursday/Friday sessions. If the connections-dev account behaves on staging, we are in luck as the demo lands either way.\n• Yes to your sync — set it up with @Tom and @Artem, and let's treat prod WhatsApp (click-service per env, public /click and /image via CloudFront, approved Twilio templates per environment) as planned work with an owner. @Adi picks it up when back — it is his activation roadmap.\n• One ask for today: confirm in this channel what staging can reliably do — immediate activation, and the reply-resets-the-clock behaviour. That decides how bold I am in the demo.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
