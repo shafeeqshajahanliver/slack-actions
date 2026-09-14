@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 10 Sep, 10:07 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 14 Sep, 10:05 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -1489,15 +1489,30 @@ const ITEMS = [
       "whatsapp",
       "activation",
       "demo",
-      "decision"
+      "decision",
+      "sent"
     ],
     "who": "Bruce Vaughan — group DM with Adi, Tom, Artem",
     "when": "Thu 10 Sep, 08:53",
-    "due": "Demo slots Thu/Fri AM",
-    "ask": "“This is actually becoming a big task. I feel it needs to be planned properly so we know exactly what needs to be done. We will also need click-service deployed in each environment, the /click and /image endpoints opened to public via a cloudfront domain and the 4 templates (per environment) in twilio created and approved to support each environment.” — plus his ask to Adi for a sync meeting; James is asking about the services that need deployment.",
+    "ask": "Handled — settled the same day: Adi confirmed after talking to you that “Stg will be enough for now” (demo_telco staging), and you were in the channel Thursday afternoon working the staging activation issue ahead of the demos. Prod WhatsApp stays a planned piece of work.",
+    "done": true,
     "context": "Your Tuesday-night question (“let me know what i can or cant demo”) has no direct answer yet, and Adi is out today and Sunday, leaving you to steer the channel yourself — he said as much. Tom has ruled out linking MTN to staging and prefers prod, but prod needs Sandra (busy on the EE South Africa deployment) and Artem on the UI side. The realistic call for this week is demoing WhatsApp push from staging on demo_telco, with prod WhatsApp treated as a planned piece of work rather than a scramble before your Thursday and Friday morning demos.",
     "link": "https://intent.slack.com/archives/C0C0H9UNX1B/p1789026790298439",
     "draft": "Bruce — agreed, let's not brute-force this while I am on the road.\n\n• For this week: I will demo WhatsApp push from staging on demo_telco and keep the prod workspaces for the core IntentOne story — so nothing here blocks my Thursday/Friday sessions. If the connections-dev account behaves on staging, we are in luck as the demo lands either way.\n• Yes to your sync — set it up with @Tom and @Artem, and let's treat prod WhatsApp (click-service per env, public /click and /image via CloudFront, approved Twilio templates per environment) as planned work with an owner. @Adi picks it up when back — it is his activation roadmap.\n• One ask for today: confirm in this channel what staging can reliably do — immediate activation, and the reply-resets-the-clock behaviour. That decides how bold I am in the demo.\n\nHope that helps."
+  },
+  {
+    "title": "Adi: share how the demos are going",
+    "category": "internal",
+    "tags": [
+      "demos",
+      "quick"
+    ],
+    "who": "Adi Dahan — group DM with Luca and Sam",
+    "when": "Mon 14 Sep, 08:39",
+    "ask": "“Hey Shaf, So how are the demos until now? Please share some... :))”",
+    "context": "Adi is back from leave and this is his first ping — he covered the WhatsApp-activation calls before he left, so he knows the SA demos were the week's big bet. Plenty to share from the road: MTN Uganda on Friday morning, the EasyEquities sessions today with Prathna, and the data-story wobble Georgia fixed mid-flight (ONE-2327). Three lines or a voice note keeps him moving; the proper debrief can wait for your 1x1.",
+    "link": "https://intent.slack.com/archives/C0ATED932HW/p1789371586991929",
+    "draft": "Adi! Welcome back — demos have been brilliant, and instructive in equal measure.\n\n• Quick highlights: MTN Uganda went well Friday morning, and the EasyEquities sessions are today — Prathna and I have the scenarios prepped, models story included.\n• Two things you'll care about: the data-story panel broke mid-demo Thursday (Georgia turned the fix around same day — ONE-2327), and WhatsApp stayed on staging as we agreed, which was the right call.\n• Proper debrief with screenshots once today's sessions are done — there is a lot on messaging (we undersell the data-monetisation angle) that should feed your activation roadmap and mine.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
