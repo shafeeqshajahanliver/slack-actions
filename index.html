@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 15 Sep, 10:06 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 16 Sep, 10:08 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -585,11 +585,13 @@ const ITEMS = [
     "tags": [
       "mtn",
       "positioning",
-      "decision"
+      "decision",
+      "sent"
     ],
     "who": "Gareth Evans — DM",
     "when": "Tue 15 Sep, 09:38",
-    "ask": "“Sure happy to discuss but you told me you need to step back from Enterprise customers and focus on getting the whole trial engine and midmarket strategy ready for FY27… the sales team need to know how to represent this and sell. Also we are bleeding expenses on an account that currently pays us just $750k p/a atm. We need to see a full account plan and revenue plan for MTN for FY27.”",
+    "ask": "Handled — you took it to the phone Tue: Gareth clarified he is 101% behind your deal involvement and was just protecting your time, you rang him at lunchtime, agreed to keep these conversations private and share the floor findings when back, and sent an invite for a Wednesday catch-up.",
+    "done": true,
     "context": "You opened this conversation this morning with two arguments: being front-line with clients closes the feedback loop (MTN this week being the proof), and the way IntentHQ/IntentOne is positioned to clients needs a significant change. Gareth's reply holds you to your own commitment — trial engine and mid-market for FY27 — and lands a concrete ask: a full MTN FY27 account and revenue plan. The demo week gave you live ammunition (product catalogues, data-story explainability, connector asks all came out of those rooms), but the expense point is fair and Ben needs the SA env for JJ by end of month, so the account plan has a natural owner pairing.",
     "link": "https://intent.slack.com/archives/D0BPYE5RV8U/p1789461522873849",
     "draft": "Gareth — appreciate the straight answer, and you are right to hold me to what I said. I am not walking back the priority: trial engine and mid-market are where my time goes.\n\n• On being with clients: I am not proposing to run enterprise accounts. What I want is a few structured days a quarter in front of clients — this week alone changed three roadmap items (product catalogues in the autopilot, data-story explainability, connector asks). That feedback loop makes the mid-market product better, it does not compete with it.\n• On sales representing it without me: agreed, and that is the fix. Rather than me demoing forever, I will run the enablement sessions JL and I already discussed (IntentOne vs Edge positioning, what to demo and how). If those land, we are in luck as the demo load moves off me naturally. If they do not, that tells us something about the product story, not just the sellers.\n• On the MTN plan: fair ask. @Ben and I will put together the FY27 account and revenue plan — Uganda and SA this week gave us concrete expansion signals to build it on rather than hope.\n\nCan we take 30 minutes this week rather than do this over Slack? The positioning piece deserves a proper conversation.\n\nHope that helps."
@@ -600,14 +602,62 @@ const ITEMS = [
     "tags": [
       "fishka",
       "easyequities",
-      "demo"
+      "demo",
+      "sent"
     ],
     "who": "Prathna Singh — DM",
     "when": "Tue 15 Sep, 08:18",
-    "ask": "“For when you see this later dollface 1. Wanted to clarify if the goals feed the knowledge base or the other way around, today if we want to set this correctly for clients, we will need the ability to edit from the outset. 2. When is that part going to be available?” — plus: “3. Are we leaving behind access for clients who want to play around. I suspect with Tristan the next one will be easier on a call to read the screen and then we may decide to let them ask some questions on their own.”",
+    "ask": "Handled — you answered all three Tue morning: goals and knowledge base are independent today (both editable anytime), goal-group / business-objective editing lands Oct/early Nov, and leave access behind but hold Tristan until shadow migration.",
+    "done": true,
     "context": "Follow-on from the demo week: she is spinning up an Allo demo for Fishka today (you sent her the sign-up path and the org-naming/versioning trick this morning) and iterating the EasyEquities demo, with Tristan the next session. The three questions are really two product calls — when knowledge-base editing lands, and whether clients get hands-on access between sessions. Luca and Sam are off this week, so the answer is yours to give or explicitly park.",
     "link": "https://intent.slack.com/archives/D09P26469LY/p1789456692376469",
     "draft": "Great questions — in order:\n\n• 1. Goals feed the knowledge base today, not the other way round — the KB assembles from what we set at onboarding plus whatever context we upload. You are right that for real clients we need to edit it from the outset rather than live with what generation gives us.\n• 2. Honest answer: it is on the roadmap but not dated. @Claudia's team is closest to it — I will get you a real answer this week rather than guess. Until then the workaround is what you are already doing: be deliberate at onboarding (org naming, goals, MD uploads) because that is what the KB inherits.\n• 3. Leave access behind, but deliberately: fine for them to look around and ask the copilot questions, but I would not leave them free to regenerate or edit until we trust the guardrails. Your Tristan plan is right — drive the call first, open it up after. If Fishka behave with Allo, we are in luck as that becomes our template for supervised client access. If they wander into something half-built, I would rather find out on a demo org than a real one.\n\nHope that helps."
+  },
+  {
+    "title": "Alfonso: Flexypro wants hands-on demo access + push to their phones",
+    "category": "client",
+    "tags": [
+      "flexypro",
+      "demo",
+      "access",
+      "prospect"
+    ],
+    "who": "Alfonso Urien — #intent-one",
+    "when": "Wed 16 Sep, 09:36",
+    "ask": "“Flexypro is asking for credentials and access to an IntentOne demo connected to MyNetwork Assistant so they can \\\"play\\\" with the demo and end push notifications to their devices. How can we do it? Who could help me with this?”",
+    "context": "A prospect from Alfonso's LatAm push asking to self-drive — the strongest buying signal a demo gets. Two asks hiding in one: external credentials (the Admin → Teams & Access route you just walked Prathna through for Fishka's Mike, and Lidor has written a knowledge article for it), and live push to their own devices, which needs the MyNetwork Assistant Edge SDK wired to activation, not just a login. Same supervised-access call you made on Tristan: drive first, open up after.",
+    "link": "https://intent.slack.com/archives/C096PLD9MU2/p1789547779282509",
+    "draft": "Alfonso — great signal, a prospect asking to play is exactly what we want.\n\nTwo different asks hiding in here:\n• Credentials: easy. External users are invited via Admin → Teams & Access — @Lidor wrote a knowledge article on exactly this yesterday for Fishka, can you share it with Alfonso and help him set Flexypro up?\n• Push to their own devices: harder. That needs the MyNetwork Assistant SDK wired to activation, not just a login. @Adi — what would it take for a Flexypro phone to receive a real push from the demo environment, and is staging the right place to do it?\n\nOne steer before we hand over keys: run the first session with them and open self-serve after — same playbook as Fishka. If they mainly want to click around insights and the copilot, we are in luck as access is a same-day job. If live push is the real ask, I will prioritise scoping it with Adi properly rather than promise it casually.\n\nHope that helps."
+  },
+  {
+    "title": "EE: fictitious data, Data Audit visibility + Edge co-existence",
+    "category": "client",
+    "tags": [
+      "easyequities",
+      "demo",
+      "migration"
+    ],
+    "who": "Prathna Singh & Lidor Raviv — group DM with Ben",
+    "when": "Tue 15 Sep, 17:03",
+    "ask": "Prathna: “maybe we can create an environment with just what they have today with fictitious data?” — Lidor: “To make sure I'm clear, today in EE Data Audit we won't see all available MS only the most relevant ones? The fact that you have more CRM data than Edge data it will affect the opportunities?”",
+    "context": "The EE shadow deployment is legally paused — Shirley confirmed the current contract only covers Edge, so no EE data enters IntentOne until they consent (likely full IntentOne terms, not a simple addendum). The group is redesigning what can be shown by end September without it. Lidor also asked in #ee-intentone-deploy where you stand on IntentOne/Edge console co-existence — without hashed IDs campaigns cannot activate from IntentOne but could from the Edge console — and floated rebuilding EE's historic Edge campaigns in IntentOne as a validation test.",
+    "link": "https://intent.slack.com/archives/C0BU6BPS19Q/p1789488199996729",
+    "draft": "Both good questions — and with legal pausing the data plug-in, the fictitious-data route is the right hedge.\n\n• Fictitious env: yes — build it on exactly the data shapes EE has today (their CRM microsegments plus the Edge signals we know exist), not an idealised set. If the synthetic pipeline takes that shape cleanly, we are in luck as it can be up well before end September. If it fights us, I will prioritise a hand-built version for the demo and automate after.\n• Lidor's Data Audit question: correct — the audit surfaces the most relevant microsegments, not the full list. And yes, a CRM-heavy mix pulls opportunities towards CRM data; that is honest behaviour, but let's make the Edge contribution visible per opportunity — which is exactly the point Tristan is circling.\n• Co-existence, so we all say one sentence: shadow migration puts data and opportunities in IntentOne; activation stays in the Edge console until hashed IDs exist. No IntentOne activation promises this phase.\n• Rebuilding their historic Edge campaigns in IntentOne is a strong validation test — @Lidor let's pick 3–4 that mattered commercially, not the full back catalogue.\n\nHope that helps."
+  },
+  {
+    "title": "Prathna: EE data dictionary + untargetable microsegments",
+    "category": "client",
+    "tags": [
+      "easyequities",
+      "data",
+      "product-gap"
+    ],
+    "who": "Prathna Singh — DM",
+    "when": "Wed 16 Sep, 07:21",
+    "ask": "“also i think data dictionary for EE like the MPESA on is something I need to help, can we create this?” — and later: “Not all microsegments can be used to run a campaign… and there is no intuitive way for the client to know this.”",
+    "context": "Demo-prep follow-on: she is building the EE like-for-like demo (plus Supabets and Allo) and wants an EE data dictionary modelled on the MPESA one. The second point is a real product gap, not admin — a client can build an audience on a microsegment that will never activate and nothing in the UI says so. Same targetable-vs-matched honesty territory as the opportunities anomaly Adi collected from Gal's QA feedback in August.",
+    "link": "https://intent.slack.com/archives/D09P26469LY/p1789539665027539",
+    "draft": "Two things back to you:\n\n• Data dictionary: yes — copy the MPESA structure and build it from the EE data audit rather than from scratch. Start it and I will do a pass. If the microsegment list exports cleanly, we are in luck as this is a one-day job; if not, I will get you the export.\n• Untargetable microsegments: that is a real product gap, not a you-problem — nothing tells a client that the audience they just built cannot activate. I will take it to @Adi and @Mark as a labelling fix (targetable vs insight-only) in the UI. Until it lands, mark the untargetable ones explicitly in your dictionary so the demo never walks into it live.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1312,11 +1362,13 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "compliance",
-      "admin"
+      "admin",
+      "sent"
     ],
     "who": "Elle St George-McKenzie — DM",
     "when": "Thu 27 Aug, 14:15",
-    "ask": "“Quick reminder to please complete any outstanding Ninjio security awareness training as soon as you can. Thanks! P.s You have 19 outstanding 😄”",
+    "ask": "Handled — the DM has moved on: you replied Tue while travelling (sorting Rekha's Thursday start with Elle) and she has not chased the trainings since. The 19 episodes themselves are still a block-an-hour job when you get a gap.",
+    "done": true,
     "context": "Nineteen is the whole backlog since you joined, and the Ninjio bot is now nudging you three times a day. Each episode is a few minutes; this is a block-an-hour job, not a reply. Worth doing before the ISO/DPIA conversations with Fred make ‘VP Product has not done security training’ an awkward line.",
     "link": "https://intent.slack.com/archives/D0AQDDZV9U4/p1787836553314749",
     "draft": "Thanks Elle — back from leave today, will chip through them this week."
@@ -1543,6 +1595,37 @@ const ITEMS = [
     "context": "Adi is back from leave and this is his first ping — he covered the WhatsApp-activation calls before he left, so he knows the SA demos were the week's big bet. Plenty to share from the road: MTN Uganda on Friday morning, the EasyEquities sessions today with Prathna, and the data-story wobble Georgia fixed mid-flight (ONE-2327). Three lines or a voice note keeps him moving; the proper debrief can wait for your 1x1.",
     "link": "https://intent.slack.com/archives/C0ATED932HW/p1789371586991929",
     "draft": "Adi! Welcome back — demos have been brilliant, and instructive in equal measure.\n\n• Quick highlights: MTN Uganda went well Friday morning, and the EasyEquities sessions are today — Prathna and I have the scenarios prepped, models story included.\n• Two things you'll care about: the data-story panel broke mid-demo Thursday (Georgia turned the fix around same day — ONE-2327), and WhatsApp stayed on staging as we agreed, which was the right call.\n• Proper debrief with screenshots once today's sessions are done — there is a lot on messaging (we undersell the data-monetisation angle) that should feed your activation roadmap and mine.\n\nHope that helps."
+  },
+  {
+    "title": "Paulius: OKR/KPI audit — 12 Product measures by Friday",
+    "category": "internal",
+    "tags": [
+      "okr",
+      "planning",
+      "deadline"
+    ],
+    "who": "Paulius Butvilauskas — DM",
+    "when": "Tue 15 Sep, 17:39",
+    "due": "Hard deadline — Fri EOD",
+    "ask": "“If you're able to get through the OKR/KPI audit spreadsheet ahead of our session later this week, that would help massively… go through the 12 measures for Product and for each one confirm: 1. Still relevant, or postpone to 2027 / drop… 2. The target for the year… 3. Accountable and Data Owner/Reporter are still correct 4. Anything missing… We've got a hard deadline for this end of week.”",
+    "context": "Company-wide KPI audit with a hard end-of-week deadline; if you clear the sheet offline the session later this week gets cancelled. With Sam and Luca off this week the Product answers are yours alone — and it lands the same week Gareth's FY27 planning and the MTN account-plan ask are live, so the measures you keep should match the trial-engine and mid-market priority you have committed to.",
+    "link": "https://intent.slack.com/archives/D0BQMKZQE4V/p1789490394461019",
+    "draft": "Thanks Paulius — I will do it offline before the session so we can hand the slot back.\n\n• I will go measure by measure: keep/drop with a reason, a target, and the right accountable and data owner. Anything marked postpone-to-2027 will say why, not just get parked.\n• Two likely additions while I am in there: a mid-market trial metric (activation or trial-to-paid) and something on demo-to-opportunity conversion — that is where FY27 focus is going and the current measures predate it.\n• If I clear all 12 by Thursday, we are in luck as Friday is comfortable and we cancel the call. If any measure needs a data owner that does not exist yet, I will flag it in the sheet rather than invent a name.\n\nHope that helps."
+  },
+  {
+    "title": "Nidhi: sign off the Blue Box pain-point update",
+    "category": "internal",
+    "tags": [
+      "bluebox",
+      "documentation",
+      "quick"
+    ],
+    "who": "Nidhi Sharma — group DM with Adi",
+    "when": "Tue 15 Sep, 19:35",
+    "ask": "“All the gap points will be covered in Oct Intent One meeting already been setup. On documentation front, Intent One documentation will cover the gaps. This has been put as the update for ‘Refresh the Edge pain-point doc vs Intent 1 capabilities… and present at next Blue Box’. Let me know if you both agree OR want to reword something.”",
+    "context": "The landing of a long back-and-forth she and Adi worked through on Tue: the Edge pain-point gaps get covered in the October IntentOne Activations walkthrough (the one you shared in #intent-one-news) and IntentOne documentation covers the documentation side. Adi has 👍'd; yours is the only sign-off missing before she files it as the update on the Asana risk item. Cheap confirm, but worth one tightening — as written, ‘documentation will cover it’ has no owner or date.",
+    "link": "https://intent.slack.com/archives/C09QMEK0WPP/p1789497325090719",
+    "draft": "Nidhi — agree, with one tightening:\n\n• Happy for the update to say the gap points land in the October IntentOne meeting and documentation covers the doc side.\n• One addition so it does not read as parked: name an owner and a date for the documentation piece — ‘IntentOne documentation will cover it’ is a hope, not an update, and the challenge you raised deserved better than that.\n• If @Adi owns the SDK-side items and I take the product-side ones, we are in luck as the update can name both today. If ownership is fuzzier than that, let's settle it in the Oct meeting prep rather than in the wording.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
