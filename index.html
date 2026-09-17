@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 16 Sep, 10:08 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 17 Sep, 10:05 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -555,11 +555,13 @@ const ITEMS = [
     "tags": [
       "ypf",
       "sdk",
-      "migration"
+      "migration",
+      "sent"
     ],
     "who": "Nidhi Sharma & Alfonso Urien — #edge-clients-ypf",
     "when": "Wed 9 Sep, 13:59",
-    "ask": "Nidhi: “Without the new SDK version, how will the campaigns work from Intent One as it needs unique user id, either through CMS (or hashed ID). This is my understanding. @Shafeeq @Bruno do you agree?” — after Alfonso asked you directly: “As far as I initially understood we did not need to get the SDK updated for a shadow migration… Has there been a change in this topic?”",
+    "ask": "Resolved by the team — the Wed 10 Sep sync landed it (Nidhi's summary): SDK upgrade IS required and gets communicated to YPF, alongside CISO clearance for Brazil hosting and privacy-law posture. Data-processing consent from YPF is now the gating item, and Alfonso is arranging the client conversation.",
+    "done": true,
     "context": "The two questions are really one: shadow-migrating the data vs activating campaigns from IntentOne have different SDK requirements, and YPF have not yet been told an SDK update might be needed. Alfonso wants a plan and roadmap presented to YPF ASAP if it is mandatory, and has booked a Wednesday sync to align; Bruno is working audience definitions with Netta and Yurii for the YPF readout in the week of 14 Sep. Your answer decides what gets communicated to the client and when.",
     "link": "https://intent.slack.com/archives/C082U83PXM5/p1788958763423309?thread_ts=1788525066.154759&cid=C082U83PXM5",
     "draft": "Nidhi, Alfonso — good challenge, and let's land one answer before anything reaches YPF.\n\n• Nidhi's read matches mine on the mechanism: IntentOne campaign activation needs a stable per-user ID (CMS or hashed ID), which the current SDK version does not give us. So the split is: shadow migration of the data — no SDK update needed; activating campaigns FROM IntentOne — yes, it needs the newer SDK.\n• That fits Alfonso's sequencing: first campaigns run through the Engagement Console on the current SDK, while the IntentOne shadow runs on migrated data. The SDK upgrade conversation then goes to YPF as part of the IntentOne transition plan, not as a surprise blocker.\n• If the sync lands that sequencing, we are in luck as nothing urgent needs to reach YPF this week. If we want IntentOne-activated campaigns sooner, I will prioritise building the SDK-upgrade plan and roadmap with @Bruno so Alfonso presents a plan, not a problem.\n\nHope that helps."
@@ -620,11 +622,13 @@ const ITEMS = [
       "flexypro",
       "demo",
       "access",
-      "prospect"
+      "prospect",
+      "sent"
     ],
     "who": "Alfonso Urien — #intent-one",
     "when": "Wed 16 Sep, 09:36",
-    "ask": "“Flexypro is asking for credentials and access to an IntentOne demo connected to MyNetwork Assistant so they can \\\"play\\\" with the demo and end push notifications to their devices. How can we do it? Who could help me with this?”",
+    "ask": "Handled — you replied in-thread Wed morning: give them Demo_Telco (connected to JEMA), whitelist their devices for push, and pair with Adi via his activations how-to guide. Alfonso: “Thank you Shaf!!!”, and he has taken the access details to Adi directly.",
+    "done": true,
     "context": "A prospect from Alfonso's LatAm push asking to self-drive — the strongest buying signal a demo gets. Two asks hiding in one: external credentials (the Admin → Teams & Access route you just walked Prathna through for Fishka's Mike, and Lidor has written a knowledge article for it), and live push to their own devices, which needs the MyNetwork Assistant Edge SDK wired to activation, not just a login. Same supervised-access call you made on Tristan: drive first, open up after.",
     "link": "https://intent.slack.com/archives/C096PLD9MU2/p1789547779282509",
     "draft": "Alfonso — great signal, a prospect asking to play is exactly what we want.\n\nTwo different asks hiding in here:\n• Credentials: easy. External users are invited via Admin → Teams & Access — @Lidor wrote a knowledge article on exactly this yesterday for Fishka, can you share it with Alfonso and help him set Flexypro up?\n• Push to their own devices: harder. That needs the MyNetwork Assistant SDK wired to activation, not just a login. @Adi — what would it take for a Flexypro phone to receive a real push from the demo environment, and is staging the right place to do it?\n\nOne steer before we hand over keys: run the first session with them and open self-serve after — same playbook as Fishka. If they mainly want to click around insights and the copilot, we are in luck as access is a same-day job. If live push is the real ask, I will prioritise scoping it with Adi properly rather than promise it casually.\n\nHope that helps."
@@ -635,11 +639,13 @@ const ITEMS = [
     "tags": [
       "easyequities",
       "demo",
-      "migration"
+      "migration",
+      "sent"
     ],
     "who": "Prathna Singh & Lidor Raviv — group DM with Ben",
     "when": "Tue 15 Sep, 17:03",
-    "ask": "Prathna: “maybe we can create an environment with just what they have today with fictitious data?” — Lidor: “To make sure I'm clear, today in EE Data Audit we won't see all available MS only the most relevant ones? The fact that you have more CRM data than Edge data it will affect the opportunities?”",
+    "ask": "Handled — you answered Lidor Wed afternoon: the synthetic EE workspace shows only a subset of microsegments because it is synthetic, it does affect opportunities, and the next step is a new synthetic demo shaped with more Edge data and less CRM data. You also shared the EE SDK Data Dictionary into the group DM.",
+    "done": true,
     "context": "The EE shadow deployment is legally paused — Shirley confirmed the current contract only covers Edge, so no EE data enters IntentOne until they consent (likely full IntentOne terms, not a simple addendum). The group is redesigning what can be shown by end September without it. Lidor also asked in #ee-intentone-deploy where you stand on IntentOne/Edge console co-existence — without hashed IDs campaigns cannot activate from IntentOne but could from the Edge console — and floated rebuilding EE's historic Edge campaigns in IntentOne as a validation test.",
     "link": "https://intent.slack.com/archives/C0BU6BPS19Q/p1789488199996729",
     "draft": "Both good questions — and with legal pausing the data plug-in, the fictitious-data route is the right hedge.\n\n• Fictitious env: yes — build it on exactly the data shapes EE has today (their CRM microsegments plus the Edge signals we know exist), not an idealised set. If the synthetic pipeline takes that shape cleanly, we are in luck as it can be up well before end September. If it fights us, I will prioritise a hand-built version for the demo and automate after.\n• Lidor's Data Audit question: correct — the audit surfaces the most relevant microsegments, not the full list. And yes, a CRM-heavy mix pulls opportunities towards CRM data; that is honest behaviour, but let's make the Edge contribution visible per opportunity — which is exactly the point Tristan is circling.\n• Co-existence, so we all say one sentence: shadow migration puts data and opportunities in IntentOne; activation stays in the Edge console until hashed IDs exist. No IntentOne activation promises this phase.\n• Rebuilding their historic Edge campaigns in IntentOne is a strong validation test — @Lidor let's pick 3–4 that mattered commercially, not the full back catalogue.\n\nHope that helps."
@@ -650,14 +656,32 @@ const ITEMS = [
     "tags": [
       "easyequities",
       "data",
-      "product-gap"
+      "product-gap",
+      "sent"
     ],
     "who": "Prathna Singh — DM",
     "when": "Wed 16 Sep, 07:21",
-    "ask": "“also i think data dictionary for EE like the MPESA on is something I need to help, can we create this?” — and later: “Not all microsegments can be used to run a campaign… and there is no intuitive way for the client to know this.”",
+    "ask": "Handled — you ran the build Wed morning (“my thing is running… done by the time I get home”) and delivered the EE SDK Data Dictionary at 13:30: agent-built from the Edge codebase, Gil's knowledge base, Lightfield and Slack, mapped to EE's top goals. Same MPESA pattern that worked in Kenya.",
+    "done": true,
     "context": "Demo-prep follow-on: she is building the EE like-for-like demo (plus Supabets and Allo) and wants an EE data dictionary modelled on the MPESA one. The second point is a real product gap, not admin — a client can build an audience on a microsegment that will never activate and nothing in the UI says so. Same targetable-vs-matched honesty territory as the opportunities anomaly Adi collected from Gal's QA feedback in August.",
     "link": "https://intent.slack.com/archives/D09P26469LY/p1789539665027539",
     "draft": "Two things back to you:\n\n• Data dictionary: yes — copy the MPESA structure and build it from the EE data audit rather than from scratch. Start it and I will do a pass. If the microsegment list exports cleanly, we are in luck as this is a one-day job; if not, I will get you the export.\n• Untargetable microsegments: that is a real product gap, not a you-problem — nothing tells a client that the audience they just built cannot activate. I will take it to @Adi and @Mark as a labelling fix (targetable vs insight-only) in the UI. Until it lands, mark the untargetable ones explicitly in your dictionary so the demo never walks into it live.\n\nHope that helps."
+  },
+  {
+    "title": "e& Egypt PAG approval — due Friday EOD",
+    "category": "client",
+    "tags": [
+      "etisalat",
+      "approval",
+      "deadline"
+    ],
+    "who": "Adam Wilson — #intentone-presales-e&",
+    "when": "Wed 16 Sep, 14:38",
+    "due": "Due Fri 18 Sep EOD",
+    "ask": "“Please provide your PAG outcome for the CP-044-e& Egypt-IntentOne sales proposal… The deadline for review completion is end of day Friday 18-Sep-2026. The Proposal Assurance Gate form to enter your approval outcome can be found here: CP-044-PAG Approval.”",
+    "context": "The e& Egypt deal from Ben's August technical session reaching paper — seven reviewers including Gareth, Fred and Shirley, and yours is the product-deliverability call. Same discipline as XLSMART, AIS and Beem: check which committed capabilities the proposal rests on (shipped vs Now/Next) and that nothing implies MCP access or anything still in flight. You are deep in Mobileum workshop prep with Ben this week, so this needs its own slot before Friday.",
+    "link": "https://intent.slack.com/archives/C0C1YUVMETU/p1789565895854049",
+    "draft": "Thanks Adam — I will have my PAG outcome in before Friday EOD.\n\nSame two checks as the last round, flagging early rather than sitting on the form:\n• Which committed capabilities does the proposal rest on? If it is the standard IntentOne + SDK story we showed e& in the August technical session, we are in luck as I can approve straight through. If it leans on anything still in Now/Next (MCP access, connectors work), I will prioritise flagging it in the doc tomorrow morning so it does not hold up your Friday.\n• @Ben — anything change in scope since the Egypt session that I should read the proposal against? You know this room best.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1587,11 +1611,13 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "demos",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Adi Dahan — group DM with Luca and Sam",
     "when": "Mon 14 Sep, 08:39",
-    "ask": "“Hey Shaf, So how are the demos until now? Please share some... :))”",
+    "ask": "Handled — you were back in the group DM the same evening (Google Ads release with Luca: “release as a standard press release with the loom and we can systemise it properly later”), and the fuller demo debrief is running through your live 1x1 thread with Adi this week.",
+    "done": true,
     "context": "Adi is back from leave and this is his first ping — he covered the WhatsApp-activation calls before he left, so he knows the SA demos were the week's big bet. Plenty to share from the road: MTN Uganda on Friday morning, the EasyEquities sessions today with Prathna, and the data-story wobble Georgia fixed mid-flight (ONE-2327). Three lines or a voice note keeps him moving; the proper debrief can wait for your 1x1.",
     "link": "https://intent.slack.com/archives/C0ATED932HW/p1789371586991929",
     "draft": "Adi! Welcome back — demos have been brilliant, and instructive in equal measure.\n\n• Quick highlights: MTN Uganda went well Friday morning, and the EasyEquities sessions are today — Prathna and I have the scenarios prepped, models story included.\n• Two things you'll care about: the data-story panel broke mid-demo Thursday (Georgia turned the fix around same day — ONE-2327), and WhatsApp stayed on staging as we agreed, which was the right call.\n• Proper debrief with screenshots once today's sessions are done — there is a lot on messaging (we undersell the data-monetisation angle) that should feed your activation roadmap and mine.\n\nHope that helps."
@@ -1602,12 +1628,13 @@ const ITEMS = [
     "tags": [
       "okr",
       "planning",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Paulius Butvilauskas — DM",
     "when": "Tue 15 Sep, 17:39",
-    "due": "Hard deadline — Fri EOD",
-    "ask": "“If you're able to get through the OKR/KPI audit spreadsheet ahead of our session later this week, that would help massively… go through the 12 measures for Product and for each one confirm: 1. Still relevant, or postpone to 2027 / drop… 2. The target for the year… 3. Accountable and Data Owner/Reporter are still correct 4. Anything missing… We've got a hard deadline for this end of week.”",
+    "ask": "Handled — you told Paulius Wed afternoon you won't have time before, so the 12 Product measures get worked through in the session itself; he confirmed (“yes we can, no probs”). The Friday hard deadline still stands, but the route to it is agreed.",
+    "done": true,
     "context": "Company-wide KPI audit with a hard end-of-week deadline; if you clear the sheet offline the session later this week gets cancelled. With Sam and Luca off this week the Product answers are yours alone — and it lands the same week Gareth's FY27 planning and the MTN account-plan ask are live, so the measures you keep should match the trial-engine and mid-market priority you have committed to.",
     "link": "https://intent.slack.com/archives/D0BQMKZQE4V/p1789490394461019",
     "draft": "Thanks Paulius — I will do it offline before the session so we can hand the slot back.\n\n• I will go measure by measure: keep/drop with a reason, a target, and the right accountable and data owner. Anything marked postpone-to-2027 will say why, not just get parked.\n• Two likely additions while I am in there: a mid-market trial metric (activation or trial-to-paid) and something on demo-to-opportunity conversion — that is where FY27 focus is going and the current measures predate it.\n• If I clear all 12 by Thursday, we are in luck as Friday is comfortable and we cancel the call. If any measure needs a data owner that does not exist yet, I will flag it in the sheet rather than invent a name.\n\nHope that helps."
@@ -1626,6 +1653,52 @@ const ITEMS = [
     "context": "The landing of a long back-and-forth she and Adi worked through on Tue: the Edge pain-point gaps get covered in the October IntentOne Activations walkthrough (the one you shared in #intent-one-news) and IntentOne documentation covers the documentation side. Adi has 👍'd; yours is the only sign-off missing before she files it as the update on the Asana risk item. Cheap confirm, but worth one tightening — as written, ‘documentation will cover it’ has no owner or date.",
     "link": "https://intent.slack.com/archives/C09QMEK0WPP/p1789497325090719",
     "draft": "Nidhi — agree, with one tightening:\n\n• Happy for the update to say the gap points land in the October IntentOne meeting and documentation covers the doc side.\n• One addition so it does not read as parked: name an owner and a date for the documentation piece — ‘IntentOne documentation will cover it’ is a hope, not an update, and the challenge you raised deserved better than that.\n• If @Adi owns the SDK-side items and I take the product-side ones, we are in luck as the update can name both today. If ownership is fuzzier than that, let's settle it in the Oct meeting prep rather than in the wording.\n\nHope that helps."
+  },
+  {
+    "title": "Tobie: cost-a-profile squad — your three answers",
+    "category": "internal",
+    "tags": [
+      "pricing",
+      "infra",
+      "decision"
+    ],
+    "who": "Tobie Alberts — #new-env-hit-squad",
+    "when": "Wed 16 Sep, 20:32",
+    "ask": "“Please reply in-thread with owners + dates: … 2. Shafeeq — close Sangram's Qs: 1M CRM ready? edge synthesis plan? point Albert at the Nigeria 1M index. Confirm client/workspace stand-up ETA.”",
+    "context": "Tobie's urgent push to cost a profile properly (SDK, IntentAI, IntentOne, activations at 1M users) so finance and pricing get an idle-floor + component cost sheet rather than a shared-staging guess. Albert asked you the same thing separately in #tech-leadership-team — he could not reach MTN Frankfurt and needs pointing at the Nigeria 1M index — and his ~100-field-baseline + field-pack proposal lands squarely on your pricing work, so one in-thread reply covers both and buys you a seat in how the baseline gets set.",
+    "link": "https://intent.slack.com/archives/C0C22384E3F/p1789587139923529",
+    "draft": "Tobie — answers in order:\n\n• Nigeria 1M index: @Albert I will send you the exact index name and the Opal route today so Frankfurt stops blocking you.\n• 1M CRM: yes — the synthetic pipeline can produce it and we have the shape from the demo work. Edge synthesis is the open piece: I will confirm with @Sangram whether we sample real edge data or synthesise, and post the plan here.\n• Client/workspace stand-up: I can create the client the same day the clean ihq-sta env exists — so my ETA hangs on Tom and Sandra's INFRA-2099 date, not on product.\n• One steer on the readout: Albert's 100-field baseline + field packs is the right measurement frame AND the right pricing frame. If the cost sheet and the pricing tiers use the same field definitions, we are in luck as we build one vocabulary, not two. If they drift apart, I will prioritise a session with Albert before anything reaches finance.\n\nHope that helps."
+  },
+  {
+    "title": "Sangram: behavioural-tokens kickoff — confirm tomorrow 10:30",
+    "category": "internal",
+    "tags": [
+      "intentai",
+      "scheduling",
+      "quick"
+    ],
+    "who": "Sangram Reddy — #p-edge-behavioural-tokens",
+    "when": "Thu 17 Sep, 08:43",
+    "due": "Meeting Fri 10:30",
+    "ask": "“Invite sent for tomorrow at 10:30AM GMT. @Shafeeq, was unable to find an other slot and your calendar looks busy. Will you be able to make it to this one?”",
+    "context": "New channel for the behavioural-tokens work: structuring edge signals (what, when, where, who) into tokens a sequence-to-sequence model can learn from, with Conrad and Shaun helping Alexander. Sangram asked you to add product context and the kickoff is tomorrow 10:30. Peter has offered to move your Fri 10:45 1x1 to make room and wants adding to the invite. Sangram is off today and separately DM'd asking to WhatsApp you (“loads to chat… which time works best?”) — one call settles the slot and the agenda.",
+    "link": "https://intent.slack.com/archives/C0C2H54KF2N/p1789631017154769",
+    "draft": "Sangram — yes, I will make 10:30 work.\n\n• @Peter — take your own offer: move our 10:45 and join this instead, your skills work sits right on top of it. I will get you on the invite.\n• So the hour lands: the ambiguity to kill first is the token schema — what one behavioural token looks like (event, timestamp, place, user ref) and which edge signals emit it today vs need new capture. If the current SDK signal set covers the first pass, we are in luck as Alexander can start on real shapes next week. If it needs new emission work, I will prioritise scoping that with @Adi before we put timelines on a sequence model.\n• Sangram — WhatsApp me when you surface today and I will give you the product context to fold in before tomorrow.\n\nHope that helps."
+  },
+  {
+    "title": "Kipp: “next cycle” notification is unclear",
+    "category": "internal",
+    "tags": [
+      "feedback",
+      "ui",
+      "quick"
+    ],
+    "who": "Kipp Gearhart — #intent-one-feedback",
+    "when": "Wed 16 Sep, 20:01",
+    "ask": "“When you add a new goal to IntentOne, it triggers a notification saying the new opportunities will be generated in the next cycle… I have no idea what a cycle is, how often cycles run, or when the next one will be. Can you please add this to the backlog of UI enhancements needed?”",
+    "context": "Tagged you, Sam and Luca — but Luca is off until Friday afternoon, so the ack falls to you. Fair catch: the product exposes internal scheduling language (“cycle”) without saying when it runs, and Kipp is hitting it while selling. Cheap to log in the opportunities QA & Feedback project Luca pointed the squad at this week; the better fix is the notification stating the actual next run time.",
+    "link": "https://intent.slack.com/archives/C0B47UNPJMS/p1789585279758399",
+    "draft": "Kipp — fair catch, logging it.\n\n• I will raise it in the opportunities QA & Feedback project today. The fix I want is not a glossary — the notification should just say when: “new opportunities will be generated at the next scheduled run (tonight at HH:MM)”.\n• If the run schedule is already exposed to the frontend, we are in luck as this is copy plus a timestamp. If it is not, I will get the squad to confirm what the UI can know before we promise the nicer version.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
