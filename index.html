@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 17 Sep, 10:05 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 21 Sep, 10:05 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -682,6 +682,36 @@ const ITEMS = [
     "context": "The e& Egypt deal from Ben's August technical session reaching paper — seven reviewers including Gareth, Fred and Shirley, and yours is the product-deliverability call. Same discipline as XLSMART, AIS and Beem: check which committed capabilities the proposal rests on (shipped vs Now/Next) and that nothing implies MCP access or anything still in flight. You are deep in Mobileum workshop prep with Ben this week, so this needs its own slot before Friday.",
     "link": "https://intent.slack.com/archives/C0C1YUVMETU/p1789565895854049",
     "draft": "Thanks Adam — I will have my PAG outcome in before Friday EOD.\n\nSame two checks as the last round, flagging early rather than sitting on the form:\n• Which committed capabilities does the proposal rest on? If it is the standard IntentOne + SDK story we showed e& in the August technical session, we are in luck as I can approve straight through. If it leans on anything still in Now/Next (MCP access, connectors work), I will prioritise flagging it in the doc tomorrow morning so it does not hold up your Friday.\n• @Ben — anything change in scope since the Egypt session that I should read the proposal against? You know this room best.\n\nHope that helps."
+  },
+  {
+    "title": "Fishka: who builds the IntentOne env from the consented data?",
+    "category": "client",
+    "tags": [
+      "fishka",
+      "intentone",
+      "ownership"
+    ],
+    "who": "Lidor Raviv — #fishka-var",
+    "when": "Thu 17 Sep, 11:56",
+    "ask": "“What now? Who is going to use this data to create an Intent one env.?” — tagging you and Sam.",
+    "context": "Fishka's consent is the thing EE is still chasing, so Fishka is ahead: data is cleared and now nobody owns standing the env up. The channel has been silent since — this is an ownership gap, not a technical one. EE shadow-deploy is the obvious pattern to reuse.",
+    "link": "https://intent.slack.com/archives/C0BCXKEEW1Z/p1789642607275909",
+    "draft": "Good chase — this should not sit. Splitting it:\n\n• Data: if the consented Fishka data is already landing somewhere we control, we are in luck as we can follow the same pattern as the EE shadow deploy and stand the env up without new legal work. If it is not landing yet, that is the first job.\n• Owner: proposal — the team already doing the EE stand-up owns Fishka too, same runbook, second client through the same door. @Sam Rayner does that clash with anything on foundations?\n• Sequence: internal env first, we sanity-check insights quality, then decide together what Fishka actually sees.\n\nIf we agree, I will get an owner named this week. Hope that helps."
+  },
+  {
+    "title": "MTN AI Expo: Syed needs the product brochure link",
+    "category": "client",
+    "tags": [
+      "mtn",
+      "expo",
+      "collateral"
+    ],
+    "who": "Syed Shah — #mtn-ai-expo-2026",
+    "when": "Fri 18 Sep, 09:02",
+    "ask": "“Can you please share the link to the existing Product brochure? … we could use the QR-first approach: a product one-pager online + a QR code … so visitors can scan to download (no print dependency, feeds HubSpot). Let me know.”",
+    "context": "Booth is confirmed (Tunji manning all 4 days), audience is MTN Prepaid EXCO — senior and commercial. Syed is deliberately avoiding a print dependency. Colin has separately flagged that travel/manpower for the event still is not approved, so the collateral ask is the easy unblock.",
+    "link": "https://intent.slack.com/archives/C0BUW9DJ9RS/p1789718567517009",
+    "draft": "Hi Syed — good plan, QR-first is the right call: no print run, and every scan lands in HubSpot.\n\n• Brochure: link coming to you today.\n• One check before we point a C-level Prepaid audience at it — does the current one-pager lead with business outcomes rather than architecture? If yes, we are in luck as we can use it as-is. If it is feature-led, I will prioritise a quick outcomes-first refresh before the Expo.\n• @Colin White can you make sure the QR capture routes into the Expo pipeline with the role classification you set up?\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1306,14 +1336,16 @@ const ITEMS = [
     "tags": [
       "privacy",
       "dpia",
-      "decision"
+      "decision",
+      "sent"
     ],
     "who": "Fred Oberholzer — DM",
     "when": "Tue 25 Aug, 12:53",
-    "ask": "“I also wanted to touch on the health-provider field. It's the one field in the warehouse that's arguably special category data… I suggest we switch it off. Can you confirm (a) nothing downstream consumes it, and (b) who actions that config change?” He also asked you to run a workspace-evidence prompt in your Claude for the mid-market DPIA.",
+    "ask": "Closed — you replied in the DM (“agree on two flavours” on the evidence run) and nothing has come back from Fred since.",
     "context": "You replied “agree on two flavours” ten minutes after Fred's message, but the health-provider field question (does anything consume it, who flips the config) and the workspace-evidence prompt are still unanswered — and he called that field the single biggest legal risk in the whole picture. Adi and Albert are the ones who can actually answer (a) and (b); the exec-level two-flavours decision he wants is a separate, bigger conversation with JL. A short reply delegating (a)/(b) and confirming when you will run the prompt is enough to move it.",
     "link": "https://intent.slack.com/archives/D0BRLTGR8SD/p1787658791248619",
-    "draft": "Fred — on the health-provider field:\n\n• I support switching it off. @Adi / @Albert — can you confirm (a) nothing downstream reads it (dashboards, exports, scheduled jobs) and (b) whose config change it is? If nothing consumes it, we are in luck as it is a low-risk switch-off and we do it this week. If something does, I will prioritise finding out why before we pull it.\n• The evidence run for the DPIA: I will run it when I am back Monday and send you the output — flagging now so you are not waiting on silence.\n• The two-flavours decision: agree it needs exec sign-off, not a DM. I will put it on the agenda with JL — the marketing claim gets corrected to whatever we decide, not the other way round.\n\nSame principle as the AIS permissions wording: if we would not defend it in front of a regulator, it does not ship.\n\nHope that helps."
+    "draft": "Fred — on the health-provider field:\n\n• I support switching it off. @Adi / @Albert — can you confirm (a) nothing downstream reads it (dashboards, exports, scheduled jobs) and (b) whose config change it is? If nothing consumes it, we are in luck as it is a low-risk switch-off and we do it this week. If something does, I will prioritise finding out why before we pull it.\n• The evidence run for the DPIA: I will run it when I am back Monday and send you the output — flagging now so you are not waiting on silence.\n• The two-flavours decision: agree it needs exec sign-off, not a DM. I will put it on the agenda with JL — the marketing claim gets corrected to whatever we decide, not the other way round.\n\nSame principle as the AIS permissions wording: if we would not defend it in front of a regulator, it does not ship.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Colin: landing page V2 + Dipak's decision tree",
@@ -1675,15 +1707,17 @@ const ITEMS = [
     "tags": [
       "intentai",
       "scheduling",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Sangram Reddy — #p-edge-behavioural-tokens",
     "when": "Thu 17 Sep, 08:43",
     "due": "Meeting Fri 10:30",
-    "ask": "“Invite sent for tomorrow at 10:30AM GMT. @Shafeeq, was unable to find an other slot and your calendar looks busy. Will you be able to make it to this one?”",
+    "ask": "Closed — the kickoff went ahead on Fri 18 Sep and the squad has moved on to the token spec (see the new review card).",
     "context": "New channel for the behavioural-tokens work: structuring edge signals (what, when, where, who) into tokens a sequence-to-sequence model can learn from, with Conrad and Shaun helping Alexander. Sangram asked you to add product context and the kickoff is tomorrow 10:30. Peter has offered to move your Fri 10:45 1x1 to make room and wants adding to the invite. Sangram is off today and separately DM'd asking to WhatsApp you (“loads to chat… which time works best?”) — one call settles the slot and the agenda.",
     "link": "https://intent.slack.com/archives/C0C2H54KF2N/p1789631017154769",
-    "draft": "Sangram — yes, I will make 10:30 work.\n\n• @Peter — take your own offer: move our 10:45 and join this instead, your skills work sits right on top of it. I will get you on the invite.\n• So the hour lands: the ambiguity to kill first is the token schema — what one behavioural token looks like (event, timestamp, place, user ref) and which edge signals emit it today vs need new capture. If the current SDK signal set covers the first pass, we are in luck as Alexander can start on real shapes next week. If it needs new emission work, I will prioritise scoping that with @Adi before we put timelines on a sequence model.\n• Sangram — WhatsApp me when you surface today and I will give you the product context to fold in before tomorrow.\n\nHope that helps."
+    "draft": "Sangram — yes, I will make 10:30 work.\n\n• @Peter — take your own offer: move our 10:45 and join this instead, your skills work sits right on top of it. I will get you on the invite.\n• So the hour lands: the ambiguity to kill first is the token schema — what one behavioural token looks like (event, timestamp, place, user ref) and which edge signals emit it today vs need new capture. If the current SDK signal set covers the first pass, we are in luck as Alexander can start on real shapes next week. If it needs new emission work, I will prioritise scoping that with @Adi before we put timelines on a sequence model.\n• Sangram — WhatsApp me when you surface today and I will give you the product context to fold in before tomorrow.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Kipp: “next cycle” notification is unclear",
@@ -1699,6 +1733,38 @@ const ITEMS = [
     "context": "Tagged you, Sam and Luca — but Luca is off until Friday afternoon, so the ack falls to you. Fair catch: the product exposes internal scheduling language (“cycle”) without saying when it runs, and Kipp is hitting it while selling. Cheap to log in the opportunities QA & Feedback project Luca pointed the squad at this week; the better fix is the notification stating the actual next run time.",
     "link": "https://intent.slack.com/archives/C0B47UNPJMS/p1789585279758399",
     "draft": "Kipp — fair catch, logging it.\n\n• I will raise it in the opportunities QA & Feedback project today. The fix I want is not a glossary — the notification should just say when: “new opportunities will be generated at the next scheduled run (tonight at HH:MM)”.\n• If the run schedule is already exposed to the frontend, we are in luck as this is copy plus a timestamp. If it is not, I will get the squad to confirm what the UI can know before we promise the nicer version.\n\nHope that helps."
+  },
+  {
+    "title": "Sangram: behavioural-tokens pitch doc — review due today",
+    "category": "internal",
+    "tags": [
+      "behavioural-tokens",
+      "intentai",
+      "review",
+      "deadline"
+    ],
+    "who": "Sangram Reddy — #p-edge-behavioural-tokens",
+    "when": "Fri 18 Sep, 13:37",
+    "due": "Due — he asked for it “before monday” (today)",
+    "ask": "“Created this initial shapeup style doc for alignment… Pitch: Behavioural token serialisation. @Tobie Alberts and @Shafeeq Shajahan, would love a review from you guys before monday.”",
+    "context": "He built the tokenizer/synthesizer stack over the weekend (repo up, address format {topic}.{brand}.{action}.{where}) and the squad walks it through in today's meeting. Conrad has pushed a what3words-style decomposable-token view and Alexander has scoped stage 1 to signals the SDK already collects, first token = sleep. Your review is the product voice before this hardens.",
+    "link": "https://intent.slack.com/archives/C0C2H54KF2N/p1789735061444929?thread_ts=1789728209.047599&cid=C0C2H54KF2N",
+    "draft": "Sangram — been through the doc. Direction is right; three things before we lock it:\n\n• First proof point: what is the first commercial question this answers, and for whom? If it is propensity/churn uplift on a dataset we already hold, we are in luck as the pitch can anchor on real numbers. If not, I will prioritise defining one with you this week — a tokenizer without a target use case will drift.\n• Vocab ownership: brands/topics vocabs will need versioning and human review at scale — let's explicitly fold the brand-labeller learning loop in here rather than run two labelling efforts.\n• Scope discipline: strongly agree with Alexander's stage 1 — only signals the SDK already collects. Anything needing new SDK collection goes in a later stage, priced separately.\n\nHappy to go deeper in today's session. @Tobie Alberts keen on your pass too. Hope that helps."
+  },
+  {
+    "title": "Rekha: confirm her hybrid working arrangement",
+    "category": "internal",
+    "tags": [
+      "rekha",
+      "people",
+      "onboarding"
+    ],
+    "who": "Rekha Thalla — DM",
+    "when": "Mon 21 Sep, 10:03",
+    "ask": "“During my interview with you, my understanding was … around once a week or whenever required. However, during onboarding, HR mentioned 2–3 days per week… Just wanted to confirm that this arrangement is still okay with you so we're aligned going forward.”",
+    "context": "Your new QA hire, first full week. She has a 1.5h commute each way and her day-to-day collaboration is with Meri in Barcelona, so remote-heavy is rational. The real fix is squaring the message with People so she is not caught between what you said and what HR said — leaving it vague is worse than either answer.",
+    "link": "https://intent.slack.com/archives/D0C2DMSRBMK/p1789981397427449",
+    "draft": "Hi Rekha — good weekend thanks, hope you did too. Thanks for flagging this early rather than letting it sit.\n\n• Yes — what we discussed stands: once a week or whenever the work needs it. With Meri in Barcelona, most of your collaboration is remote anyway.\n• I will square the wording with the People team so onboarding guidance matches what we agreed — leave that with me, you should not be caught between two versions.\n• Only ask from my side: make the office days purposeful — KT sessions, workshops, team days — rather than a fixed ritual.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
