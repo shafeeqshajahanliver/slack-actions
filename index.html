@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 21 Sep, 10:05 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 23 Sep, 10:24 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -673,12 +673,14 @@ const ITEMS = [
     "tags": [
       "etisalat",
       "approval",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Adam Wilson — #intentone-presales-e&",
     "when": "Wed 16 Sep, 14:38",
     "due": "Due Fri 18 Sep EOD",
-    "ask": "“Please provide your PAG outcome for the CP-044-e& Egypt-IntentOne sales proposal… The deadline for review completion is end of day Friday 18-Sep-2026. The Proposal Assurance Gate form to enter your approval outcome can be found here: CP-044-PAG Approval.”",
+    "ask": "Handled — after Adam's overdue chase (channel Mon, DM Tue) you acknowledged in #intentone-presales-e& Tue evening and Scott completed his review the same hour. Worth a ten-second check that your outcome is actually entered in the CP-044 PAG form.",
+    "done": true,
     "context": "The e& Egypt deal from Ben's August technical session reaching paper — seven reviewers including Gareth, Fred and Shirley, and yours is the product-deliverability call. Same discipline as XLSMART, AIS and Beem: check which committed capabilities the proposal rests on (shipped vs Now/Next) and that nothing implies MCP access or anything still in flight. You are deep in Mobileum workshop prep with Ben this week, so this needs its own slot before Friday.",
     "link": "https://intent.slack.com/archives/C0C1YUVMETU/p1789565895854049",
     "draft": "Thanks Adam — I will have my PAG outcome in before Friday EOD.\n\nSame two checks as the last round, flagging early rather than sitting on the form:\n• Which committed capabilities does the proposal rest on? If it is the standard IntentOne + SDK story we showed e& in the August technical session, we are in luck as I can approve straight through. If it leans on anything still in Now/Next (MCP access, connectors work), I will prioritise flagging it in the doc tomorrow morning so it does not hold up your Friday.\n• @Ben — anything change in scope since the Egypt session that I should read the proposal against? You know this room best.\n\nHope that helps."
@@ -694,7 +696,7 @@ const ITEMS = [
     "who": "Lidor Raviv — #fishka-var",
     "when": "Thu 17 Sep, 11:56",
     "ask": "“What now? Who is going to use this data to create an Intent one env.?” — tagging you and Sam.",
-    "context": "Fishka's consent is the thing EE is still chasing, so Fishka is ahead: data is cleared and now nobody owns standing the env up. The channel has been silent since — this is an ownership gap, not a technical one. EE shadow-deploy is the obvious pattern to reuse.",
+    "context": "Fishka's consent is the thing EE is still chasing, so Fishka is ahead: data is cleared and now nobody owns standing the env up. Sam replied in-thread Tue: someone from data-ingestions (probably Manuel), asking Luca to confirm — the scope being a separated Allo environment for the Allo subset of Fishka users. Still nobody named and Luca hasn't confirmed, so the ownership gap is narrower but not closed.",
     "link": "https://intent.slack.com/archives/C0BCXKEEW1Z/p1789642607275909",
     "draft": "Good chase — this should not sit. Splitting it:\n\n• Data: if the consented Fishka data is already landing somewhere we control, we are in luck as we can follow the same pattern as the EE shadow deploy and stand the env up without new legal work. If it is not landing yet, that is the first job.\n• Owner: proposal — the team already doing the EE stand-up owns Fishka too, same runbook, second client through the same door. @Sam Rayner does that clash with anything on foundations?\n• Sequence: internal env first, we sanity-check insights quality, then decide together what Fishka actually sees.\n\nIf we agree, I will get an owner named this week. Hope that helps."
   },
@@ -712,6 +714,37 @@ const ITEMS = [
     "context": "Booth is confirmed (Tunji manning all 4 days), audience is MTN Prepaid EXCO — senior and commercial. Syed is deliberately avoiding a print dependency. Colin has separately flagged that travel/manpower for the event still is not approved, so the collateral ask is the easy unblock.",
     "link": "https://intent.slack.com/archives/C0BUW9DJ9RS/p1789718567517009",
     "draft": "Hi Syed — good plan, QR-first is the right call: no print run, and every scan lands in HubSpot.\n\n• Brochure: link coming to you today.\n• One check before we point a C-level Prepaid audience at it — does the current one-pager lead with business outcomes rather than architecture? If yes, we are in luck as we can use it as-is. If it is feature-led, I will prioritise a quick outcomes-first refresh before the Expo.\n• @Colin White can you make sure the QR capture routes into the Expo pipeline with the role classification you set up?\n\nHope that helps."
+  },
+  {
+    "title": "Lidor: no invite email for the Allo environment",
+    "category": "client",
+    "tags": [
+      "fishka",
+      "allo",
+      "access",
+      "quick"
+    ],
+    "who": "Lidor Raviv — DM",
+    "when": "Wed 23 Sep, 09:24",
+    "ask": "“If Fishka has access to their Fishka Intent one, and now I've sent him access to the Allo one, he is saying he is not seeing the email. Because he has his Fishka one — he can access it with the same password he set for the Fishka one? Perhaps the email won't be sent again?”",
+    "context": "The Allo access you green-lit last week hitting a mechanical snag: an existing IntentOne user added to a second workspace does not appear to get a fresh welcome email. Lidor's own read — same email, same password, just the Allo URL — is probably right, but he is guessing in front of a client contact, and this is the same invite territory that bit Verizon (invalid welcome codes, Sam resending). Thirty seconds to confirm, plus a line in his access knowledge article so the next existing-user case is not a mystery.",
+    "link": "https://intent.slack.com/archives/D09NF7VLW10/p1790151889860589",
+    "draft": "Lidor — your read is right, no bug here.\n\n• Mike already has an IntentOne account, so adding him to Allo does not trigger a fresh welcome email. He just goes to the Allo URL and logs in with the same email and password he set for Fishka.\n• Ask him to try that first. If he is in, we are in luck as this is only a docs gap — add a line to your access knowledge article covering the existing-user case so it never confuses anyone again. If he genuinely cannot get in, I will prioritise checking the admin side with @Sam today so he is not blocked.\n\nHope that helps."
+  },
+  {
+    "title": "Alfonso: betting-industry video wants your view",
+    "category": "client",
+    "tags": [
+      "betting",
+      "video",
+      "prospect"
+    ],
+    "who": "Alfonso Urien — DM",
+    "when": "Wed 23 Sep, 09:32",
+    "ask": "“This video has unlocked a meeting with the CEO. Hello Shaf! What do you think about this new video for the Betting Industry?” (Loom attached)",
+    "context": "Follow-on from the elevator-pitch video you shaped with him Tue (intro the workspace, context that feeds the agent, data story, Google Ads campaign) — the first cut has already landed a CEO meeting at the prospect, and now he has cut a betting-sector version and wants your eyes on it. You also told him Tue that he should not be editing videos himself and floated hiring a contract video editor on your budget, with Colin in the loop — this is the moment to move that.",
+    "link": "https://intent.slack.com/archives/D09P1P6A6TS/p1790152335717099?thread_ts=1790073442.957029&cid=D09P1P6A6TS",
+    "draft": "Alfonso — a CEO meeting off the back of one video is a serious result, well earned.\n\n• Watching the betting cut today; comments back to you by end of day.\n• So you know my lens: does it lead with the commercial problem (retention, VIP value, at-risk behaviour) rather than our product nouns, and does anything overclaim what is shipped — same discipline as the roadmap.\n• If it holds up, we are in luck as it becomes the template for every sector cut and we reuse rather than reinvent per prospect. If it needs work, I will mark up timestamps rather than hand you vibes.\n• And as we said yesterday — you should not be the video editor. Let's take the contractor idea to @Colin this week; I am happy to fund it from my budget.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1468,11 +1501,13 @@ const ITEMS = [
     "tags": [
       "gtm",
       "wedge",
-      "review"
+      "review",
+      "sent"
     ],
     "who": "Martin Golding — DM",
     "when": "Thu 3 Sep, 16:46",
-    "ask": "“Ref building iGaming wedge, I will be attending the SBC summit at the end of September to sharpen this in the language of customer. Attached is doc I put together to review the agenda and objectives — if you have 5 minutes next week, would be good to get your view and any areas of particular interest.”",
+    "ask": "Handled — you replied Mon and the DM has moved on to the Mindszi introducer meeting (you pulled in Sam to demo and briefed him Tue). If the SBC doc still needs a pass before end-September, Martin will re-raise it.",
+    "done": true,
     "context": "SBC summit is the forcing function — end of September, so a reply next week still lands in time. The doc is his agenda-and-objectives pass for turning the iGaming wedge into customer language; Parimatch is the live proof point and the wedge work Colin has been building (Loyalty first) is the frame it should slot into rather than run parallel to. Cheap to answer: a slot plus two or three areas of interest.",
     "link": "https://intent.slack.com/archives/D09NSR8B094/p1788450365015629",
     "draft": "Martin — good move, sharpening this at SBC in the customer's language is exactly right.\n\n• Yes to 5 minutes next week — send an invite for Tue/Wed and I will read the doc before we speak.\n• Areas I care most about, so you can weight the agenda:\n  • What the iGaming buyer actually buys first — retention/VIP churn or fraud/abuse signals? The wedge should lead with one, not both.\n  • Where this sits against the wedge work @Colin is building — one wedge framework with iGaming as an entry, not a parallel track.\n  • Anything at SBC on data/permissions expectations in gambling — same territory we defended on Parimatch, and it decides how bold our signals story can be.\n\nIf the doc already leans that way, we are in luck as the 5 minutes becomes a yes-and. If not, I will prioritise a proper 30 minutes before you go.\n\nHope that helps."
@@ -1692,11 +1727,13 @@ const ITEMS = [
     "tags": [
       "pricing",
       "infra",
-      "decision"
+      "decision",
+      "sent"
     ],
     "who": "Tobie Alberts — #new-env-hit-squad",
     "when": "Wed 16 Sep, 20:32",
-    "ask": "“Please reply in-thread with owners + dates: … 2. Shafeeq — close Sangram's Qs: 1M CRM ready? edge synthesis plan? point Albert at the Nigeria 1M index. Confirm client/workspace stand-up ETA.”",
+    "ask": "Handled — you answered in-channel Mon: posted the Nigeria 1M S3 indexes (profile + weblog) for Albert, proposed seed-and-synthesise-to-1M as the data route, and committed to creating the client/workspace the same day the clean env exists. Tobie's Wednesday follow-up (copy vs storage-only Edge) is its own card.",
+    "done": true,
     "context": "Tobie's urgent push to cost a profile properly (SDK, IntentAI, IntentOne, activations at 1M users) so finance and pricing get an idle-floor + component cost sheet rather than a shared-staging guess. Albert asked you the same thing separately in #tech-leadership-team — he could not reach MTN Frankfurt and needs pointing at the Nigeria 1M index — and his ~100-field-baseline + field-pack proposal lands squarely on your pricing work, so one in-thread reply covers both and buys you a seat in how the baseline gets set.",
     "link": "https://intent.slack.com/archives/C0C22384E3F/p1789587139923529",
     "draft": "Tobie — answers in order:\n\n• Nigeria 1M index: @Albert I will send you the exact index name and the Opal route today so Frankfurt stops blocking you.\n• 1M CRM: yes — the synthetic pipeline can produce it and we have the shape from the demo work. Edge synthesis is the open piece: I will confirm with @Sangram whether we sample real edge data or synthesise, and post the plan here.\n• Client/workspace stand-up: I can create the client the same day the clean ihq-sta env exists — so my ETA hangs on Tom and Sandra's INFRA-2099 date, not on product.\n• One steer on the readout: Albert's 100-field baseline + field packs is the right measurement frame AND the right pricing frame. If the cost sheet and the pricing tiers use the same field definitions, we are in luck as we build one vocabulary, not two. If they drift apart, I will prioritise a session with Albert before anything reaches finance.\n\nHope that helps."
@@ -1735,7 +1772,7 @@ const ITEMS = [
     "draft": "Kipp — fair catch, logging it.\n\n• I will raise it in the opportunities QA & Feedback project today. The fix I want is not a glossary — the notification should just say when: “new opportunities will be generated at the next scheduled run (tonight at HH:MM)”.\n• If the run schedule is already exposed to the frontend, we are in luck as this is copy plus a timestamp. If it is not, I will get the squad to confirm what the UI can know before we promise the nicer version.\n\nHope that helps."
   },
   {
-    "title": "Sangram: behavioural-tokens pitch doc — review due today",
+    "title": "Sangram: behavioural-tokens pitch doc — review overdue",
     "category": "internal",
     "tags": [
       "behavioural-tokens",
@@ -1745,7 +1782,7 @@ const ITEMS = [
     ],
     "who": "Sangram Reddy — #p-edge-behavioural-tokens",
     "when": "Fri 18 Sep, 13:37",
-    "due": "Due — he asked for it “before monday” (today)",
+    "due": "Overdue — he asked for it before Mon 21 Sep",
     "ask": "“Created this initial shapeup style doc for alignment… Pitch: Behavioural token serialisation. @Tobie Alberts and @Shafeeq Shajahan, would love a review from you guys before monday.”",
     "context": "He built the tokenizer/synthesizer stack over the weekend (repo up, address format {topic}.{brand}.{action}.{where}) and the squad walks it through in today's meeting. Conrad has pushed a what3words-style decomposable-token view and Alexander has scoped stage 1 to signals the SDK already collects, first token = sleep. Your review is the product voice before this hardens.",
     "link": "https://intent.slack.com/archives/C0C2H54KF2N/p1789735061444929?thread_ts=1789728209.047599&cid=C0C2H54KF2N",
@@ -1757,14 +1794,77 @@ const ITEMS = [
     "tags": [
       "rekha",
       "people",
-      "onboarding"
+      "onboarding",
+      "sent"
     ],
     "who": "Rekha Thalla — DM",
     "when": "Mon 21 Sep, 10:03",
-    "ask": "“During my interview with you, my understanding was … around once a week or whenever required. However, during onboarding, HR mentioned 2–3 days per week… Just wanted to confirm that this arrangement is still okay with you so we're aligned going forward.”",
+    "ask": "Handled — you replied within the hour: once a week is fine (you recommend 1–2), People are flexible, and “if anyone asks, just point to me”. Rekha confirmed it works and you were in the office with her Tue.",
+    "done": true,
     "context": "Your new QA hire, first full week. She has a 1.5h commute each way and her day-to-day collaboration is with Meri in Barcelona, so remote-heavy is rational. The real fix is squaring the message with People so she is not caught between what you said and what HR said — leaving it vague is worse than either answer.",
     "link": "https://intent.slack.com/archives/D0C2DMSRBMK/p1789981397427449",
     "draft": "Hi Rekha — good weekend thanks, hope you did too. Thanks for flagging this early rather than letting it sit.\n\n• Yes — what we discussed stands: once a week or whenever the work needs it. With Meri in Barcelona, most of your collaboration is remote anyway.\n• I will square the wording with the People team so onboarding guidance matches what we agreed — leave that with me, you should not be caught between two versions.\n• Only ask from my side: make the office days purposeful — KT sessions, workshops, team days — rather than a fixed ritual.\n\nHope that helps."
+  },
+  {
+    "title": "Cost-a-profile: confirm copy vs storage-only by EOD",
+    "category": "internal",
+    "tags": [
+      "pricing",
+      "infra",
+      "deadline"
+    ],
+    "who": "Tobie Alberts — #new-env-hit-squad",
+    "when": "Wed 23 Sep, 10:11",
+    "due": "Confirm by EOD — figures due Fri 25 Sep",
+    "ask": "“Keep UAT moving (Tom): Do not pause INFRA-2099. Sandra is ready to copy data when the seed/plan is named. @Shafeeq / @Tom — confirm by EOD what gets copied vs storage-only Edge for Friday. Reply in-thread with owners confirming those three Friday lines.”",
+    "context": "The follow-on to Monday's answers (indexes posted, seed-and-synthesise agreed). Since then Tobie locked the hybrid: Option 3 measured job costs run directly on MTN Nigeria this week (no +20% baked in), UAT idle floor continues in parallel, Tom owns Edge for Friday as a storage-only placeholder. Two things still carry your name: the EOD confirm on what actually gets copied to UAT, and Sangram's Monday question — does Sriram have capacity to deploy processing on the new env? One wrinkle from Xingzhe's profiling: the Nigeria sample has ~904k CRM subscribers but only one usable weblog day, and IntentAI accumulates over ~14 — so the Friday IntentAI line needs a labelled caveat.",
+    "link": "https://intent.slack.com/archives/C0C22384E3F/p1790154674754009?thread_ts=1790087576.748019&cid=C0C22384E3F",
+    "draft": "Tobie — confirming in-thread so Friday is not waiting on me:\n\n• Copy vs storage-only: for Friday, storage-only Edge (Tom's placeholder) and nothing new copied to UAT — Option 3 measures jobs on MTN Nigeria directly, so the Friday baseline does not need a copy. Seed-and-synthesise stays the plan for the UAT tenant milestone, not this week.\n• One caveat for the artefact: Xingzhe's profiling shows only one usable weblog day in the sample and IntentAI accumulates over ~14 — so the IntentAI line is a job-cost baseline, not affinity-complete. Better a labelled caveat than a silent gap finance later finds.\n• @Sangram — on Sriram deploying processing on the new env: confirming his capacity today. If he is free, we are in luck and he owns it. If not, I will name an alternative rather than leave it unowned into Friday.\n\nHope that helps."
+  },
+  {
+    "title": "Helen: betway-nurture regenerated — check it",
+    "category": "internal",
+    "tags": [
+      "nurture",
+      "demo",
+      "quick"
+    ],
+    "who": "Helen Soniega — #p-client-foundations",
+    "when": "Tue 22 Sep, 12:04",
+    "ask": "“Hey Shafeeq — the goals have been updated and the opportunities regenerated 🙌 Can you please check?”",
+    "context": "Your own request, turned round in a day: the 'Nurture' for-good pillar you are co-developing with Sharifah (betway-nurture workspace, goals replaced with your markdown). Helen flagged the caveat up front — the synthetic customers were built from the old acquire/revenue goals, so audiences under the new opportunities still read as normal sportsbook customers, not at-risk ones. A check-and-thanks closes her loop; whether the demo needs at-risk-looking synthetic data before Sharifah sees it is the real call.",
+    "link": "https://intent.slack.com/archives/C0BBRU8UQCS/p1790075093091279?thread_ts=1789990433.015729&cid=C0BBRU8UQCS",
+    "draft": "Helen — checked, and this is exactly what I asked for, thank you for the fast turnaround.\n\n• Goals and opportunity framing look right for the first Sharifah walkthrough — the Nurture story is carried by the goals and the opportunity titles, so we can show it as-is.\n• On the caveat you flagged: agreed and understood — the audiences underneath still look like normal sportsbook customers. If we get to a second pass, we are in luck if the synthetic pipeline can skew a small at-risk cohort (late-night frequency, deposit chasing); if it cannot, I will scope a hand-built cohort rather than block the pillar on it.\n\nHope that helps."
+  },
+  {
+    "title": "Adi: SDK localisation — strict no, scalable yes?",
+    "category": "internal",
+    "tags": [
+      "launch",
+      "sdk",
+      "decision",
+      "quick"
+    ],
+    "who": "Adi Dahan — product group DM (Sam, Luca)",
+    "when": "Wed 23 Sep, 10:06",
+    "ask": "Sam: “SDK App localisation work?” → Adi: “Strict launch - no. Scalable launch - yes. @Shafeeq — agree?”",
+    "context": "Thread under your launch-critical list from this morning (ingestions, exit paths, Google Ads, agent SDK provisioning, Orb). Sam floated SDK app localisation as a possible pre-launch item; Adi's position is it gates the scalable launch, not the strict one, and yours is the deciding voice so the critical list stays credible. This is also the localisation thread you have owed Lidor a direction on since August — settling it here settles where it sits on the roadmap.",
+    "link": "https://intent.slack.com/archives/C0ATED932HW/p1790154385334899?thread_ts=1790150948.148349&cid=C0ATED932HW",
+    "draft": "Agree — strict launch: no, scalable launch: yes.\n\n• Localisation does not gate the first paying customers, so it stays off the critical list — that list only earns its name if we defend it ruthlessly.\n• But let's not lose it: top of the scalable-launch backlog with a rough scope, because the markets pulling hardest right now (LatAm, SEA, Africa) will make it real fast — and Lidor has been asking since August.\n• @Sam — park it in the launch doc under 'scalable' so we keep one list, not two."
+  },
+  {
+    "title": "Sarah: can you join tomorrow's IntentOne call?",
+    "category": "internal",
+    "tags": [
+      "scheduling",
+      "quick"
+    ],
+    "who": "Sarah Nelson — DM",
+    "when": "Wed 23 Sep, 10:17",
+    "ask": "“hey, are you able to join the Intent one call tomorrow morning?”",
+    "context": "Ten-second confirm — but check the diary first: you are on annual leave Thursday and Friday (you have already told Yema and Ana this week and moved their meetings to Monday/Tuesday). If this is the IntentOne weekly Lawrence pushes on, a no needs to come with a pointer — the transition-plan Miro or a delegate — rather than just an apology.",
+    "link": "https://intent.slack.com/archives/D0B18U6AZ0F/p1790155078475419",
+    "draft": "Hi Sarah — I am on annual leave tomorrow and Friday, so I will miss it.\n\n• Anything needing a product voice: @Sam has the latest on the transition plan and the launch-critical list from this morning.\n• If there is a decision waiting on me specifically, drop it here today and I will answer before I go — I would rather clear it now than have it wait until Monday.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
