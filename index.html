@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Wed 23 Sep, 10:24 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Thu 24 Sep, 10:18 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -695,10 +695,11 @@ const ITEMS = [
     ],
     "who": "Lidor Raviv — #fishka-var",
     "when": "Thu 17 Sep, 11:56",
-    "ask": "“What now? Who is going to use this data to create an Intent one env.?” — tagging you and Sam.",
-    "context": "Fishka's consent is the thing EE is still chasing, so Fishka is ahead: data is cleared and now nobody owns standing the env up. Sam replied in-thread Tue: someone from data-ingestions (probably Manuel), asking Luca to confirm — the scope being a separated Allo environment for the Allo subset of Fishka users. Still nobody named and Luca hasn't confirmed, so the ownership gap is narrower but not closed.",
+    "ask": "Latest (Wed 23 Sep, 19:49, Allo group DM): “It's for the VAR deal… Prathna is away until the 28th, if we will have it until she is back it's amazing, but let me know how feasible it is…” — on top of the original “Who is going to use this data to create an Intent one env.?”",
+    "context": "You picked this up Tuesday: named the Allo group DM, asked Luca whether the filtered Fishka→Allo workspace sits in Client Foundations or Data Ingestion, and asked Lidor when it is needed. Two loops still open: Lidor needs a feasibility answer against the 28th, and the data looks short — Netta sees 38,980 users in SEG_ANAG_ALLO_LAST_6_MM_PROD_2026_09_17 against the ~123,000 expected, which needs reconciling before anyone builds an env on it.",
     "link": "https://intent.slack.com/archives/C0BCXKEEW1Z/p1789642607275909",
-    "draft": "Good chase — this should not sit. Splitting it:\n\n• Data: if the consented Fishka data is already landing somewhere we control, we are in luck as we can follow the same pattern as the EE shadow deploy and stand the env up without new legal work. If it is not landing yet, that is the first job.\n• Owner: proposal — the team already doing the EE stand-up owns Fishka too, same runbook, second client through the same door. @Sam Rayner does that clash with anything on foundations?\n• Sequence: internal env first, we sanity-check insights quality, then decide together what Fishka actually sees.\n\nIf we agree, I will get an owner named this week. Hope that helps."
+    "draft": "Lidor — here is where it stands.\n\n• Feasibility: if Luca can slot the filtered workspace into Client Foundations this week, we are in luck as having it ready for Prathna's return on the 28th is realistic. If it lands with Data Ingestion behind other work, I will prioritise getting you an honest date rather than a hopeful one — either way you will know this week.\n• Before anyone builds: the segment count needs reconciling. Netta sees ~39k users in the Allo segment against the ~123k we expected — @Sam can you and Netta work out whether the segment definition or the extract is wrong? No point building an env on a third of the data.\n• @Luca — confirm which team owns it and I will stop guessing.\n\nHope that helps.",
+    "due": "Lidor wants it by Mon 28 Sep (Prathna back)"
   },
   {
     "title": "MTN AI Expo: Syed needs the product brochure link",
@@ -722,14 +723,16 @@ const ITEMS = [
       "fishka",
       "allo",
       "access",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Lidor Raviv — DM",
     "when": "Wed 23 Sep, 09:24",
-    "ask": "“If Fishka has access to their Fishka Intent one, and now I've sent him access to the Allo one, he is saying he is not seeing the email. Because he has his Fishka one — he can access it with the same password he set for the Fishka one? Perhaps the email won't be sent again?”",
+    "ask": "Handled — you replied the same morning (“it should be sent!”, plus your habit: send a follow-up email with the workspace link); Lidor confirmed “Got it! I will write it in the playbook”.",
     "context": "The Allo access you green-lit last week hitting a mechanical snag: an existing IntentOne user added to a second workspace does not appear to get a fresh welcome email. Lidor's own read — same email, same password, just the Allo URL — is probably right, but he is guessing in front of a client contact, and this is the same invite territory that bit Verizon (invalid welcome codes, Sam resending). Thirty seconds to confirm, plus a line in his access knowledge article so the next existing-user case is not a mystery.",
     "link": "https://intent.slack.com/archives/D09NF7VLW10/p1790151889860589",
-    "draft": "Lidor — your read is right, no bug here.\n\n• Mike already has an IntentOne account, so adding him to Allo does not trigger a fresh welcome email. He just goes to the Allo URL and logs in with the same email and password he set for Fishka.\n• Ask him to try that first. If he is in, we are in luck as this is only a docs gap — add a line to your access knowledge article covering the existing-user case so it never confuses anyone again. If he genuinely cannot get in, I will prioritise checking the admin side with @Sam today so he is not blocked.\n\nHope that helps."
+    "draft": "Lidor — your read is right, no bug here.\n\n• Mike already has an IntentOne account, so adding him to Allo does not trigger a fresh welcome email. He just goes to the Allo URL and logs in with the same email and password he set for Fishka.\n• Ask him to try that first. If he is in, we are in luck as this is only a docs gap — add a line to your access knowledge article covering the existing-user case so it never confuses anyone again. If he genuinely cannot get in, I will prioritise checking the admin side with @Sam today so he is not blocked.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Alfonso: betting-industry video wants your view",
@@ -737,14 +740,32 @@ const ITEMS = [
     "tags": [
       "betting",
       "video",
-      "prospect"
+      "prospect",
+      "sent"
     ],
     "who": "Alfonso Urien — DM",
     "when": "Wed 23 Sep, 09:32",
-    "ask": "“This video has unlocked a meeting with the CEO. Hello Shaf! What do you think about this new video for the Betting Industry?” (Loom attached)",
+    "ask": "Handled — you replied (“amazing!!! good luck :slightly_smiling_face:”) after Alfonso shared that the video unlocked a CEO meeting.",
     "context": "Follow-on from the elevator-pitch video you shaped with him Tue (intro the workspace, context that feeds the agent, data story, Google Ads campaign) — the first cut has already landed a CEO meeting at the prospect, and now he has cut a betting-sector version and wants your eyes on it. You also told him Tue that he should not be editing videos himself and floated hiring a contract video editor on your budget, with Colin in the loop — this is the moment to move that.",
     "link": "https://intent.slack.com/archives/D09P1P6A6TS/p1790152335717099?thread_ts=1790073442.957029&cid=D09P1P6A6TS",
-    "draft": "Alfonso — a CEO meeting off the back of one video is a serious result, well earned.\n\n• Watching the betting cut today; comments back to you by end of day.\n• So you know my lens: does it lead with the commercial problem (retention, VIP value, at-risk behaviour) rather than our product nouns, and does anything overclaim what is shipped — same discipline as the roadmap.\n• If it holds up, we are in luck as it becomes the template for every sector cut and we reuse rather than reinvent per prospect. If it needs work, I will mark up timestamps rather than hand you vibes.\n• And as we said yesterday — you should not be the video editor. Let's take the contractor idea to @Colin this week; I am happy to fund it from my budget.\n\nHope that helps."
+    "draft": "Alfonso — a CEO meeting off the back of one video is a serious result, well earned.\n\n• Watching the betting cut today; comments back to you by end of day.\n• So you know my lens: does it lead with the commercial problem (retention, VIP value, at-risk behaviour) rather than our product nouns, and does anything overclaim what is shipped — same discipline as the roadmap.\n• If it holds up, we are in luck as it becomes the template for every sector cut and we reuse rather than reinvent per prospect. If it needs work, I will mark up timestamps rather than hand you vibes.\n• And as we said yesterday — you should not be the video editor. Let's take the contractor idea to @Colin this week; I am happy to fund it from my budget.\n\nHope that helps.",
+    "done": true
+  },
+  {
+    "title": "Alfonso: Personal Pay CDO demo tonight — connectors link is stale",
+    "category": "client",
+    "tags": [
+      "personal-pay",
+      "demo",
+      "deadline"
+    ],
+    "who": "Alfonso Urien — DM",
+    "when": "Thu 24 Sep, 09:49",
+    "due": "Tonight — CDO demo",
+    "ask": "“I have a meeting with the CDO at Personal Pay tonight, where I will go through the Personal Pay demo… I wanted to add the connectors piece, which I had stored in this link (signal-recommender-paths.vercel.app) but seems that the content has changed. Is there a new link for it, so I can show the demo from the beginning to the end?”",
+    "context": "He demos by shifting tabs so the CDO sees the whole flow end to end, and the standalone connectors site he bookmarked now carries different content. You are on leave today, so the useful answer is a link, not a meeting: either the current home of the connectors story or the live Connectors page inside the workspace. Same momentum thread as his betting video — a broken segment tonight is a cheap way to lose expensive momentum with a prospect CDO.",
+    "link": "https://intent.slack.com/archives/D09P1P6A6TS/p1790239752541619",
+    "draft": "Alfonso — good luck tonight, let's make sure the flow is complete.\n\n• Something else lives at that Vercel link now, so do not lean on it.\n• If the live Connectors page inside the Personal Pay workspace shows what you need, we are in luck as it is one fewer tab and it is always current — use that.\n• If you need the standalone visual, ping me before your call and I will dig out the right link — I am on leave today but this is a two-minute job.\n\nOne small ask: after tonight, tell me which version landed better with the CDO — it decides what we standardise for the other prospects.\n\nHope that helps."
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1815,9 +1836,9 @@ const ITEMS = [
     ],
     "who": "Tobie Alberts — #new-env-hit-squad",
     "when": "Wed 23 Sep, 10:11",
-    "due": "Confirm by EOD — figures due Fri 25 Sep",
+    "due": "Overdue — EOD was Wed; Tobie re-pinged Thu 08:33, figures due Fri",
     "ask": "“Keep UAT moving (Tom): Do not pause INFRA-2099. Sandra is ready to copy data when the seed/plan is named. @Shafeeq / @Tom — confirm by EOD what gets copied vs storage-only Edge for Friday. Reply in-thread with owners confirming those three Friday lines.”",
-    "context": "The follow-on to Monday's answers (indexes posted, seed-and-synthesise agreed). Since then Tobie locked the hybrid: Option 3 measured job costs run directly on MTN Nigeria this week (no +20% baked in), UAT idle floor continues in parallel, Tom owns Edge for Friday as a storage-only placeholder. Two things still carry your name: the EOD confirm on what actually gets copied to UAT, and Sangram's Monday question — does Sriram have capacity to deploy processing on the new env? One wrinkle from Xingzhe's profiling: the Nigeria sample has ~904k CRM subscribers but only one usable weblog day, and IntentAI accumulates over ~14 — so the Friday IntentAI line needs a labelled caveat.",
+    "context": "The follow-on to Monday's answers (indexes posted, seed-and-synthesise agreed). Since then Tobie locked the hybrid: Option 3 measured job costs run directly on MTN Nigeria this week (no +20% baked in), UAT idle floor continues in parallel, Tom owns Edge for Friday as a storage-only placeholder. Two things still carry your name: the EOD confirm on what actually gets copied to UAT, and Sangram's Monday question — does Sriram have capacity to deploy processing on the new env? One wrinkle from Xingzhe's profiling: the Nigeria sample has ~904k CRM subscribers but only one usable weblog day, and IntentAI accumulates over ~14 — so the Friday IntentAI line needs a labelled caveat. Tobie's Thursday-morning check keeps your name on line 3 — confirm what gets copied vs storage-only Edge so Sandra can load — and Tom is now pushing back that storage-only is misleading (“the processing is an outcome of the storage”), so expect to referee that before Friday.",
     "link": "https://intent.slack.com/archives/C0C22384E3F/p1790154674754009?thread_ts=1790087576.748019&cid=C0C22384E3F",
     "draft": "Tobie — confirming in-thread so Friday is not waiting on me:\n\n• Copy vs storage-only: for Friday, storage-only Edge (Tom's placeholder) and nothing new copied to UAT — Option 3 measures jobs on MTN Nigeria directly, so the Friday baseline does not need a copy. Seed-and-synthesise stays the plan for the UAT tenant milestone, not this week.\n• One caveat for the artefact: Xingzhe's profiling shows only one usable weblog day in the sample and IntentAI accumulates over ~14 — so the IntentAI line is a job-cost baseline, not affinity-complete. Better a labelled caveat than a silent gap finance later finds.\n• @Sangram — on Sriram deploying processing on the new env: confirming his capacity today. If he is free, we are in luck and he owns it. If not, I will name an alternative rather than leave it unowned into Friday.\n\nHope that helps."
   },
@@ -1857,14 +1878,59 @@ const ITEMS = [
     "category": "internal",
     "tags": [
       "scheduling",
-      "quick"
+      "quick",
+      "sent"
     ],
     "who": "Sarah Nelson — DM",
     "when": "Wed 23 Sep, 10:17",
-    "ask": "“hey, are you able to join the Intent one call tomorrow morning?”",
+    "ask": "Handled — you replied (offered later that day; Sarah is on a plane) and agreed the way forward: sense-check where it stands with you, then hand the event work off to Luca.",
     "context": "Ten-second confirm — but check the diary first: you are on annual leave Thursday and Friday (you have already told Yema and Ana this week and moved their meetings to Monday/Tuesday). If this is the IntentOne weekly Lawrence pushes on, a no needs to come with a pointer — the transition-plan Miro or a delegate — rather than just an apology.",
     "link": "https://intent.slack.com/archives/D0B18U6AZ0F/p1790155078475419",
-    "draft": "Hi Sarah — I am on annual leave tomorrow and Friday, so I will miss it.\n\n• Anything needing a product voice: @Sam has the latest on the transition plan and the launch-critical list from this morning.\n• If there is a decision waiting on me specifically, drop it here today and I will answer before I go — I would rather clear it now than have it wait until Monday.\n\nHope that helps."
+    "draft": "Hi Sarah — I am on annual leave tomorrow and Friday, so I will miss it.\n\n• Anything needing a product voice: @Sam has the latest on the transition plan and the launch-critical list from this morning.\n• If there is a decision waiting on me specifically, drop it here today and I will answer before I go — I would rather clear it now than have it wait until Monday.\n\nHope that helps.",
+    "done": true
+  },
+  {
+    "title": "Maciej: demo_other is 404ing — promote the new index or kill the client?",
+    "category": "internal",
+    "tags": [
+      "intentone",
+      "demo-env",
+      "bug"
+    ],
+    "who": "Manana Jaworska + Maciej Pfutzner — #intent-one-shhh",
+    "when": "Thu 24 Sep, 10:02",
+    "ask": "Manana: “Anyone against pointing the demo_other client at today's index?” → Albert: “do we need the demo_other client?” → Manana: “I have no idea — who should I ask?” → Maciej: “@Shafeeq?”",
+    "context": "Maciej's ONE-2469 write fix is in prod and the refresh built a new profiles index (~69k profiles, campaign-agent already querying it), but IntentOne config still points demo_other at a June index that no longer exists — so autopilot 404s in that workspace. The mechanical fix (promote via the dataset-ready API) is ready; the blocker is the product question Albert raised: whether demo_other is worth keeping at all. Two decisions, both yours, both quick.",
+    "link": "https://intent.slack.com/archives/C09H04PU9GD/p1790240554001009?thread_ts=1790173930.875019&cid=C09H04PU9GD",
+    "draft": "Thanks for chasing — this one is mine.\n\n• Short term: promote. Point demo_other at today's index via the dataset-ready API so autopilot stops 404ing — no objection to the route Manana proposed.\n• @Albert on whether we need it at all: fair challenge. If nobody has demoed from demo_other in the last month, we are in luck as we can retire it and save the refresh cost. If it is still someone's sandbox, I will prioritise naming an owner — Manana should not have to guess who to ask.\n\nHope that helps."
+  },
+  {
+    "title": "Lawrence: HiBob leave on the wrong week + JL session at risk",
+    "category": "internal",
+    "tags": [
+      "scheduling",
+      "quick"
+    ],
+    "who": "Lawrence Chapman — DM",
+    "when": "Thu 24 Sep, 10:01",
+    "ask": "“On HiBob I think you entered Thursday/Friday last week by mistake… FYI — I'm confirm[ing] JL can make this otherwise it will need to be rescheduled” (calendar screenshot attached)",
+    "context": "You told him you are on leave today and tomorrow but joining this afternoon's cluster (localisation + mid-market with JL and Gareth). He thinks the HiBob entry sits on last week's Thursday/Friday, so the system and reality disagree — which is exactly how meetings get booked over your leave. He is separately checking JL can make the session in his screenshot before rescheduling it.",
+    "link": "https://intent.slack.com/archives/D09KBLZ71T8/p1790240519719119",
+    "draft": "Thanks for catching it.\n\n• HiBob: you are probably right — I will fix the entry to this Thu/Fri when I am next at a laptop, so the record matches reality.\n• The JL session: if he can make it, we are in luck as I am on for the afternoon cluster anyway, so keep it where it is. If he cannot, I will prioritise whichever new slot works for JL and Gareth — send it and I will accept from my phone.\n\nHope that helps."
+  },
+  {
+    "title": "Adam: project status artefact needs your read-through",
+    "category": "internal",
+    "tags": [
+      "searce",
+      "review"
+    ],
+    "who": "Adam Wilson — group DM with Colin",
+    "when": "Wed 23 Sep, 23:14",
+    "ask": "“Can you guys please read through this project status and info artefact I have created… If you see anything incorrect, you can highlight the text / area and leave a comment of what's wrong and what it should be.”",
+    "context": "Directed at you and Colin, and nobody has replied. Adam runs the Searce/marketplace workstream, and the same day Tom routed ‘how do we want customers to land in marketplace’ to you — the thread then settled on the public sign-up page (one.intenthq.com/sign-up) rather than the Zitadel-gated URL. Worth checking the artefact tells that story and does not commit product to dates you have not agreed.",
+    "link": "https://intent.slack.com/archives/C0C2PDB4XRB/p1790201646832889",
+    "draft": "Adam — will do a pass and leave comments inline.\n\n• Two things I am reading for: anything that commits product to a date, and how it describes the marketplace landing flow — the team settled on the public sign-up page yesterday, so the doc should say that rather than the old gated URL.\n• If both are right, we are in luck as you get my comments with no rework. If anything is off, I will prioritise those sections first so nothing wrong circulates.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
