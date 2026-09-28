@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Fri 25 Sep, 10:20 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 28 Sep, 10:17 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -794,14 +794,16 @@ const ITEMS = [
     "tags": [
       "personal-pay",
       "salesforce",
-      "integration"
+      "integration",
+      "sent"
     ],
     "who": "Alfonso Urien — #intent-one",
     "when": "Thu 24 Sep, 21:12",
-    "ask": "“How does Intent One export audiences to Salesforce? Personal Pay would make it one of the use cases.” Followed up Friday: “a. Export audiences b. Export audiences and campaign copies and activate them in Salesforce c. Activate campaigns directly from Intent One integrated with Salesforce. Have we already tested the 3 paths?”",
+    "ask": "Handled — you gave the ask a thumbs-up and laid out the three Salesforce export paths in the thread: audience export ships from Sam’s pod next month; publish/activate integration sits on Adi’s roadmap.",
     "context": "Personal Pay’s CDO demo happened Wednesday night; Salesforce orchestrates their campaigns, so the answer decides whether IntentOne is a data feed or an activation layer for them. Sam and Alex are separately scoping exit paths (audience/opportunity export to other systems) in Linear — same question from the roadmap side.",
     "link": "https://intent.slack.com/archives/C096PLD9MU2/p1790280751761869",
-    "draft": "Alfonso — let me give you a straight answer rather than a guess, because this overlaps with the exit-paths work @Sam and @Alex are scoping right now (audience/opportunity export to other systems).\n\n• Path a (export audiences): the one we’re closest on — I’ll confirm the exact mechanism we can safely demo.\n• Paths b and c (generate/activate inside Salesforce, or activate direct from IntentOne): I don’t believe either is tested end-to-end yet — I’d rather validate than have you overpromise to Emiliano.\n\nIf a covers the use case, we are in luck as it can go into the story now. If they need b or c, I will prioritise getting real timelines from @Sam before your next Personal Pay conversation.\n\nHope that helps."
+    "draft": "Alfonso — let me give you a straight answer rather than a guess, because this overlaps with the exit-paths work @Sam and @Alex are scoping right now (audience/opportunity export to other systems).\n\n• Path a (export audiences): the one we’re closest on — I’ll confirm the exact mechanism we can safely demo.\n• Paths b and c (generate/activate inside Salesforce, or activate direct from IntentOne): I don’t believe either is tested end-to-end yet — I’d rather validate than have you overpromise to Emiliano.\n\nIf a covers the use case, we are in luck as it can go into the story now. If they need b or c, I will prioritise getting real timelines from @Sam before your next Personal Pay conversation.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Alfonso: tier permissions, T5 credit guardrails, approval workflow",
@@ -809,14 +811,16 @@ const ITEMS = [
     "tags": [
       "personal-pay",
       "pricing",
-      "product"
+      "product",
+      "sent"
     ],
     "who": "Alfonso Urien — #intent-one",
     "when": "Thu 24 Sep, 11:51",
-    "ask": "(a) “Can IntentOne limit a user’s permissions just to enriched data (T1–T4)? The response is NO but it can be configured by account to limit types of processing — is it correct?” (b) “Opportunity generation consumes T5 credits but copilot campaign-idea asks don’t — is IntentOne configured to ask and validate what the user is requesting?” (c) “A prospect asked if IntentOne has an approval workflow (Marketing → DS → DE → CRM → Compliance → Creative → QA).”",
+    "ask": "Handled — JL covered the credits and pricing posture in-thread; you confirmed the approval flow is Client Foundations work (Mark + Sam), on the roadmap for late Q4.",
     "context": "Three product questions surfaced from live prospect conversations. (b) is really a metering-integrity question and feeds the credits/pricing model Vasilis is building; (c) is a roadmap question dressed as a capability question.",
     "link": "https://intent.slack.com/archives/C096PLD9MU2/p1790247084696359",
-    "draft": "Alfonso — taking these one at a time:\n\n• (a) Per-user tier permissions: your read matches mine — configuration is per account/workspace, not per user. I’ll confirm whether user-level restriction is on the roadmap.\n• (b) T5 vs copilot credits: sharp catch. The guardrail isn’t explicit today — I’ll take it into the metering work with @Vasilis so the boundary is enforced, not just documented.\n• (c) Approval workflow: not a today feature, and I’d position it differently — IntentOne collapses the chain (the DS/DE/CRM steps disappear) rather than replicating it; validators like Creative and Compliance become lightweight checks we can design for.\n\nIf any of these is blocking a live conversation, tell me which and I will prioritise a written answer for that one first.\n\nHope that helps."
+    "draft": "Alfonso — taking these one at a time:\n\n• (a) Per-user tier permissions: your read matches mine — configuration is per account/workspace, not per user. I’ll confirm whether user-level restriction is on the roadmap.\n• (b) T5 vs copilot credits: sharp catch. The guardrail isn’t explicit today — I’ll take it into the metering work with @Vasilis so the boundary is enforced, not just documented.\n• (c) Approval workflow: not a today feature, and I’d position it differently — IntentOne collapses the chain (the DS/DE/CRM steps disappear) rather than replicating it; validators like Creative and Compliance become lightweight checks we can design for.\n\nIf any of these is blocking a live conversation, tell me which and I will prioritise a written answer for that one first.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Lewis: Banco Macro — consent withdrawal vs IntentOne processing",
@@ -2043,15 +2047,17 @@ const ITEMS = [
     "tags": [
       "demo",
       "jl",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Andrew Cole — group DM with Sam",
     "when": "Fri 25 Sep, 10:09",
     "due": "Needed before Mon (JL)",
-    "ask": "“How can I stand up and run that AutoML config UI that you demoed for me a couple of weeks back? The one where you select a target and can tell IntentOne to run a model. I’ll be in front of JL on Monday and I would like to bring that up.”",
+    "ask": "Handled — you replied Monday morning: setting up 30 mins today/tomorrow with Albert to pass on the context.",
     "context": "The AutoML config prototype you and Sam demoed. Andy wants it in front of JL Monday — the real decision is whether he gets self-serve access (it may be as fragile as the connectors demo you flagged to Alfonso) or whether you or Sam drive it live while he narrates.",
     "link": "https://intent.slack.com/archives/C0BBUMC66D7/p1790327386471809",
-    "draft": "Andy — love that you want to put this in front of JL.\n\n• It’s still a prototype, so two options: I give you access plus a 5-minute walkthrough before Monday, or @Sam or I drive it live in the session while you tell the story.\n• If the goal is JL seeing target-selection → model run, we are in luck as the happy path demos well. If you want him clicking around it himself, I’d hold off — it isn’t robust enough yet.\n\nWhich way do you want to play it? I will prioritise whichever before Monday.\n\nHope that helps."
+    "draft": "Andy — love that you want to put this in front of JL.\n\n• It’s still a prototype, so two options: I give you access plus a 5-minute walkthrough before Monday, or @Sam or I drive it live in the session while you tell the story.\n• If the goal is JL seeing target-selection → model run, we are in luck as the happy path demos well. If you want him clicking around it himself, I’d hold off — it isn’t robust enough yet.\n\nWhich way do you want to play it? I will prioritise whichever before Monday.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Searce: partner registration form to fill",
@@ -2074,28 +2080,32 @@ const ITEMS = [
     "tags": [
       "mid-market",
       "automation",
-      "gtm"
+      "gtm",
+      "sent"
     ],
     "who": "Colin White — group DM with Vasilis",
     "when": "Fri 25 Sep, 09:31",
-    "ask": "“When the mid-market sequences start… rather than a manual process to set up the demo environment, could we create a demo pipeline? A demo@intenthq.com address — forward the email, and automate moving that into the demo environment setup process? Don’t know if it’s technically possible, hence asking you both.”",
+    "ask": "Handled — you backed the idea Monday morning and proposed a joint brainstorm on agentic pipelines; Colin is booking 30 mins with a whiteboard.",
     "context": "Touches the tenant-provisioning / self-signup work already in flight. The real question is sequencing: is inbound-email-triggered provisioning worth building before volumes justify it, or does the mid-market self-signup flow make the email hop redundant?",
     "link": "https://intent.slack.com/archives/C0ADBJKMLJD/p1790325098791749",
-    "draft": "Colin — right instinct, and it’s technically possible. Two thoughts before we build anything:\n\n• The mid-market self-signup flow we’re building may make the email hop redundant — the reply link can go straight to a signup that provisions the demo env itself.\n• If sequences start before that lands, a lightweight bridge (demo@ address → alert + semi-automated provisioning) is sensible — @Vasilis, can you scope what the trigger would take?\n\nWhat’s your expected start date for the sequences? If it’s after self-signup lands, we are in luck as we skip the interim build. If before, I will prioritise the bridge version.\n\nHope that helps."
+    "draft": "Colin — right instinct, and it’s technically possible. Two thoughts before we build anything:\n\n• The mid-market self-signup flow we’re building may make the email hop redundant — the reply link can go straight to a signup that provisions the demo env itself.\n• If sequences start before that lands, a lightweight bridge (demo@ address → alert + semi-automated provisioning) is sensible — @Vasilis, can you scope what the trigger would take?\n\nWhat’s your expected start date for the sequences? If it’s after self-signup lands, we are in luck as we skip the interim build. If before, I will prioritise the bridge version.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Laura: onboarding videos — IntentOne overview + Hyperspell",
     "category": "internal",
     "tags": [
       "onboarding",
-      "enablement"
+      "enablement",
+      "sent"
     ],
     "who": "Laura Wilkinson — group DM with Vasilis",
     "when": "Fri 25 Sep, 09:58",
-    "ask": "“Are you ok to send me a lil video that we will use for new joiners in the onboarding schedule: • Product Overview of IntentOne • Hyperspell.”",
+    "ask": "Handled — you sent Laura the path-to-value link and the Introducing IntentOne video for onboarding.",
     "context": "Reusable asset — the walkthrough video work Syed has been driving may already cover the IntentOne overview, so this could be a re-share rather than a new recording. Hyperspell presumably falls to Vasilis.",
     "link": "https://intent.slack.com/archives/C0C4JDVDT1S/p1790326688929639",
-    "draft": "Laura — happy to.\n\n• IntentOne overview: rather than record fresh, I’ll check whether the walkthrough video Syed has been driving covers it — if so, we are in luck and you’ll have it this week. If not, I’ll record a short one.\n• Hyperspell: @Vasilis — can you take that one?\n\nWhat’s the deadline for the onboarding schedule so I can slot it properly?\n\nHope that helps."
+    "draft": "Laura — happy to.\n\n• IntentOne overview: rather than record fresh, I’ll check whether the walkthrough video Syed has been driving covers it — if so, we are in luck and you’ll have it this week. If not, I’ll record a short one.\n• Hyperspell: @Vasilis — can you take that one?\n\nWhat’s the deadline for the onboarding schedule so I can slot it properly?\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Brand-labeller: positioning steer + Jev score question waiting on you",
@@ -2111,6 +2121,36 @@ const ITEMS = [
     "context": "The app is unblocked and open to the whole company — launch is waiting purely on your positioning call (how to pitch voting so people do it in coffee breaks). The Jev classification-score idea would shrink human labelling to the disagreement set.",
     "link": "https://intent.slack.com/archives/C0C22DRA9LH/p1790259743438739?thread_ts=1790087402.422149&cid=C0C22DRA9LH",
     "draft": "Both — thanks for getting it open to everyone, that was the hard part.\n\n• Jev classification score: yes — if Jev’s score lets us auto-accept agreements and route only disagreements to humans, we are in luck as the 80k becomes a much smaller human task. @Sangram, can you size the disagreement rate on a sample first?\n• Positioning: pitch it as a game, not a chore — leaderboard, a weekly shout-out, one line on why it matters (better brand labels = better demos for everyone). Announce in #general with a 30-second clip of the app.\n\nGive me a slot Monday and I’ll do the announcement myself.\n\nHope that helps."
+  },
+  {
+    "title": "JL: updated sales deck — two questions back to you",
+    "category": "internal",
+    "tags": [
+      "jl",
+      "sales-deck",
+      "video"
+    ],
+    "who": "Jonathan Lakin — group DM with Sam",
+    "when": "Mon 28 Sep, 09:49",
+    "ask": "“Shared as want you to either be aligned or suggest changes. By current flow do you mean the existing or the updated one I am proposing?” And on the demo video: “even if Colin manages it you are the customer so you need to be happy with it!!”",
+    "context": "JL is rebuilding the sales deck into a fuller 18-slide leave-behind: two problems, then IntentOne as the answer, a 45-sec video demo at slide 11, commercial framework, 45-day-trial close. You gave one steer this morning (punch harder with the solution) and he wants to know which flow that applied to. Separately he approved the zero-hour video-editor hire in your DM, but the quality bar stays with you.",
+    "link": "https://intent.slack.com/archives/C0B0Z3RRBME/p1790585395285059",
+    "draft": "Hey JL — on both:\n\n• The criticism was of your proposed flow, not the old deck. The two-problems-then-solution structure works. The gap is that the ‘Introducing IntentOne’ slides need to land explicitly as the answer to problem 1 and problem 2, not as a feature tour — a one-line bridge slide would do it.\n• On the video: agreed, I own the quality bar. @Colin manages the editor day-to-day, I sign off the cut before it goes near a client. I’ll brief the editor with Colin this week.\n\nIf the 45-sec demo lands, we are in luck as it also solves the ‘no time for a live demo’ problem you flagged. If it doesn’t, I will prioritise a tighter screen-capture cut we control fully.\n\nHope that helps."
+  },
+  {
+    "title": "Albert: WorkOS needs usage estimates — nudged today",
+    "category": "internal",
+    "tags": [
+      "albert",
+      "workos",
+      "sso"
+    ],
+    "who": "Albert Pastrana — #team-product",
+    "when": "Mon 28 Sep, 10:01",
+    "ask": "“Do we have any estimation about number of users, SSO integrations, etc? It would help with WorkOS.” Nudged today: “any ideas here 👆?” (tagging you, Sam and Luca).",
+    "context": "Albert is scoping WorkOS/AuthKit for IntentOne auth. WorkOS sales want monthly active users, SSO connections and SCIM volumes to decide whether an enterprise agreement makes sense. The original ask sat four days before today’s nudge.",
+    "link": "https://intent.slack.com/archives/C03GG6U7VT9/p1790586098838629",
+    "draft": "Hey Albert — rough shapes to unblock the WorkOS conversation, all assumptions to refine:\n\n• Users: tens of seats per client (campaign managers + analysts), not thousands. I’d model a few hundred MAU across live + pipeline clients over the next 12 months.\n• SSO: assume one connection per enterprise client — telcos will want SAML — so roughly 10–15 connections in year one.\n• SCIM: I wouldn’t commit yet; no client has asked.\n\nIf WorkOS prices sanely at that volume, we are in luck as we can defer any enterprise agreement. If they push enterprise pricing, let’s pressure-test build-vs-buy before signing. @Sam can you sanity-check seat counts against the live workspaces?\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
