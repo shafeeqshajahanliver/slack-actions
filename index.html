@@ -157,7 +157,7 @@
       <div>
         <div class="wordmark"><s>I</s><s>N</s><s>T</s><s>E</s><s>N</s><s>T</s></div>
         <h1>Waiting on <em>you</em></h1>
-        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Mon 28 Sep, 10:17 BST</span></div>
+        <div class="sync"><span class="dot"></span><span class="stamp">Synced from Slack — Tue 29 Sep, 10:23 BST</span></div>
       </div>
       <div class="hactions">
         <a class="refresh" id="refreshBtn" href="#">
@@ -782,7 +782,7 @@ const ITEMS = [
     ],
     "who": "Adam Wilson — #edge-presale-bt_ee",
     "when": "Thu 24 Sep, 11:15",
-    "due": "Due Mon 28 Sep EOD",
+    "due": "Overdue — was Mon 28 Sep EOD",
     "ask": "“Please provide your DRG outcome for the CP-013-BT Group\\\\EE-Edge Statement of Work. Note: this is now the working copy of the proposal so any edits should be made in this document. The deadline for review completion is end of day Monday 28-Sep-2026.”",
     "context": "Delivery Review Gate on the BT Group/EE Edge SoW — the commit-to-deliver check. It runs alongside the EE IntentOne shadow-deployment thread (consent still pending, NX1 backend in flight), so worth checking the SoW doesn’t implicitly promise anything the shadow deployment is still proving.",
     "link": "https://intent.slack.com/archives/C05U6GWDZQ8/p1790244925162839",
@@ -843,15 +843,16 @@ const ITEMS = [
     "tags": [
       "etisalat",
       "pricing",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Lewis Longman-Jones — group DM with Adam, Roberto",
     "when": "Thu 24 Sep, 17:04",
-    "due": "Roberto promised your view Fri",
-    "ask": "“Have we a new onboarding resource estimate (in person days)… to ingest weblogs, build local brands and process CRM, weblog, SDK and generate opportunities through IntentOne? …I’m using the heuristic of £2k a month for 1M customers + £5k a month infra — does that appear reasonable still?” Roberto: “For operations can we stall till tomorrow? Shaff will have a better view then.”",
+    "ask": "Handled — you answered in the group DM Mon with the ADP result: 1M real MTN Nigeria profiles (weblog + CRM) ingested in under a day with no client-side preparation, which resets the onboarding-effort estimate. Lewis followed up on local brands and time-to-value and you pointed him at the IntentAI pipeline and the brand labeller.",
     "context": "Lewis is refreshing the e& Egypt cost model for proposal margins. Roberto covered onboarding (team running efforts with the onboarding tools next week) but parked the operations line on you for Friday. Xingzhe’s cost-a-profile artefact is the obvious source — measured ingest around $0.99 per 1M users/day plus per-task pipeline costs, with the full-day measured run due today.",
     "link": "https://intent.slack.com/archives/C0C52PB3B6U/p1790265853637109",
-    "draft": "Lewis — picking up the operations piece Roberto parked on me.\n\n• Best source is the cost-a-profile artefact the hit squad is finalising today — measured, not heuristic: ingest is landing around $1 per 1M users/day, with per-component pipeline costs alongside.\n• Your £2k/month per 1M + £5k infra heuristic is directionally sane, but I’d anchor the proposal on the measured lines — the full-day run lands today.\n• On onboarding person-days: @Roberto’s team are running through it with the onboarding tools next week, so let’s not invent a number ahead of that.\n\nIf the artefact lands today as planned, we are in luck as I can give you real per-component numbers by Monday. If not, I will prioritise a bridging estimate so the e& proposal isn’t blocked.\n\nHope that helps."
+    "draft": "Lewis — picking up the operations piece Roberto parked on me.\n\n• Best source is the cost-a-profile artefact the hit squad is finalising today — measured, not heuristic: ingest is landing around $1 per 1M users/day, with per-component pipeline costs alongside.\n• Your £2k/month per 1M + £5k infra heuristic is directionally sane, but I’d anchor the proposal on the measured lines — the full-day run lands today.\n• On onboarding person-days: @Roberto’s team are running through it with the onboarding tools next week, so let’s not invent a number ahead of that.\n\nIf the artefact lands today as planned, we are in luck as I can give you real per-component numbers by Monday. If not, I will prioritise a bridging estimate so the e& proposal isn’t blocked.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Receipts to SD, plus the £44.95",
@@ -1920,15 +1921,16 @@ const ITEMS = [
     "tags": [
       "pricing",
       "infra",
-      "deadline"
+      "deadline",
+      "sent"
     ],
     "who": "Tobie Alberts — #new-env-hit-squad",
     "when": "Wed 23 Sep, 10:11",
-    "due": "Due today (Fri 25 Sep)",
-    "ask": "“Keep UAT moving (Tom): Do not pause INFRA-2099. Sandra is ready to copy data when the seed/plan is named. @Shafeeq / @Tom — confirm by EOD what gets copied vs storage-only Edge for Friday. Reply in-thread with owners confirming those three Friday lines.”",
+    "ask": "Resolved by the team — Tobie wrapped the Friday chase Mon morning (Option 3 partial landed: measured ingest held at $39.62 / $0.99 per 1M users a day), Tom confirmed the Edge Processing line is intentional and owns the costing env / UAT copy decision from here.",
     "context": "The follow-on to Monday's answers (indexes posted, seed-and-synthesise agreed). Since then Tobie locked the hybrid: Option 3 measured job costs run directly on MTN Nigeria this week (no +20% baked in), UAT idle floor continues in parallel, Tom owns Edge for Friday as a storage-only placeholder. Two things still carry your name: the EOD confirm on what actually gets copied to UAT, and Sangram's Monday question — does Sriram have capacity to deploy processing on the new env? One wrinkle from Xingzhe's profiling: the Nigeria sample has ~904k CRM subscribers but only one usable weblog day, and IntentAI accumulates over ~14 — so the Friday IntentAI line needs a labelled caveat. Tobie's Thursday-morning check keeps your name on line 3 — confirm what gets copied vs storage-only Edge so Sandra can load — and Tom is now pushing back that storage-only is misleading (“the processing is an outcome of the storage”), so expect to referee that before Friday. Tobie’s Friday-morning check (25 Sep) repeats it: INFRA-2099 is due today and Sandra is waiting on the copy-vs-storage-only call to load UAT.",
     "link": "https://intent.slack.com/archives/C0C22384E3F/p1790154674754009?thread_ts=1790087576.748019&cid=C0C22384E3F",
-    "draft": "Tobie — confirming in-thread so Friday is not waiting on me:\n\n• Copy vs storage-only: for Friday, storage-only Edge (Tom's placeholder) and nothing new copied to UAT — Option 3 measures jobs on MTN Nigeria directly, so the Friday baseline does not need a copy. Seed-and-synthesise stays the plan for the UAT tenant milestone, not this week.\n• One caveat for the artefact: Xingzhe's profiling shows only one usable weblog day in the sample and IntentAI accumulates over ~14 — so the IntentAI line is a job-cost baseline, not affinity-complete. Better a labelled caveat than a silent gap finance later finds.\n• @Sangram — on Sriram deploying processing on the new env: confirming his capacity today. If he is free, we are in luck and he owns it. If not, I will name an alternative rather than leave it unowned into Friday.\n\nHope that helps."
+    "draft": "Tobie — confirming in-thread so Friday is not waiting on me:\n\n• Copy vs storage-only: for Friday, storage-only Edge (Tom's placeholder) and nothing new copied to UAT — Option 3 measures jobs on MTN Nigeria directly, so the Friday baseline does not need a copy. Seed-and-synthesise stays the plan for the UAT tenant milestone, not this week.\n• One caveat for the artefact: Xingzhe's profiling shows only one usable weblog day in the sample and IntentAI accumulates over ~14 — so the IntentAI line is a job-cost baseline, not affinity-complete. Better a labelled caveat than a silent gap finance later finds.\n• @Sangram — on Sriram deploying processing on the new env: confirming his capacity today. If he is free, we are in luck and he owns it. If not, I will name an alternative rather than leave it unowned into Friday.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Helen: betway-nurture regenerated — check it",
@@ -2032,14 +2034,16 @@ const ITEMS = [
     "tags": [
       "mid-market",
       "legal",
-      "gtm"
+      "gtm",
+      "sent"
     ],
     "who": "Thomas Murdock — group DM with Shirley, Luca, Sam, Fred",
     "when": "Fri 25 Sep, 09:01",
-    "ask": "“There are already general fair-use provisions in the Ts&Cs, but if Intent wants anything specific I need that instruction — can you provide this? Separately, what headline guidance / pre-Ts&Cs directions do you want for potential customers (45 days, first 15 synthetic then max 30 live, blue box only, hosted on Intent environment, fair use, moves to paid term if not cancelled)?”",
+    "ask": "Handled — you replied Mon: asked for the T&Cs relink (fair use sits in clauses 2.4 and 2.8), sent the headline pre-signup guidance (45 days, first 15 synthetic then live, eligibility check, Intent-hosted, fair use, moves to paid unless cancelled), and booked a 30-min pairing with Thomas.",
     "context": "Ts&Cs have been essentially ready since 10 Sep — both remaining blockers are yours: the actual fair-use threshold numbers (you said you wanted to work these through with Thomas and a wider group) and the headline pre-signup lines. You also flagged that Sam needs to swap the new Ts&Cs into the onboarding journey.",
     "link": "https://intent.slack.com/archives/C0BQSJ4BCPR/p1790323282163379",
-    "draft": "Thomas — thanks for keeping this moving. Two answers:\n\n• Fair-use thresholds: let’s not hold the Ts&Cs on the numbers. Keep your general provisions as drafted; I’ll bring the specific thresholds out of the pricing and metering work with @Vasilis and we slot them in as a schedule once agreed.\n• Headline guidance: yes — a short pre-signup summary exactly along your lines: 45-day trial (first 15 days synthetic, live data max 30), blue box only, hosted on our environment, subject to fair use, converts to a paid term unless cancelled. Draft it that way and I’ll do a fast pass.\n\n@Sam — reminder that the new Ts&Cs need swapping into the onboarding journey once final.\n\nHope that helps."
+    "draft": "Thomas — thanks for keeping this moving. Two answers:\n\n• Fair-use thresholds: let’s not hold the Ts&Cs on the numbers. Keep your general provisions as drafted; I’ll bring the specific thresholds out of the pricing and metering work with @Vasilis and we slot them in as a schedule once agreed.\n• Headline guidance: yes — a short pre-signup summary exactly along your lines: 45-day trial (first 15 days synthetic, live data max 30), blue box only, hosted on our environment, subject to fair use, converts to a paid term unless cancelled. Draft it that way and I’ll do a fast pass.\n\n@Sam — reminder that the new Ts&Cs need swapping into the onboarding journey once final.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Andy: stand up the AutoML config UI — wants it for JL on Monday",
@@ -2065,14 +2069,16 @@ const ITEMS = [
     "tags": [
       "searce",
       "partner",
-      "admin"
+      "admin",
+      "sent"
     ],
     "who": "Satheesh Thangadhurai — #external-intenthq-searce",
     "when": "Fri 25 Sep, 06:26",
-    "ask": "“Can you please fill this form… to the Unit Name question, please fill the partner name followed by Profile, e.g. (Partner Name that was registered) Profile.”",
+    "ask": "Handled — you submitted the partner registration form Mon morning; Satheesh is iterating with Google for review. On the wider deadline Adam flagged (Searce support ends Fri), you told him to extend and asked to be cc'd in.",
     "context": "Marketplace unit registration for the Searce/GCP partnership — a five-minute admin task, but it gates their side of the listing. Quick win to clear.",
     "link": "https://intent.slack.com/archives/C0BFETMR64C/p1790314018771509",
-    "draft": "Thanks Satheesh — will get the form filled in today.\n\nOne check before I submit: for Unit Name, I’m assuming “Intent HQ Profile” (registered partner name + Profile). If the registered name differs on your side, drop it here and I’ll match it exactly.\n\nHope that helps."
+    "draft": "Thanks Satheesh — will get the form filled in today.\n\nOne check before I submit: for Unit Name, I’m assuming “Intent HQ Profile” (registered partner name + Profile). If the registered name differs on your side, drop it here and I’ll match it exactly.\n\nHope that helps.",
+    "done": true
   },
   {
     "title": "Colin: demo@intenthq.com — automate the demo-env pipeline?",
@@ -2143,14 +2149,47 @@ const ITEMS = [
     "tags": [
       "albert",
       "workos",
-      "sso"
+      "sso",
+      "sent"
     ],
     "who": "Albert Pastrana — #team-product",
     "when": "Mon 28 Sep, 10:01",
-    "ask": "“Do we have any estimation about number of users, SSO integrations, etc? It would help with WorkOS.” Nudged today: “any ideas here 👆?” (tagging you, Sam and Luca).",
+    "ask": "Handled — you gave Albert the estimates Mon morning: max 20 SSO connections and 500–1000 MAU for Q4 26 / Q4 27, scaling the commercial model frictionlessly into 27. Albert confirmed that covers the WorkOS pricing conversation.",
     "context": "Albert is scoping WorkOS/AuthKit for IntentOne auth. WorkOS sales want monthly active users, SSO connections and SCIM volumes to decide whether an enterprise agreement makes sense. The original ask sat four days before today’s nudge.",
     "link": "https://intent.slack.com/archives/C03GG6U7VT9/p1790586098838629",
-    "draft": "Hey Albert — rough shapes to unblock the WorkOS conversation, all assumptions to refine:\n\n• Users: tens of seats per client (campaign managers + analysts), not thousands. I’d model a few hundred MAU across live + pipeline clients over the next 12 months.\n• SSO: assume one connection per enterprise client — telcos will want SAML — so roughly 10–15 connections in year one.\n• SCIM: I wouldn’t commit yet; no client has asked.\n\nIf WorkOS prices sanely at that volume, we are in luck as we can defer any enterprise agreement. If they push enterprise pricing, let’s pressure-test build-vs-buy before signing. @Sam can you sanity-check seat counts against the live workspaces?\n\nHope that helps."
+    "draft": "Hey Albert — rough shapes to unblock the WorkOS conversation, all assumptions to refine:\n\n• Users: tens of seats per client (campaign managers + analysts), not thousands. I’d model a few hundred MAU across live + pipeline clients over the next 12 months.\n• SSO: assume one connection per enterprise client — telcos will want SAML — so roughly 10–15 connections in year one.\n• SCIM: I wouldn’t commit yet; no client has asked.\n\nIf WorkOS prices sanely at that volume, we are in luck as we can defer any enterprise agreement. If they push enterprise pricing, let’s pressure-test build-vs-buy before signing. @Sam can you sanity-check seat counts against the live workspaces?\n\nHope that helps.",
+    "done": true
+  },
+  {
+    "title": "Colin: trial onboarding hits a dead end",
+    "category": "internal",
+    "tags": [
+      "mid-market",
+      "trial",
+      "ux"
+    ],
+    "who": "Colin White — DM",
+    "when": "Tue 29 Sep, 09:49",
+    "ask": "“I've been following the Trial onboarding process to see what happens. When I get to this screen, I seem to hit a deadend. There is no call to action on what to do next?”",
+    "context": "Colin is walking the mid-market trial journey end to end — exactly the customer-interest-to-demo-provisioning QA you asked for in Monday's mid-market plan feedback (his leg of the pre-Phase-1 stress test). A dead-end screen in the trial flow is the class of gap that pass exists to catch; worth establishing whether it is a missing call to action or a genuinely missing step before Phase 1 dates firm up.",
+    "link": "https://intent.slack.com/archives/D09JY6FFLLX/p1790671797431879",
+    "draft": "Thanks for stress-testing this — a dead end here is exactly what we cannot ship.\n\n• Can you send me a screenshot plus the URL of the screen? I want to know whether it is a missing call to action or a genuinely missing step in the flow.\n• If it is copy/CTA only, we are in luck as that is a quick fix I can put through with @Mark. If the flow itself stops there, I will prioritise it with the Client Foundations pod as part of trial readiness — it goes ahead of polish.\n\nEither way, keep walking the journey and log every snag like this — it is exactly the QA pass we agreed pre-Phase-1 needs.\n\nHope that helps."
+  },
+  {
+    "title": "Martyna: October bonus sheets for Luca + Sam",
+    "category": "internal",
+    "tags": [
+      "people",
+      "bonus",
+      "deadline"
+    ],
+    "who": "Martyna Jaskowiak — DM",
+    "when": "Mon 28 Sep, 15:20",
+    "due": "Due Mon 5 Oct",
+    "ask": "“We're kicking off our October bonus assessments; please find attached sheets for Luca [and] Sam… If you could please complete by Monday 5 October, that would be much appreciated.”",
+    "context": "Outcomes carry 90% of the assessment, behaviours 10%, and the sheets can pre-fill objectives from HiBob performance reviews. Her earlier nudge — HiBob peer feedback for Andy, Ben and Lidor (1 Sep) — is still open on this board, so one HiBob sitting this week clears both before the deadline.",
+    "link": "https://intent.slack.com/archives/D09MH2L443U/p1790605207779049",
+    "draft": "Thanks Martyna — noted, and I will have both in by Monday 5th.\n\n• One check before I start: should the objectives mirror Luca's and Sam's HiBob reviews exactly, or can I weight towards the Q3 delivery work where most of their impact actually sat?\n• If the sheets pre-populate from HiBob cleanly, we are in luck as I can do both in one sitting this week — and I will clear the outstanding peer feedback for Andy, Ben and Lidor at the same time. If not, I will prioritise Luca's and Sam's sheets first since they carry the deadline.\n\nHope that helps."
   }
 ];
 /* ITEMS:END */
